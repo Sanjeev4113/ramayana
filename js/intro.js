@@ -15,8 +15,8 @@ float noise(vec2 p){ vec2 i = floor(p), f = fract(p); f = f * f * (3. - 2. * f);
   return mix(mix(hash(i), hash(i + vec2(1., 0.)), f.x), mix(hash(i + vec2(0., 1.)), hash(i + vec2(1., 1.)), f.x), f.y); }
 float fbm(vec2 p){ float v = 0., a = .5; for (int i = 0; i < 5; i++) { v += a * noise(p); p = p * 2.03 + 7.1; a *= .5; } return v; }`;
 
-// a painting with its depth: covers the screen like the film (centred), drifts with the pointer, light rays from its sun
-const LAND = `precision highp float; uniform sampler2D tCol, tDep; uniform vec2 uRes, uImg, uMouse, uLight; uniform float uTime, uZoom, uRays, uDrift; ${NOISE}
+// a painting with its depth: covers the screen like the film (centred), subtle 4-tap clarity sharpen, light rays, and optional war-fire glow
+const LAND = `precision highp float; uniform sampler2D tCol, tDep; uniform vec2 uRes, uImg, uMouse, uLight; uniform float uTime, uZoom, uRays, uDrift, uWar; ${NOISE}
 void main(){
   vec2 frag = gl_FragCoord.xy / uRes;
   vec2 s = uRes / uImg; float sc = max(s.x, s.y); vec2 size = uImg * sc; vec2 off = (uRes - size) * .5;
@@ -26,13 +26,28 @@ void main(){
   float d = texture2D(tDep, uv).r;
   uv += uMouse * vec2(.012, .008) * (d - .45) * uDrift;
   uv.x += uDrift * .0022 * sin(uTime * .3 + d * 3.) * (1. - d);
-  vec3 col = texture2D(tCol, clamp(uv, .001, .999)).rgb;
+  // subtle heat shimmer on war plates
+  if (uWar > .01) { uv.x += sin(uv.y * 42. + uTime * 3.8) * .00065 * uWar * smoothstep(.35, .85, uv.y); }
+  vec2 cUv = clamp(uv, .002, .998);
+  vec2 px = 1. / uImg;
+  vec3 c0 = texture2D(tCol, cUv).rgb;
+  // gentle 4-tap unsharp mask for crisp architectural & painterly clarity
+  vec3 avg = (texture2D(tCol, clamp(cUv + vec2(px.x, 0.), .001, .999)).rgb + texture2D(tCol, clamp(cUv - vec2(px.x, 0.), .001, .999)).rgb
+            + texture2D(tCol, clamp(cUv + vec2(0., px.y), .001, .999)).rgb + texture2D(tCol, clamp(cUv - vec2(0., px.y), .001, .999)).rgb) * .25;
+  vec3 col = clamp(c0 + (c0 - avg) * .42, 0., 1.);
+  // subtle filmic local contrast boost
+  col = mix(col, col * col * (3. - 2. * col), .14);
   float asp = uRes.x / uRes.y;
   vec2 q = vec2(frag.x * asp, frag.y) - vec2(uLight.x * asp, 1. - uLight.y);
   float ang = atan(q.y, q.x), r = length(q);
-  float rays = pow(fbm(vec2(ang * 5., uTime * .035)) * fbm(vec2(ang * 11. + 3., -uTime * .028)), 1.6) * 2.2;
-  col += vec3(1., .84, .55) * (rays * smoothstep(1.4, 0., r) * .12 + exp(-r * 2.8) * .05) * uRays * (1. - d * .5);
-  gl_FragColor = vec4(col, 1.);
+  float rays = pow(fbm(vec2(ang * 5., uTime * .035)) * fbm(vec2(ang * 11. + 3., -uTime * .028)), 1.6) * 2.4;
+  col += vec3(1., .86, .58) * (rays * smoothstep(1.45, 0., r) * .14 + exp(-r * 2.6) * .065) * uRays * (1. - d * .48);
+  if (uWar > .01) {
+    float flick = .55 + .45 * sin(uTime * 5.2 + frag.x * 4.) * cos(uTime * 3.1 - frag.x * 2.5);
+    float band = smoothstep(.18, .55, 1. - frag.y) * smoothstep(.98, .48, 1. - frag.y);
+    col += vec3(1., .38, .08) * band * flick * .16 * uWar;
+  }
+  gl_FragColor = vec4(clamp(col, 0., 1.), 1.);
 }`;
 
 function gl2d(canvas, frag, detail = () => 1.75) {
@@ -68,7 +83,7 @@ export async function land(canvas, meta) {
   const g = gl2d(canvas, LAND, () => 1.1 * Math.min(img.width / (canvas.clientWidth || innerWidth), img.height / (canvas.clientHeight || innerHeight))); if (!g) return null;
   const { gl, U } = g; g.tex(img, 0); g.tex(dep, 1);
   gl.uniform1i(U('tCol'), 0); gl.uniform1i(U('tDep'), 1); gl.uniform2f(U('uImg'), img.width, img.height); gl.uniform2f(U('uLight'), ...(meta.light || [.5, .25]));
-  const st = { zoom: 1, rays: 1, drift: 1, m: [0, 0], mouse: [0, 0], visible: true };
+  const st = { zoom: 1, rays: 1, drift: 1, war: meta.war || 0, m: [0, 0], mouse: [0, 0], visible: true };
   addEventListener('pointermove', e => { st.mouse = [e.clientX / innerWidth * 2 - 1, -(e.clientY / innerHeight * 2 - 1)]; }, { passive: true });
   const t0 = performance.now();
   // the painting breathes slowly (a drift, light rays, the pointer's parallax): thirty frames a second look the same as
@@ -76,7 +91,7 @@ export async function land(canvas, meta) {
   frames(canvas, () => {
     st.m[0] += (st.mouse[0] - st.m[0]) * .08; st.m[1] += (st.mouse[1] - st.m[1]) * .08;
     gl.uniform2f(U('uRes'), canvas.width, canvas.height); gl.uniform2f(U('uMouse'), st.m[0], st.m[1]);
-    gl.uniform1f(U('uTime'), (performance.now() - t0) / 1000); gl.uniform1f(U('uZoom'), st.zoom); gl.uniform1f(U('uRays'), st.rays); gl.uniform1f(U('uDrift'), st.drift);
+    gl.uniform1f(U('uTime'), (performance.now() - t0) / 1000); gl.uniform1f(U('uZoom'), st.zoom); gl.uniform1f(U('uRays'), st.rays); gl.uniform1f(U('uDrift'), st.drift); gl.uniform1f(U('uWar'), st.war || 0);
     gl.drawArrays(gl.TRIANGLES, 0, 3); }, { fps: 30 });
   canvas.style.background = 'none';
   return st;
@@ -97,8 +112,8 @@ export class Sparks {
   }
   add(x, y, vx, vy, life, size, drag = .985) { const d = this.dpr; this.p.push({ x: x * d, y: y * d, vx: vx * d, vy: vy * d, life, max: life, s: size * d, drag }); }
   frame(dt, t) {
-    for (const e of this.emit) e(dt, t, this);
     const { x: c } = this; c.clearRect(0, 0, this.c.width, this.c.height); c.globalCompositeOperation = 'lighter';
+    for (const e of this.emit) e(dt, t, this);
     this.p = this.p.filter(p => (p.life -= dt) > 0);
     for (const p of this.p) {
       p.vx *= p.drag; p.vy = p.vy * p.drag - this.rise * dt * this.dpr; p.x += p.vx * dt; p.y += p.vy * dt;
@@ -140,20 +155,69 @@ function gate(sound) {
     diyas.innerHTML = spots.map(([x, y]) => `<g transform="translate(${x} ${y})"><path class="dy" d="M-8 4 Q0 10 8 4 L6 0 L-6 0Z"/><path class="fl" d="M0 0 C-5 -5 -2 -10 0 -15 C2 -10 5 -5 0 0Z"/></g>`).join('');
     const fl = $$('.fl', diyas);
     const st = { p: 0 }; let tw = null, done = false;
-    const draw = () => { prog.style.strokeDashoffset = 1 - st.p; fl.forEach((f, i) => f.classList.toggle('lit', st.p > (i + .5) / fl.length)); btn.style.setProperty('--p', st.p); };
-    const finish = () => { if (done) return; done = true; tw?.kill(); st.p = 1; draw(); btn.classList.add('opened'); resolve(); };
+    const draw = () => { prog.style.strokeDashoffset = 1 - st.p; fl.forEach((f, i) => f.classList.toggle('lit', st.p > (i + .5) / fl.length || i === 0 || i === fl.length - 1)); btn.style.setProperty('--p', st.p); };
+    const dust = new Sparks($('#gate-dust'), { rise: 10 });
+    // twinkling celestial starfield + occasional golden shooting comets + radiant temple-arch aura
+    const stars = Array.from({ length: LITE ? 45 : 95 }, () => ({ x: Math.random(), y: Math.random() * .78, r: .6 + Math.random() * 1.4, ph: Math.random() * 6.28, sp: 1.2 + Math.random() * 2.8, warm: Math.random() < .6 }));
+    let comets = [], cometCd = 1.6;
+    dust.emit.push((dt, t, S) => {
+      const c = S.x, W = S.c.width, H = S.c.height, d = S.dpr;
+      c.save(); c.globalCompositeOperation = 'lighter';
+      // subtle twinkling stars across the cosmos
+      for (const s of stars) {
+        const a = .22 + .78 * (.5 + .5 * Math.sin(t * s.sp + s.ph));
+        c.fillStyle = s.warm ? `rgba(255,232,175,${a * .75})` : `rgba(210,230,255,${a * .65})`;
+        c.beginPath(); c.arc(s.x * W, s.y * H, s.r * d, 0, 6.283); c.fill();
+      }
+      // occasional golden shooting star / comet streaking through the heavens
+      cometCd -= dt;
+      if (cometCd <= 0) {
+        cometCd = 2.6 + Math.random() * 4.2;
+        const fromL = Math.random() < .5;
+        comets.push({ x: (fromL ? .08 + Math.random() * .35 : .55 + Math.random() * .38) * W, y: (.06 + Math.random() * .26) * H, vx: (fromL ? 1 : -1) * (420 + Math.random() * 260) * d, vy: (110 + Math.random() * 110) * d, life: .75, max: .75 });
+      }
+      comets = comets.filter(m => (m.life -= dt) > 0);
+      for (const m of comets) {
+        m.x += m.vx * dt; m.y += m.vy * dt;
+        const f = m.life / m.max, tx = m.x - m.vx * .14, ty = m.y - m.vy * .14;
+        const gr = c.createLinearGradient(m.x, m.y, tx, ty);
+        gr.addColorStop(0, `rgba(255,252,235,${f})`); gr.addColorStop(.3, `rgba(255,214,126,${f * .7})`); gr.addColorStop(1, 'rgba(255,160,60,0)');
+        c.strokeStyle = gr; c.lineWidth = 2.2 * d; c.lineCap = 'round';
+        c.beginPath(); c.moveTo(m.x, m.y); c.lineTo(tx, ty); c.stroke();
+      }
+      // gentle breathing sacred aura centered behind the temple arch
+      const r = btn.getBoundingClientRect();
+      if (r.width) {
+        const ax = (r.left + r.width / 2) * d, ay = (r.top + r.height * .45) * d;
+        const ar = (120 + 20 * Math.sin(t * 2.1) + st.p * 140) * d;
+        const gr = c.createRadialGradient(ax, ay, 0, ax, ay, ar);
+        gr.addColorStop(0, `rgba(255,222,140,${.18 + st.p * .36})`);
+        gr.addColorStop(.45, `rgba(255,168,64,${.07 + st.p * .16})`);
+        gr.addColorStop(1, 'rgba(255,140,40,0)');
+        c.fillStyle = gr; c.fillRect(ax - ar, ay - ar, ar * 2, ar * 2);
+      }
+      c.restore();
+      if (Math.random() < dt * (LITE ? 18 : 34)) S.add(Math.random() * innerWidth, innerHeight + 10, (Math.random() - .5) * 16, -34 - Math.random() * 58, 5.5 + Math.random() * 5.5, .7 + Math.random() * 2.0, .998);
+    });
+    const burstArch = () => {
+      const r = btn.getBoundingClientRect();
+      const cx = r.left + r.width / 2, cy = r.top + r.height * .44;
+      for (let i = 0; i < 65; i++) {
+        const an = Math.random() * 6.283, sp = 70 + Math.random() * 260;
+        dust.add(cx, cy, Math.cos(an) * sp, Math.sin(an) * sp - 30, .7 + Math.random() * .9, 1.2 + Math.random() * 2.8, .96);
+      }
+    };
+    const finish = () => { if (done) return; done = true; tw?.kill(); st.p = 1; draw(); btn.classList.add('opened'); burstArch(); resolve(); };
     // one press opens the gate: the ring of gold fills by itself and the diyas light one by one (nothing to hold)
     const open = () => { if (done || tw) return; sound?.start(); btn.classList.add('holding'); tw = gsap.to(st, { p: 1, duration: .7, ease: 'power1.inOut', onUpdate: draw, onComplete: finish }); };
     btn.addEventListener('click', e => { e.preventDefault(); open(); });
     btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); finish(); } });
     btn.addEventListener('contextmenu', e => e.preventDefault());
     draw();
-    gsap.timeline({ delay: .3 })
-      .from('.g-sloka p', { opacity: 0, y: 18, filter: 'blur(8px)', duration: 1.4, stagger: .3, ease: 'power3.out' })
-      .from('.g-tr, .g-en', { opacity: 0, y: 10, duration: 1.1, stagger: .2 }, '-=.8')
-      .from(btn, { opacity: 0, y: 24, scale: .94, duration: 1.2, ease: 'power3.out' }, '-=.6');
-    const dust = new Sparks($('#gate-dust'), { rise: 8 });
-    dust.emit.push((dt, t, S) => { if (Math.random() < dt * 20) S.add(Math.random() * innerWidth, innerHeight + 10, (Math.random() - .5) * 12, -30 - Math.random() * 50, 6 + Math.random() * 6, .6 + Math.random() * 1.8, .998); });
+    gsap.timeline({ delay: .2 })
+      .from('.g-sloka p', { opacity: 0, y: 16, filter: 'blur(6px)', duration: 1.15, stagger: .25, ease: 'power3.out' })
+      .from('.g-tr, .g-en', { opacity: 0, y: 10, duration: .95, stagger: .16 }, '-=.7')
+      .from(btn, { opacity: 0, y: 20, scale: .95, duration: 1.0, ease: 'power3.out' }, '-=.55');
     $('.gate').__dust = dust;
   });
 }
@@ -175,19 +239,26 @@ export async function runIntro({ sound, embers, skip = false } = {}) {
   if (!ok) { intro.remove(); landed(); return; }
   let handed = false, was = null, restored = false;
   const restore = () => { if (restored || !was) return; restored = true; setTimeout(() => sound?.setMusic?.(true), 400); };
-  const handOver = async () => {
+  const handOver = async (instant = false) => {
     if (handed) return; handed = true;
-    await heroP;
-    gsap.to(intro, { opacity: 0, duration: .7, ease: 'power1.inOut', onComplete: () => { intro.style.pointerEvents = 'none'; } });
+    intro.style.pointerEvents = 'none';
+    gsap.killTweensOf('.gate, .g-sloka p, .g-tr, .g-en, #g-enter');
+    const gateEl = $('.gate');
+    if (gateEl) { gateEl.__dust?.stop(); if (instant) { gateEl.style.display = 'none'; } else { gsap.to(gateEl, { opacity: 0, duration: .25, overwrite: true }); } }
+    if (!instant) await heroP;
+    const gone = () => { video.pause(); $('.gate')?.__dust?.stop(); intro.remove(); if (!video.muted) restore(); };
+    gsap.to(intro, { opacity: 0, duration: instant ? .35 : .7, ease: 'power1.inOut', onComplete: () => { if (instant) gone(); } });
     landed();
     gsap.fromTo('.fr-pillar.l, .fr-medal.l, .fr-corner.tl, .fr-frieze.bl', { x: '-110%' }, { x: '0%', duration: 1.1, ease: 'power3.out', delay: .2, clearProps: 'transform' });
     gsap.fromTo('.fr-pillar.r, .fr-medal.r, .fr-corner.tr, .fr-frieze.br', { x: '110%' }, { x: '0%', duration: 1.1, ease: 'power3.out', delay: .2, clearProps: 'transform' });
     gsap.fromTo('#nav', { opacity: 0, y: -10 }, { opacity: 1, y: 0, duration: 1, delay: .5, clearProps: 'transform' });   // (a transform left on the bar would trap the phone menu's full-screen panel inside it)
-    const gone = () => { video.pause(); $('.gate')?.__dust?.stop(); intro.remove(); if (!video.muted) restore(); };
-    if (video.muted || video.ended) setTimeout(gone, 900); else { video.addEventListener('ended', gone, { once: true }); setTimeout(gone, 4200); }
+    if (!instant) {
+      if (video.muted || video.ended) setTimeout(gone, 900); else { video.addEventListener('ended', gone, { once: true }); setTimeout(gone, 4200); }
+    }
   };
-  $('.in-skip').addEventListener('click', e => { e.stopPropagation(); handOver(); });
+  $('.in-skip').addEventListener('click', e => { e.stopPropagation(); handOver(true); });
   await gate(sound);
+  if (handed) return;
   sound?.bell?.(.7);
   gsap.to('.gate', { opacity: 0, y: 20, duration: .7, ease: 'power2.in', onComplete: () => { $('.gate')?.__dust?.stop(); $('.gate')?.remove(); } });
   gsap.to('#gate-dust', { opacity: 0, duration: 1 });

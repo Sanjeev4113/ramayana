@@ -12,7 +12,7 @@ const esc = s => String(s).replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', 
 // 16:9 as if seen from high above the south: the whole land from the Himālaya to Laṅkā fills one screen)
 const W = 3200, H = 1800, xy = p => [(p.lon - 52) / 56 * W, (39 - p.lat) / 37.5 * H];
 // names that would run into a neighbour's pin are written on the pin's left
-const LEFT = new Set(['ayodhya', 'panchavati']);
+const LEFT = new Set(['ayodhya']);
 // the places that carry a name on the map; the rest are pins that name themselves on hover
 const NAMED = new Set(['ayodhya', 'mithila', 'chitrakoot', 'panchavati', 'kishkindha', 'rameswaram', 'lanka', 'himalaya']);
 
@@ -39,9 +39,13 @@ export function initJourney({ openBook }) {
     <g class="routes">${JOURNEYS.map(j => `<path class="route faint" data-j="${j.id}" d="${road(j.path.map(id => PLACE[id]).filter(Boolean).map(xy))}" style="stroke:${j.color}"/>`).join('')}</g>
     <path class="route live" d="" />
     <circle class="comet" r="14" cx="-99" cy="-99"/>
-    <g class="pins">${pins.map(p => { const [x, y] = xy(p); return `<g class="pin" data-p="${p.id}" transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) scale(1.2)">
-      <path d="M0 0 C-14 -22 -22 -32 -22 -44 A22 22 0 1 1 22 -44 C22 -32 14 -22 0 0Z"/><circle cy="-44" r="8"/>
-      ${NAMED.has(p.id) ? `<text ${LEFT.has(p.id) && innerWidth > 760 ? 'x="-28" text-anchor="end"' : 'x="28"'} y="-36">${esc(p.name.split(' (')[0])}</text>` : `<title>${esc(p.name)}</title>`}</g>`; }).join('')}</g>`;
+    <g class="pins">${pins.map(p => { const [x, y] = xy(p), major = NAMED.has(p.id); return major
+      ? `<g class="pin major" data-p="${p.id}" transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) scale(1.15)">
+        <path d="M0 0 C-14 -22 -22 -32 -22 -44 A22 22 0 1 1 22 -44 C22 -32 14 -22 0 0Z"/><circle cy="-44" r="8"/>
+        <text ${LEFT.has(p.id) && innerWidth > 760 ? 'x="-28" text-anchor="end"' : 'x="28"'} y="-36">${esc(p.name.split(' (')[0])}</text></g>`
+      : `<g class="pin minor" data-p="${p.id}" transform="translate(${x.toFixed(1)} ${y.toFixed(1)})">
+        <circle class="hit" r="24" fill="transparent"/><circle class="gem" r="10"/><circle class="core" r="4"/>
+        <title>${esc(p.name)}</title></g>`; }).join('')}</g>`;
   const live = $('.route.live', svg), comet = $('.comet', svg);
   list.innerHTML = `<h5><span lang="sa">भूगोल</span>The Journey</h5>${JOURNEYS.map(j => `<button data-j="${j.id}" style="--jc:${j.color}"><i></i>${esc(j.name)}</button>`).join('')}<button class="jr-all" data-all>▶ The Whole Journey</button>`;
 
@@ -68,13 +72,15 @@ export function initJourney({ openBook }) {
   function place(id) {
     const p = PLACE[id]; if (!p) return;
     const ep = (() => { for (const b of BOOKS) { const i = b.episodes.findIndex(e => e.place === id); if (i >= 0) return { b, i, e: b.episodes[i] }; } return null; })();
-    card.innerHTML = `<button class="x" aria-label="Close">✕</button><div class="dev">${p.dev || ''}</div><h3>${esc(p.name)}</h3><div class="mod">${esc(p.modern || '')}</div><p>${esc(p.desc || '')}</p>
+    card.innerHTML = `<button class="x" aria-label="Close">✕</button><div class="dev">${p.dev || ''}</div><h3>${esc(p.name)}</h3><div class="mod"><b class="today">Today</b> ${esc(p.modern || '')}</div><p>${esc(p.desc || '')}</p>
       ${ep ? `<a class="go" href="#odyssey" data-read="${ep.b.id}:${ep.i}">Read in the Kathā: ${esc(ep.e.title)} ›</a>` : ''}`;
+    if (document.querySelector(`.td-place[data-place="${id}"]`)) card.insertAdjacentHTML('beforeend', `<a class="go see" href="#today" data-today="${id}">The ${esc(p.name.split(' (')[0])} of today ↓</a>`);
     card.hidden = false; gsap.fromTo(card, { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: .6, ease: 'power3.out' });
   }
   svg.addEventListener('click', e => { const g = e.target.closest('.pin'); if (g) place(g.dataset.p); });
   card.addEventListener('click', e => {
     if (e.target.closest('.x')) { card.hidden = true; return; }
+    const td = e.target.closest('[data-today]'); if (td) { e.preventDefault(); e.stopPropagation(); const el = document.querySelector(`.td-place[data-place="${td.dataset.today}"]`); window.__lenis ? window.__lenis.scrollTo('#today', { offset: -20 }) : document.getElementById('today').scrollIntoView(); setTimeout(() => el?.scrollIntoView({ inline: 'center', block: 'nearest', behavior: 'smooth' }), 1300); return; }
     const r = e.target.closest('[data-read]'); if (r) { e.preventDefault(); const [b, i] = r.dataset.read.split(':'); openBook?.(b, +i); }
   });
   // the first journey draws itself when the map comes into view

@@ -75,7 +75,12 @@ export async function initOdyssey({ sound, cut = {}, onChar, onPlace }) {
     const j = JOURNEYS.find(x => x.kanda === b.num && x.path.includes(b.placeId)) || JOURNEYS.find(x => x.kanda === b.num);
     const pts = j ? j.path.map(id => PLACE[id]).filter(Boolean).map(q => mapXY(q.lat, q.lon)) : [];
     const ay = PLACE.ayodhya, la = PLACE.lanka;
-    const word = q => q.name.split(' ')[0].toUpperCase();
+    const shortPlace = name => {
+      if (!name) return '—';
+      const base = name.split(' (')[0].trim();
+      return /['’]s Hermitage$/i.test(base) ? base.replace(/['’]s Hermitage$/i, ' Āśrama') : base;
+    };
+    const word = q => q.name.split(' (')[0].split(' ')[0].replace(/['’]s$/i, '').toUpperCase();
     // side: 1 names the place to the right of its pin, -1 to the left; 0 leaves only the pin
     const lab = (q, cls = '', side = 1) => { const [x, y] = mapXY(q.lat, q.lon); return `<circle class="pin ${cls}" cx="${x}" cy="${y}" r="5"/>` +
       (side ? `<text x="${x + 9 * side}" y="${y + 5}"${side < 0 ? ' text-anchor="end"' : ''}>${esc(word(q))}</text>` : ''); };
@@ -115,10 +120,10 @@ export async function initOdyssey({ sound, cut = {}, onChar, onPlace }) {
     // the lore of the passage
     const book = BOOKS.find(x => x.id === b.book), sg = SARGAS[`${b.book}-${b.ep}`];
     $('#sd-lore').innerHTML = `<h4>Lore Summary</h4>
-      <div class="stats"><div><b>${esc(book.name.replace(' Kāṇḍa', ''))}</b><small>Kāṇḍa</small></div><div><b>${sg ? (sg[0] === sg[1] ? sg[0] : `${sg[0]}–${sg[1]}`) : '—'}</b><small>Sarga</small></div><div><b>${esc((b.place || '—').split(' ')[0])}</b><small>Place</small></div></div>
+      <div class="stats"><div><b>${esc(book.name.replace(' Kāṇḍa', ''))}</b><small>Kāṇḍa</small></div><div><b>${sg ? (sg[0] === sg[1] ? sg[0] : `${sg[0]}–${sg[1]}`) : '—'}</b><small>Sarga</small></div><div><b>${esc(shortPlace(b.place))}</b><small>Place</small></div></div>
       <h5>${esc(b.title)}</h5><p>${esc(tr(`k.${book.id}.summary`, book.summary))}</p>
       ${sg ? `<p style="margin-top:8px"><a href="${sargaUrl(b.book, sg[0])}" target="_blank" rel="noopener">Read the original sarga ↗</a></p>` : ''}`;
-    $('#bk-kanda').value = b.book; window.__compass?.(b.book);
+    setKanda(b.book); window.__compass?.(b.book);
     document.body.dataset.kanda = b.book;                     // the reading room takes on this Kāṇḍa's light (theme.css)
   }
   $('#sd-faces').addEventListener('click', e => { const f = e.target.closest('[data-char]'); if (f) onChar?.(f.dataset.char); });
@@ -214,6 +219,12 @@ export async function initOdyssey({ sound, cut = {}, onChar, onPlace }) {
     to = Math.max(0, Math.min(beats.length - 1, to));
     if (to === cur && !opts.force) return show(cur, opts);
     if (busy) busy.progress(1);
+    const targetBeat = beats[to];
+    if (targetBeat) {
+      setKanda(targetBeat.book);
+      window.__compass?.(targetBeat.book);
+      if (targetBeat.book !== beats[cur]?.book) side(targetBeat);
+    }
     if (matchMedia('(prefers-reduced-motion: reduce)').matches) { setText(to); show(to, opts); sound?.sfx?.('page'); return; }
     if (stacked()) return pageTurn(to, opts);
     const L = leafTo(to);
@@ -328,8 +339,27 @@ export async function initOdyssey({ sound, cut = {}, onChar, onPlace }) {
   $('#bk-back').addEventListener('click', () => jumpEpisode(-1));
   $('#bk-fwd').addEventListener('click', () => jumpEpisode(1));
   const sel = $('#bk-kanda');
-  sel.innerHTML = BOOKS.map(b => `<option value="${b.id}">${b.num ? b.num + '. ' : ''}${kandaName(b.id, b.name)}</option>`).join('');
-  sel.addEventListener('change', () => { if (reading) { clearTimeout(readTimer); sound?.stopSpeaking(); } turn(epStart(sel.value, 0), { narrate: reading }); });
+  const CHEV = `<svg class="lp-chev" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>`;
+  let curBook = BOOKS[0].id;
+  const kandaLabel = id => { const b = BOOKS.find(x => x.id === id) || BOOKS[0]; return `${b.num ? b.num + '. ' : ''}${kandaName(b.id, b.name)}`; };
+  const renderKandas = () => {
+    sel.innerHTML = `<button type="button" class="lp-cur" aria-haspopup="listbox" aria-expanded="${sel.classList.contains('open')}"><span>${esc(kandaLabel(curBook))}</span>${CHEV}</button>
+      <div class="lp-list" role="listbox">${BOOKS.map(b => `<button type="button" class="lb-pill${b.id === curBook ? ' on' : ''}" data-kanda="${b.id}">${esc(kandaLabel(b.id))}</button>`).join('')}</div>`;
+  };
+  function setKanda(id) {
+    if (!id) return;
+    curBook = id;
+    const lbl = $('.lp-cur span', sel);
+    if (lbl) lbl.textContent = kandaLabel(id);
+    $$('[data-kanda]', sel).forEach(b => b.classList.toggle('on', b.dataset.kanda === id));
+  }
+  renderKandas();
+  sel.addEventListener('click', e => {
+    if (e.target.closest('.lp-cur')) { e.stopPropagation(); bar.classList.remove('open'); const open = sel.classList.toggle('open'); $('.lp-cur', sel)?.setAttribute('aria-expanded', String(open)); return; }
+    const b = e.target.closest('[data-kanda]');
+    if (b) { sel.classList.remove('open'); $('.lp-cur', sel)?.setAttribute('aria-expanded', 'false'); if (reading) { clearTimeout(readTimer); sound?.stopSpeaking(); } turn(epStart(b.dataset.kanda, 0), { narrate: reading }); }
+  });
+  document.addEventListener('click', e => { if (!e.target.closest('#bk-kanda')) { sel.classList.remove('open'); $('.lp-cur', sel)?.setAttribute('aria-expanded', 'false'); } });
   text.addEventListener('click', e => { const s = e.target.closest('.s'); if (s && !reading && !busy) start(cur); });
   addEventListener('keydown', e => {
     if (!/Arrow(Left|Right)/.test(e.key) || e.target.closest('input, select, textarea')) return;
@@ -340,15 +370,16 @@ export async function initOdyssey({ sound, cut = {}, onChar, onPlace }) {
 
   /* ── the language of the book ── */
   const bar = $('#lang-bar');
-  const pills = () => { bar.innerHTML = `<button class="lp-cur" aria-haspopup="true">${LANGS.find(l => l.id === lang())?.name || 'English'} <i>▾</i></button><div class="lp-list">${LANGS.map(l => `<button class="lb-pill${l.id === lang() ? ' on' : ''}" data-lang="${l.id}" lang="${l.bcp.split('-')[0]}">${l.name}</button>`).join('')}</div>`; };
-  bar.addEventListener('click', e => { if (e.target.closest('.lp-cur')) { e.stopPropagation(); bar.classList.toggle('open'); } });
+  const pills = () => { bar.innerHTML = `<button type="button" class="lp-cur" aria-haspopup="true"><span>${LANGS.find(l => l.id === lang())?.name || 'English'}</span>${CHEV}</button><div class="lp-list">${LANGS.map(l => `<button type="button" class="lb-pill${l.id === lang() ? ' on' : ''}" data-lang="${l.id}" lang="${l.bcp.split('-')[0]}">${l.name}</button>`).join('')}</div>`; };
+  bar.addEventListener('click', e => { if (e.target.closest('.lp-cur')) { e.stopPropagation(); sel.classList.remove('open'); bar.classList.toggle('open'); } });
   document.addEventListener('click', e => { if (!e.target.closest('#lang-bar')) bar.classList.toggle('open', false); });
   bar.addEventListener('click', async e => {
     const b = e.target.closest('[data-lang]'); if (!b) return; bar.classList.toggle('open', false); if (b.dataset.lang === lang()) return;
     const id = beats[cur].id, was = reading; stop();
     bar.classList.add('busy'); await setLang(b.dataset.lang); sound?.setLang?.(langInfo().audio || lang()); bar.classList.remove('busy');
     build(); pills(); cur = index(id);
-    sel.innerHTML = BOOKS.map(x => `<option value="${x.id}">${x.num ? x.num + '. ' : ''}${kandaName(x.id, x.name)}</option>`).join('');
+    curBook = beats[cur].book;
+    renderKandas();
     setText(cur); side(beats[cur]);
     const u = new URL(location.href); u.searchParams.set('lang', lang()); history.replaceState(null, '', u);
     if (was) start(cur); else show(cur);

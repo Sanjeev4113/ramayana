@@ -52,8 +52,6 @@ function updateSoundBtn() {
   $$('[data-snd]').forEach(b => b.classList.toggle('on', { music: sound.musicOn, sfx: sound.sfxOn, narrate: sound.narrateOn, chant: sound.chantOn }[b.dataset.snd]));
 }
 sound.onChange(updateSoundBtn);
-$('#sound-toggle').addEventListener('click', e => { e.stopPropagation(); $('#sound-panel').hidden = !$('#sound-panel').hidden; });
-document.addEventListener('click', e => { if (!e.target.closest('#sound-panel')) $('#sound-panel').hidden = true; });
 document.addEventListener('click', async e => {
   const b = e.target.closest('[data-snd]'); if (!b) return;
   await sound.start();
@@ -211,7 +209,7 @@ $('#char-modal').addEventListener('click', e => {
     renderBook(book, false, +i);
   }
 });
-addEventListener('keydown', e => { if (e.key === 'Escape') { if (!$('#char-modal').hidden) closeModal(); if (!$('#duel').hidden) closeDuel(); } });
+addEventListener('keydown', e => { if (e.key === 'Escape') { if (!$('#char-modal').hidden) closeModal(); if (!$('#duel').hidden) closeDuel(); if (!$('#fight').hidden) fightGame?.exit(); } });
 
 /* ───────────────────────── WAR (lazy) ───────────────────────── */
 // धर्म युद्ध — the fighting game
@@ -232,6 +230,7 @@ let astrasApi = null;
 function openAstras() {
   openOv('#astras-ov');
   if (!astrasApi) astrasApi = import('./astras.js').then(m => m.initAstras($('#astras'), { sound }));
+  else astrasApi.then(x => x?.start?.());
 }
 
 /* ───────────────────────── DUELS ───────────────────────── */
@@ -248,7 +247,10 @@ function renderDuels() {
       <div class="dc-vs">VS</div>
       <div class="dc-side"><div class="dc-face">${faceHTML(d.right)}</div><div class="dc-name">${CHAR[d.right].name}${d.rightAlt ? ' & ' + CHAR[d.rightAlt].name : ''}</div></div>
       <div class="dc-meta">${d.kanda} · ${d.place}</div>
-      <div class="dc-more"><div><ol>${d.rounds.map(r => `<li>${r.title}</li>`).join('')}</ol><p>${d.outcome || ''}</p><span class="dc-go">Witness the duel ▶</span></div></div>
+      <div class="dc-more">
+        <p>${d.outcome || ''}</p>
+        <div class="dc-foot"><span class="dc-rounds">${d.rounds.length} Rounds</span><span class="dc-go">Witness the duel ▶</span></div>
+      </div>
     </button>`).join('');
   $('#duel-grid').addEventListener('click', e => { const b = e.target.closest('[data-duel]'); if (b) openDuel(b.dataset.duel); });
 }
@@ -433,7 +435,10 @@ near('#verse', () => import('./glimpse.js').then(m => m.initGlimpse({ sound })))
 near('#odyssey', loadOdyssey, '1400px');
 near('#pantheon', () => cutReady.then(() => import('./pantheon.js')).then(m => { pantheon = m.initPantheon({ cut: CUTM, openBook: (b, i) => renderBook(b, false, i), openChar }); }));
 let journeyApi = null;
-near('#journey', () => { journeyApi = import('./journey.js').then(m => m.initJourney({ openBook: (b, i) => renderBook(b, false, i) })); });
+const loadJourney = () => (journeyApi = journeyApi || import('./journey.js').then(m => m.initJourney({ openBook: (b, i) => renderBook(b, false, i) })));
+near('#journey', loadJourney);
+// the Rāmāyaṇa today: each place can be shown on the Journey map above it
+near('#today', () => import('./today.js').then(m => m.initToday({ showPlace: id => { goTo('#journey'); loadJourney().then(j => setTimeout(() => j.place(id), 900)); } })));
 near('#yuddha', () => themeMan.then(t => import('./yuddha.js').then(m => m.initYuddha({ src: t.yuddha || 'assets/scenes/ill/yuddha-15-1-1.webp' }))));
 setTimeout(() => (window.requestIdleCallback || setTimeout)(() => loadOdyssey()), 6000);
 

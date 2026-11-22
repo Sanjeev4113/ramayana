@@ -62,9 +62,12 @@ function nav(sound) {
   document.addEventListener('click', e => {
     const a = e.target.closest('a[href^="#"]'); if (!a) return;
     const t = document.getElementById(a.getAttribute('href').slice(1)); if (!t) return;
-    e.preventDefault(); document.body.classList.remove('menu-open'); goTo(t);
+    e.preventDefault(); document.body.classList.remove('menu-open'); $('.nv-menu')?.setAttribute('aria-expanded', 'false'); goTo(t);
   });
-  $('.nv-menu').addEventListener('click', () => document.body.classList.toggle('menu-open'));
+  $('.nv-menu').addEventListener('click', () => {
+    const open = document.body.classList.toggle('menu-open');
+    $('.nv-menu').setAttribute('aria-expanded', String(open));
+  });
   addEventListener('scroll', () => navEl.classList.toggle('solid', scrollY > innerHeight * .5), { passive: true });
   const links = $$('[data-nav]');
   const ctx = $('#ctx-switch');

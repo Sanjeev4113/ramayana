@@ -244,27 +244,27 @@
   "views": {
    "front": {
     "src": "assets/characters/cut/bharata-front.webp",
-    "w": 581,
-    "h": 1376
+    "w": 527,
+    "h": 1292
    },
    "left": {
     "src": "assets/characters/cut/bharata-left.webp",
-    "w": 609,
-    "h": 1383,
+    "w": 544,
+    "h": 1289,
     "face": "R",
     "conf": 0.034
    },
    "right": {
     "src": "assets/characters/cut/bharata-right.webp",
-    "w": 534,
-    "h": 1382,
+    "w": 484,
+    "h": 1278,
     "face": "R",
     "conf": 0.023
    },
    "back": {
     "src": "assets/characters/cut/bharata-back.webp",
-    "w": 573,
-    "h": 1376
+    "w": 520,
+    "h": 1288
    }
   },
   "incoming": "assets/characters/incoming/bharata.png"
