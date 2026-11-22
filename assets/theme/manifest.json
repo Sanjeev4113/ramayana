@@ -1,0 +1,23 @@
+{
+ "pillar": "assets/theme/pillar.webp",
+ "frieze": "assets/theme/frieze.webp",
+ "medallion": "assets/theme/medallion.webp",
+ "corner": "assets/theme/corner.webp",
+ "pedestal": "assets/theme/pedestal.webp",
+ "mandala": "assets/theme/mandala.webp",
+ "parchment": "assets/theme/parchment.webp",
+ "clouds": "assets/theme/clouds.webp",
+ "yuddha": "assets/theme/yuddha.webp",
+ "plate": "assets/theme/plate.webp",
+ "plateDepth": "assets/theme/plate-depth.png",
+ "plateLight": [
+  0.076,
+  0.201
+ ],
+ "mandalaMask": "assets/theme/mandala-mask.png",
+ "astrasDepth": "assets/theme/astras-depth.png",
+ "astrasLight": [
+  0.128,
+  0.339
+ ]
+}

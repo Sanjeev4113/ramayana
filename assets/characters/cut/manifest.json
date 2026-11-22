@@ -1,0 +1,2372 @@
+{
+ "hanuman": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/hanuman-front.webp",
+    "w": 253,
+    "h": 498
+   },
+   "left": {
+    "src": "assets/characters/cut/hanuman-left.webp",
+    "w": 246,
+    "h": 504,
+    "face": "L",
+    "conf": 0.075
+   },
+   "right": {
+    "src": "assets/characters/cut/hanuman-right.webp",
+    "w": 243,
+    "h": 505,
+    "face": "L",
+    "conf": 0.068
+   },
+   "back": {
+    "src": "assets/characters/cut/hanuman-back.webp",
+    "w": 245,
+    "h": 503
+   }
+  }
+ },
+ "ravana": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/ravana-front.webp",
+    "w": 829,
+    "h": 1223
+   }
+  }
+ },
+ "shrutakirti": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/shrutakirti-front.webp",
+    "w": 192,
+    "h": 413
+   },
+   "left": {
+    "src": "assets/characters/cut/shrutakirti-left.webp",
+    "w": 139,
+    "h": 406,
+    "face": "L",
+    "conf": 0.051
+   },
+   "right": {
+    "src": "assets/characters/cut/shrutakirti-right.webp",
+    "w": 152,
+    "h": 406,
+    "face": "L",
+    "conf": 0.073
+   },
+   "back": {
+    "src": "assets/characters/cut/shrutakirti-back.webp",
+    "w": 186,
+    "h": 408
+   }
+  },
+  "lowres": true,
+  "sheet": "contact-3"
+ },
+ "agastya": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/agastya-front.webp",
+    "w": 678,
+    "h": 1344
+   },
+   "left": {
+    "src": "assets/characters/cut/agastya-left.webp",
+    "w": 531,
+    "h": 1342,
+    "face": "R",
+    "conf": 0.018
+   },
+   "right": {
+    "src": "assets/characters/cut/agastya-right.webp",
+    "w": 401,
+    "h": 1335,
+    "face": "R",
+    "conf": 0.007
+   },
+   "back": {
+    "src": "assets/characters/cut/agastya-back.webp",
+    "w": 655,
+    "h": 1337
+   }
+  },
+  "incoming": "assets/characters/incoming/agastya.png"
+ },
+ "ahalya": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/ahalya-front.webp",
+    "w": 628,
+    "h": 1399
+   },
+   "left": {
+    "src": "assets/characters/cut/ahalya-left.webp",
+    "w": 390,
+    "h": 1402,
+    "face": "L",
+    "conf": 0.014
+   },
+   "right": {
+    "src": "assets/characters/cut/ahalya-right.webp",
+    "w": 320,
+    "h": 1403,
+    "face": "R",
+    "conf": 0.047
+   },
+   "back": {
+    "src": "assets/characters/cut/ahalya-back.webp",
+    "w": 528,
+    "h": 1396
+   }
+  },
+  "incoming": "assets/characters/incoming/ahalya.png"
+ },
+ "anasuya": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/anasuya-front.webp",
+    "w": 522,
+    "h": 1406
+   },
+   "left": {
+    "src": "assets/characters/cut/anasuya-left.webp",
+    "w": 421,
+    "h": 1410,
+    "face": "R",
+    "conf": 0.014
+   },
+   "right": {
+    "src": "assets/characters/cut/anasuya-right.webp",
+    "w": 407,
+    "h": 1410,
+    "face": "L",
+    "conf": 0.011
+   },
+   "back": {
+    "src": "assets/characters/cut/anasuya-back.webp",
+    "w": 519,
+    "h": 1401
+   }
+  },
+  "incoming": "assets/characters/incoming/anasuya.png"
+ },
+ "angada": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/angada-front.webp",
+    "w": 673,
+    "h": 1350
+   },
+   "left": {
+    "src": "assets/characters/cut/angada-left.webp",
+    "w": 664,
+    "h": 1357,
+    "face": "R",
+    "conf": 0.029
+   },
+   "right": {
+    "src": "assets/characters/cut/angada-right.webp",
+    "w": 562,
+    "h": 1346,
+    "face": "R",
+    "conf": 0.049
+   },
+   "back": {
+    "src": "assets/characters/cut/angada-back.webp",
+    "w": 625,
+    "h": 1338
+   }
+  },
+  "incoming": "assets/characters/incoming/angada.png"
+ },
+ "atri": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/atri-front.webp",
+    "w": 550,
+    "h": 1415
+   },
+   "left": {
+    "src": "assets/characters/cut/atri-left.webp",
+    "w": 392,
+    "h": 1418,
+    "face": "R",
+    "conf": 0.068
+   },
+   "right": {
+    "src": "assets/characters/cut/atri-right.webp",
+    "w": 346,
+    "h": 1416,
+    "face": "R",
+    "conf": 0.062
+   },
+   "back": {
+    "src": "assets/characters/cut/atri-back.webp",
+    "w": 547,
+    "h": 1407
+   }
+  },
+  "incoming": "assets/characters/incoming/atri.png"
+ },
+ "bharadwaja": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/bharadwaja-front.webp",
+    "w": 542,
+    "h": 1394
+   },
+   "left": {
+    "src": "assets/characters/cut/bharadwaja-left.webp",
+    "w": 572,
+    "h": 1399,
+    "face": "L",
+    "conf": 0.036
+   },
+   "right": {
+    "src": "assets/characters/cut/bharadwaja-right.webp",
+    "w": 509,
+    "h": 1406,
+    "face": "R",
+    "conf": 0.04
+   },
+   "back": {
+    "src": "assets/characters/cut/bharadwaja-back.webp",
+    "w": 522,
+    "h": 1393
+   }
+  },
+  "incoming": "assets/characters/incoming/bharadwaja.png"
+ },
+ "bharata": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/bharata-front.webp",
+    "w": 581,
+    "h": 1376
+   },
+   "left": {
+    "src": "assets/characters/cut/bharata-left.webp",
+    "w": 609,
+    "h": 1383,
+    "face": "R",
+    "conf": 0.034
+   },
+   "right": {
+    "src": "assets/characters/cut/bharata-right.webp",
+    "w": 534,
+    "h": 1382,
+    "face": "R",
+    "conf": 0.023
+   },
+   "back": {
+    "src": "assets/characters/cut/bharata-back.webp",
+    "w": 573,
+    "h": 1376
+   }
+  },
+  "incoming": "assets/characters/incoming/bharata.png"
+ },
+ "brahma": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/brahma-front.webp",
+    "w": 765,
+    "h": 1319
+   },
+   "left": {
+    "src": "assets/characters/cut/brahma-left.webp",
+    "w": 612,
+    "h": 1305,
+    "face": "L",
+    "conf": 0.02
+   },
+   "right": {
+    "src": "assets/characters/cut/brahma-right.webp",
+    "w": 569,
+    "h": 1300,
+    "face": "R",
+    "conf": 0.018
+   },
+   "back": {
+    "src": "assets/characters/cut/brahma-back.webp",
+    "w": 728,
+    "h": 1286
+   }
+  },
+  "incoming": "assets/characters/incoming/brahma.png"
+ },
+ "dasharatha": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/dasharatha-front.webp",
+    "w": 586,
+    "h": 1407
+   },
+   "left": {
+    "src": "assets/characters/cut/dasharatha-left.webp",
+    "w": 485,
+    "h": 1410,
+    "face": "R",
+    "conf": 0.064
+   },
+   "right": {
+    "src": "assets/characters/cut/dasharatha-right.webp",
+    "w": 449,
+    "h": 1410,
+    "face": "R",
+    "conf": 0.062
+   },
+   "back": {
+    "src": "assets/characters/cut/dasharatha-back.webp",
+    "w": 614,
+    "h": 1401
+   }
+  },
+  "incoming": "assets/characters/incoming/dasharatha.png"
+ },
+ "dushana": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/dushana-front.webp",
+    "w": 746,
+    "h": 1392
+   },
+   "left": {
+    "src": "assets/characters/cut/dushana-left.webp",
+    "w": 514,
+    "h": 1405,
+    "face": "L",
+    "conf": 0.001
+   },
+   "right": {
+    "src": "assets/characters/cut/dushana-right.webp",
+    "w": 579,
+    "h": 987,
+    "face": "L",
+    "conf": 0.029
+   },
+   "back": {
+    "src": "assets/characters/cut/dushana-back.webp",
+    "w": 783,
+    "h": 1388
+   }
+  },
+  "incoming": "assets/characters/incoming/dushana.png"
+ },
+ "garuda": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/garuda-front.webp",
+    "w": 688,
+    "h": 1387
+   },
+   "left": {
+    "src": "assets/characters/cut/garuda-left.webp",
+    "w": 524,
+    "h": 1393,
+    "face": "R",
+    "conf": 0.078
+   },
+   "right": {
+    "src": "assets/characters/cut/garuda-right.webp",
+    "w": 575,
+    "h": 1392,
+    "face": "L",
+    "conf": 0.102
+   },
+   "back": {
+    "src": "assets/characters/cut/garuda-back.webp",
+    "w": 688,
+    "h": 1379
+   }
+  },
+  "incoming": "assets/characters/incoming/garuda.png"
+ },
+ "guha": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/guha-front.webp",
+    "w": 732,
+    "h": 1600
+   }
+  },
+  "incoming": "assets/characters/incoming/guha.png"
+ },
+ "indra": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/indra-front.webp",
+    "w": 563,
+    "h": 1390
+   },
+   "left": {
+    "src": "assets/characters/cut/indra-left.webp",
+    "w": 425,
+    "h": 1396,
+    "face": "R",
+    "conf": 0.13
+   },
+   "right": {
+    "src": "assets/characters/cut/indra-right.webp",
+    "w": 457,
+    "h": 1396,
+    "face": "L",
+    "conf": 0.081
+   },
+   "back": {
+    "src": "assets/characters/cut/indra-back.webp",
+    "w": 565,
+    "h": 1385
+   }
+  },
+  "incoming": "assets/characters/incoming/indra.png"
+ },
+ "indrajit": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/indrajit-front.webp",
+    "w": 669,
+    "h": 1393
+   },
+   "left": {
+    "src": "assets/characters/cut/indrajit-left.webp",
+    "w": 547,
+    "h": 1402,
+    "face": "R",
+    "conf": 0.007
+   },
+   "right": {
+    "src": "assets/characters/cut/indrajit-right.webp",
+    "w": 461,
+    "h": 1400,
+    "face": "R",
+    "conf": 0.027
+   },
+   "back": {
+    "src": "assets/characters/cut/indrajit-back.webp",
+    "w": 638,
+    "h": 1389
+   }
+  },
+  "incoming": "assets/characters/incoming/indrajit.png"
+ },
+ "jambavan": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/jambavan-front.webp",
+    "w": 811,
+    "h": 1374
+   },
+   "left": {
+    "src": "assets/characters/cut/jambavan-left.webp",
+    "w": 475,
+    "h": 1386,
+    "face": "L",
+    "conf": 0.021
+   },
+   "right": {
+    "src": "assets/characters/cut/jambavan-right.webp",
+    "w": 492,
+    "h": 1383,
+    "face": "L",
+    "conf": 0.017
+   },
+   "back": {
+    "src": "assets/characters/cut/jambavan-back.webp",
+    "w": 752,
+    "h": 1364
+   }
+  },
+  "incoming": "assets/characters/incoming/jambavan.png"
+ },
+ "janaka": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/janaka-front.webp",
+    "w": 523,
+    "h": 1600
+   }
+  },
+  "incoming": "assets/characters/incoming/janaka.png"
+ },
+ "jatayu": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/jatayu-front.webp",
+    "w": 663,
+    "h": 1330
+   },
+   "left": {
+    "src": "assets/characters/cut/jatayu-left.webp",
+    "w": 662,
+    "h": 1333,
+    "face": "R",
+    "conf": 0.243
+   },
+   "right": {
+    "src": "assets/characters/cut/jatayu-right.webp",
+    "w": 649,
+    "h": 1333,
+    "face": "L",
+    "conf": 0.265
+   },
+   "back": {
+    "src": "assets/characters/cut/jatayu-back.webp",
+    "w": 663,
+    "h": 1329
+   }
+  },
+  "incoming": "assets/characters/incoming/jatayu.png"
+ },
+ "kabandha": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/kabandha-front.webp",
+    "w": 882,
+    "h": 1327
+   },
+   "left": {
+    "src": "assets/characters/cut/kabandha-left.webp",
+    "w": 454,
+    "h": 1317,
+    "face": "R",
+    "conf": 0.066
+   },
+   "right": {
+    "src": "assets/characters/cut/kabandha-right.webp",
+    "w": 452,
+    "h": 1317,
+    "face": "R",
+    "conf": 0.066
+   },
+   "back": {
+    "src": "assets/characters/cut/kabandha-back.webp",
+    "w": 839,
+    "h": 1319
+   }
+  },
+  "incoming": "assets/characters/incoming/kabandha.png"
+ },
+ "kaikesi": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/kaikesi-front.webp",
+    "w": 530,
+    "h": 1400
+   },
+   "left": {
+    "src": "assets/characters/cut/kaikesi-left.webp",
+    "w": 453,
+    "h": 1401,
+    "face": "R",
+    "conf": 0.077
+   },
+   "right": {
+    "src": "assets/characters/cut/kaikesi-right.webp",
+    "w": 449,
+    "h": 1401,
+    "face": "L",
+    "conf": 0.156
+   },
+   "back": {
+    "src": "assets/characters/cut/kaikesi-back.webp",
+    "w": 528,
+    "h": 1395
+   }
+  },
+  "incoming": "assets/characters/incoming/kaikesi.png"
+ },
+ "kaikeyi": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/kaikeyi-front.webp",
+    "w": 474,
+    "h": 1398
+   },
+   "left": {
+    "src": "assets/characters/cut/kaikeyi-left.webp",
+    "w": 436,
+    "h": 1400,
+    "face": "R",
+    "conf": 0.086
+   },
+   "right": {
+    "src": "assets/characters/cut/kaikeyi-right.webp",
+    "w": 403,
+    "h": 1401,
+    "face": "R",
+    "conf": 0.064
+   },
+   "back": {
+    "src": "assets/characters/cut/kaikeyi-back.webp",
+    "w": 474,
+    "h": 1396
+   }
+  },
+  "incoming": "assets/characters/incoming/kaikeyi.png"
+ },
+ "kausalya": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/kausalya-front.webp",
+    "w": 511,
+    "h": 1409
+   },
+   "left": {
+    "src": "assets/characters/cut/kausalya-left.webp",
+    "w": 387,
+    "h": 1412,
+    "face": "R",
+    "conf": 0.022
+   },
+   "right": {
+    "src": "assets/characters/cut/kausalya-right.webp",
+    "w": 424,
+    "h": 1411,
+    "face": "L",
+    "conf": 0.048
+   },
+   "back": {
+    "src": "assets/characters/cut/kausalya-back.webp",
+    "w": 515,
+    "h": 1407
+   }
+  },
+  "incoming": "assets/characters/incoming/kausalya.png"
+ },
+ "khara": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/khara-front.webp",
+    "w": 787,
+    "h": 1393
+   },
+   "left": {
+    "src": "assets/characters/cut/khara-left.webp",
+    "w": 594,
+    "h": 1236,
+    "face": "R",
+    "conf": 0.125
+   },
+   "right": {
+    "src": "assets/characters/cut/khara-right.webp",
+    "w": 591,
+    "h": 1309,
+    "face": "R",
+    "conf": 0.127
+   },
+   "back": {
+    "src": "assets/characters/cut/khara-back.webp",
+    "w": 679,
+    "h": 1378
+   }
+  },
+  "incoming": "assets/characters/incoming/khara.png"
+ },
+ "kubera": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/kubera-front.webp",
+    "w": 709,
+    "h": 1404
+   },
+   "left": {
+    "src": "assets/characters/cut/kubera-left.webp",
+    "w": 628,
+    "h": 1410,
+    "face": "R",
+    "conf": 0.04
+   },
+   "right": {
+    "src": "assets/characters/cut/kubera-right.webp",
+    "w": 567,
+    "h": 1408,
+    "face": "R",
+    "conf": 0.032
+   },
+   "back": {
+    "src": "assets/characters/cut/kubera-back.webp",
+    "w": 672,
+    "h": 1394
+   }
+  },
+  "incoming": "assets/characters/incoming/kubera.png"
+ },
+ "kumbhakarna": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/kumbhakarna-front.webp",
+    "w": 766,
+    "h": 1384
+   },
+   "left": {
+    "src": "assets/characters/cut/kumbhakarna-left.webp",
+    "w": 585,
+    "h": 1393,
+    "face": "L",
+    "conf": 0.045
+   },
+   "right": {
+    "src": "assets/characters/cut/kumbhakarna-right.webp",
+    "w": 386,
+    "h": 1393,
+    "face": "R",
+    "conf": 0.085
+   },
+   "back": {
+    "src": "assets/characters/cut/kumbhakarna-back.webp",
+    "w": 720,
+    "h": 1382
+   }
+  },
+  "incoming": "assets/characters/incoming/kumbhakarna.png"
+ },
+ "kusha": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/kusha-front.webp",
+    "w": 1097,
+    "h": 1425
+   }
+  },
+  "incoming": "assets/characters/incoming/kusha.png"
+ },
+ "lakshmana": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/lakshmana-front.webp",
+    "w": 596,
+    "h": 1381
+   },
+   "left": {
+    "src": "assets/characters/cut/lakshmana-left.webp",
+    "w": 566,
+    "h": 1375,
+    "face": "R",
+    "conf": 0.029
+   },
+   "right": {
+    "src": "assets/characters/cut/lakshmana-right.webp",
+    "w": 397,
+    "h": 1370,
+    "face": "R",
+    "conf": 0.04
+   },
+   "back": {
+    "src": "assets/characters/cut/lakshmana-back.webp",
+    "w": 572,
+    "h": 1367
+   }
+  },
+  "incoming": "assets/characters/incoming/lakshmana.png"
+ },
+ "lava": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/lava-front.webp",
+    "w": 634,
+    "h": 1600
+   }
+  },
+  "incoming": "assets/characters/incoming/lava.png"
+ },
+ "mandavi": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/mandavi-front.webp",
+    "w": 676,
+    "h": 1600
+   }
+  },
+  "incoming": "assets/characters/incoming/mandavi.png"
+ },
+ "mandodari": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/mandodari-front.webp",
+    "w": 486,
+    "h": 1396
+   },
+   "left": {
+    "src": "assets/characters/cut/mandodari-left.webp",
+    "w": 355,
+    "h": 1396,
+    "face": "R",
+    "conf": 0.051
+   },
+   "right": {
+    "src": "assets/characters/cut/mandodari-right.webp",
+    "w": 368,
+    "h": 1396,
+    "face": "R",
+    "conf": 0.077
+   },
+   "back": {
+    "src": "assets/characters/cut/mandodari-back.webp",
+    "w": 489,
+    "h": 1390
+   }
+  },
+  "incoming": "assets/characters/incoming/mandodari.png"
+ },
+ "manthara": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/manthara-front.webp",
+    "w": 567,
+    "h": 1301
+   },
+   "left": {
+    "src": "assets/characters/cut/manthara-left.webp",
+    "w": 589,
+    "h": 1307,
+    "face": "R",
+    "conf": 0.024
+   },
+   "right": {
+    "src": "assets/characters/cut/manthara-right.webp",
+    "w": 625,
+    "h": 1303,
+    "face": "R",
+    "conf": 0.062
+   },
+   "back": {
+    "src": "assets/characters/cut/manthara-back.webp",
+    "w": 565,
+    "h": 1303
+   }
+  },
+  "incoming": "assets/characters/incoming/manthara.png"
+ },
+ "mareecha": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/mareecha-front.webp",
+    "w": 641,
+    "h": 1389
+   },
+   "left": {
+    "src": "assets/characters/cut/mareecha-left.webp",
+    "w": 431,
+    "h": 1402,
+    "face": "R",
+    "conf": 0.006
+   },
+   "right": {
+    "src": "assets/characters/cut/mareecha-right.webp",
+    "w": 514,
+    "h": 1401,
+    "face": "R",
+    "conf": 0.042
+   },
+   "back": {
+    "src": "assets/characters/cut/mareecha-back.webp",
+    "w": 669,
+    "h": 1385
+   }
+  },
+  "incoming": "assets/characters/incoming/mareecha.png"
+ },
+ "nala": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/nala-front.webp",
+    "w": 657,
+    "h": 1356
+   },
+   "left": {
+    "src": "assets/characters/cut/nala-left.webp",
+    "w": 717,
+    "h": 1361,
+    "face": "R",
+    "conf": 0.159
+   },
+   "right": {
+    "src": "assets/characters/cut/nala-right.webp",
+    "w": 559,
+    "h": 1354,
+    "face": "R",
+    "conf": 0.171
+   },
+   "back": {
+    "src": "assets/characters/cut/nala-back.webp",
+    "w": 701,
+    "h": 1346
+   }
+  },
+  "incoming": "assets/characters/incoming/nala.png"
+ },
+ "narada": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/narada-front.webp",
+    "w": 793,
+    "h": 1600
+   }
+  },
+  "incoming": "assets/characters/incoming/narada.png"
+ },
+ "nila": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/nila-front.webp",
+    "w": 717,
+    "h": 1385
+   },
+   "left": {
+    "src": "assets/characters/cut/nila-left.webp",
+    "w": 636,
+    "h": 923,
+    "face": "R",
+    "conf": 0
+   },
+   "right": {
+    "src": "assets/characters/cut/nila-right.webp",
+    "w": 393,
+    "h": 1377,
+    "face": "R",
+    "conf": 0.098
+   },
+   "back": {
+    "src": "assets/characters/cut/nila-back.webp",
+    "w": 702,
+    "h": 1368
+   }
+  },
+  "incoming": "assets/characters/incoming/nila.png"
+ },
+ "parashurama": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/parashurama-front.webp",
+    "w": 688,
+    "h": 1400
+   },
+   "left": {
+    "src": "assets/characters/cut/parashurama-left.webp",
+    "w": 580,
+    "h": 1409,
+    "face": "R",
+    "conf": 0.002
+   },
+   "right": {
+    "src": "assets/characters/cut/parashurama-right.webp",
+    "w": 766,
+    "h": 1411,
+    "face": "L",
+    "conf": 0.001
+   },
+   "back": {
+    "src": "assets/characters/cut/parashurama-back.webp",
+    "w": 647,
+    "h": 1395
+   }
+  },
+  "incoming": "assets/characters/incoming/parashurama.png"
+ },
+ "prahasta": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/prahasta-front.webp",
+    "w": 699,
+    "h": 1392
+   },
+   "left": {
+    "src": "assets/characters/cut/prahasta-left.webp",
+    "w": 605,
+    "h": 1394,
+    "face": "L",
+    "conf": 0.168
+   },
+   "right": {
+    "src": "assets/characters/cut/prahasta-right.webp",
+    "w": 467,
+    "h": 1395,
+    "face": "R",
+    "conf": 0.079
+   },
+   "back": {
+    "src": "assets/characters/cut/prahasta-back.webp",
+    "w": 720,
+    "h": 1387
+   }
+  },
+  "incoming": "assets/characters/incoming/prahasta.png"
+ },
+ "rama": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/rama-front.webp",
+    "w": 645,
+    "h": 1390
+   },
+   "left": {
+    "src": "assets/characters/cut/rama-left.webp",
+    "w": 605,
+    "h": 1389,
+    "face": "R",
+    "conf": 0.034
+   },
+   "right": {
+    "src": "assets/characters/cut/rama-right.webp",
+    "w": 304,
+    "h": 1379,
+    "face": "L",
+    "conf": 0.084
+   },
+   "back": {
+    "src": "assets/characters/cut/rama-back.webp",
+    "w": 636,
+    "h": 1384
+   }
+  },
+  "incoming": "assets/characters/incoming/rama.png"
+ },
+ "ravana.mendicant": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/ravana.mendicant-front.webp",
+    "w": 610,
+    "h": 1401
+   },
+   "left": {
+    "src": "assets/characters/cut/ravana.mendicant-left.webp",
+    "w": 385,
+    "h": 1419,
+    "face": "R",
+    "conf": 0.041
+   },
+   "right": {
+    "src": "assets/characters/cut/ravana.mendicant-right.webp",
+    "w": 502,
+    "h": 1409,
+    "face": "L",
+    "conf": 0.007
+   },
+   "back": {
+    "src": "assets/characters/cut/ravana.mendicant-back.webp",
+    "w": 577,
+    "h": 1399
+   }
+  },
+  "incoming": "assets/characters/incoming/ravana.mendicant.png"
+ },
+ "sampati": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/sampati-front.webp",
+    "w": 727,
+    "h": 1389
+   },
+   "left": {
+    "src": "assets/characters/cut/sampati-left.webp",
+    "w": 505,
+    "h": 1392,
+    "face": "R",
+    "conf": 0.049
+   },
+   "right": {
+    "src": "assets/characters/cut/sampati-right.webp",
+    "w": 507,
+    "h": 1386,
+    "face": "L",
+    "conf": 0.014
+   },
+   "back": {
+    "src": "assets/characters/cut/sampati-back.webp",
+    "w": 703,
+    "h": 1381
+   }
+  },
+  "incoming": "assets/characters/incoming/sampati.png"
+ },
+ "shabari": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/shabari-front.webp",
+    "w": 499,
+    "h": 1391
+   },
+   "left": {
+    "src": "assets/characters/cut/shabari-left.webp",
+    "w": 571,
+    "h": 1395,
+    "face": "R",
+    "conf": 0.008
+   },
+   "right": {
+    "src": "assets/characters/cut/shabari-right.webp",
+    "w": 559,
+    "h": 1394,
+    "face": "L",
+    "conf": 0.002
+   },
+   "back": {
+    "src": "assets/characters/cut/shabari-back.webp",
+    "w": 500,
+    "h": 1387
+   }
+  },
+  "incoming": "assets/characters/incoming/shabari.png"
+ },
+ "shatrughna": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/shatrughna-front.webp",
+    "w": 525,
+    "h": 1387
+   },
+   "left": {
+    "src": "assets/characters/cut/shatrughna-left.webp",
+    "w": 598,
+    "h": 1389,
+    "face": "R",
+    "conf": 0.027
+   },
+   "right": {
+    "src": "assets/characters/cut/shatrughna-right.webp",
+    "w": 563,
+    "h": 1388,
+    "face": "R",
+    "conf": 0.028
+   },
+   "back": {
+    "src": "assets/characters/cut/shatrughna-back.webp",
+    "w": 529,
+    "h": 1376
+   }
+  },
+  "incoming": "assets/characters/incoming/shatrughna.png"
+ },
+ "shiva": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/shiva-front.webp",
+    "w": 738,
+    "h": 1395
+   },
+   "left": {
+    "src": "assets/characters/cut/shiva-left.webp",
+    "w": 477,
+    "h": 1399,
+    "face": "R",
+    "conf": 0.036
+   },
+   "right": {
+    "src": "assets/characters/cut/shiva-right.webp",
+    "w": 377,
+    "h": 1397,
+    "face": "L",
+    "conf": 0.082
+   },
+   "back": {
+    "src": "assets/characters/cut/shiva-back.webp",
+    "w": 720,
+    "h": 1388
+   }
+  },
+  "incoming": "assets/characters/incoming/shiva.png"
+ },
+ "shurpanakha": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/shurpanakha-front.webp",
+    "w": 612,
+    "h": 1387
+   },
+   "left": {
+    "src": "assets/characters/cut/shurpanakha-left.webp",
+    "w": 367,
+    "h": 1392,
+    "face": "L",
+    "conf": 0.004
+   },
+   "right": {
+    "src": "assets/characters/cut/shurpanakha-right.webp",
+    "w": 369,
+    "h": 1391,
+    "face": "R",
+    "conf": 0.012
+   },
+   "back": {
+    "src": "assets/characters/cut/shurpanakha-back.webp",
+    "w": 603,
+    "h": 1382
+   }
+  },
+  "incoming": "assets/characters/incoming/shurpanakha.png"
+ },
+ "sita": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/sita-front.webp",
+    "w": 516,
+    "h": 1376
+   },
+   "left": {
+    "src": "assets/characters/cut/sita-left.webp",
+    "w": 333,
+    "h": 1370,
+    "face": "R",
+    "conf": 0.007
+   },
+   "right": {
+    "src": "assets/characters/cut/sita-right.webp",
+    "w": 422,
+    "h": 1373,
+    "face": "L",
+    "conf": 1
+   },
+   "back": {
+    "src": "assets/characters/cut/sita-back.webp",
+    "w": 519,
+    "h": 1367
+   }
+  },
+  "incoming": "assets/characters/incoming/sita.png"
+ },
+ "subahu": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/subahu-front.webp",
+    "w": 795,
+    "h": 1388
+   },
+   "left": {
+    "src": "assets/characters/cut/subahu-left.webp",
+    "w": 545,
+    "h": 1396,
+    "face": "L",
+    "conf": 0.034
+   },
+   "right": {
+    "src": "assets/characters/cut/subahu-right.webp",
+    "w": 384,
+    "h": 1380,
+    "face": "R",
+    "conf": 0.049
+   },
+   "back": {
+    "src": "assets/characters/cut/subahu-back.webp",
+    "w": 741,
+    "h": 1372
+   }
+  },
+  "incoming": "assets/characters/incoming/subahu.png"
+ },
+ "sugriva": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/sugriva-front.webp",
+    "w": 675,
+    "h": 1368
+   },
+   "left": {
+    "src": "assets/characters/cut/sugriva-left.webp",
+    "w": 634,
+    "h": 1113,
+    "face": "L",
+    "conf": 0.072
+   },
+   "right": {
+    "src": "assets/characters/cut/sugriva-right.webp",
+    "w": 523,
+    "h": 975,
+    "face": "L",
+    "conf": 0.008
+   },
+   "back": {
+    "src": "assets/characters/cut/sugriva-back.webp",
+    "w": 646,
+    "h": 1367
+   }
+  },
+  "incoming": "assets/characters/incoming/sugriva.png"
+ },
+ "sumantra": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/sumantra-front.webp",
+    "w": 545,
+    "h": 1397
+   },
+   "left": {
+    "src": "assets/characters/cut/sumantra-left.webp",
+    "w": 441,
+    "h": 1399,
+    "face": "R",
+    "conf": 0.067
+   },
+   "right": {
+    "src": "assets/characters/cut/sumantra-right.webp",
+    "w": 358,
+    "h": 1396,
+    "face": "L",
+    "conf": 0.071
+   },
+   "back": {
+    "src": "assets/characters/cut/sumantra-back.webp",
+    "w": 554,
+    "h": 1393
+   }
+  },
+  "incoming": "assets/characters/incoming/sumantra.png"
+ },
+ "sumitra": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/sumitra-front.webp",
+    "w": 471,
+    "h": 1390
+   },
+   "left": {
+    "src": "assets/characters/cut/sumitra-left.webp",
+    "w": 338,
+    "h": 1389,
+    "face": "R",
+    "conf": 0.019
+   },
+   "right": {
+    "src": "assets/characters/cut/sumitra-right.webp",
+    "w": 401,
+    "h": 1390,
+    "face": "L",
+    "conf": 0.064
+   },
+   "back": {
+    "src": "assets/characters/cut/sumitra-back.webp",
+    "w": 466,
+    "h": 1384
+   }
+  },
+  "incoming": "assets/characters/incoming/sumitra.png"
+ },
+ "sushena": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/sushena-front.webp",
+    "w": 600,
+    "h": 1061
+   },
+   "left": {
+    "src": "assets/characters/cut/sushena-left.webp",
+    "w": 724,
+    "h": 1346,
+    "face": "R",
+    "conf": 0.101
+   },
+   "right": {
+    "src": "assets/characters/cut/sushena-right.webp",
+    "w": 516,
+    "h": 1338,
+    "face": "L",
+    "conf": 0.132
+   },
+   "back": {
+    "src": "assets/characters/cut/sushena-back.webp",
+    "w": 605,
+    "h": 1114
+   }
+  },
+  "incoming": "assets/characters/incoming/sushena.png"
+ },
+ "tara": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/tara-front.webp",
+    "w": 577,
+    "h": 1373
+   },
+   "left": {
+    "src": "assets/characters/cut/tara-left.webp",
+    "w": 568,
+    "h": 1133,
+    "face": "L",
+    "conf": 0.057
+   },
+   "right": {
+    "src": "assets/characters/cut/tara-right.webp",
+    "w": 486,
+    "h": 1373,
+    "face": "L",
+    "conf": 0.1
+   },
+   "back": {
+    "src": "assets/characters/cut/tara-back.webp",
+    "w": 579,
+    "h": 1370
+   }
+  },
+  "incoming": "assets/characters/incoming/tara.png"
+ },
+ "tataka": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/tataka-front.webp",
+    "w": 778,
+    "h": 1381
+   },
+   "left": {
+    "src": "assets/characters/cut/tataka-left.webp",
+    "w": 473,
+    "h": 1398,
+    "face": "L",
+    "conf": 0.032
+   },
+   "right": {
+    "src": "assets/characters/cut/tataka-right.webp",
+    "w": 469,
+    "h": 1397,
+    "face": "R",
+    "conf": 0.004
+   },
+   "back": {
+    "src": "assets/characters/cut/tataka-back.webp",
+    "w": 746,
+    "h": 1377
+   }
+  },
+  "incoming": "assets/characters/incoming/tataka.png"
+ },
+ "urmila": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/urmila-front.webp",
+    "w": 470,
+    "h": 1395
+   },
+   "left": {
+    "src": "assets/characters/cut/urmila-left.webp",
+    "w": 414,
+    "h": 1398,
+    "face": "L",
+    "conf": 0.119
+   },
+   "right": {
+    "src": "assets/characters/cut/urmila-right.webp",
+    "w": 359,
+    "h": 1400,
+    "face": "R",
+    "conf": 0.079
+   },
+   "back": {
+    "src": "assets/characters/cut/urmila-back.webp",
+    "w": 475,
+    "h": 1390
+   }
+  },
+  "incoming": "assets/characters/incoming/urmila.png"
+ },
+ "vali": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/vali-front.webp",
+    "w": 721,
+    "h": 1397
+   },
+   "left": {
+    "src": "assets/characters/cut/vali-left.webp",
+    "w": 634,
+    "h": 1398,
+    "face": "R",
+    "conf": 0.011
+   },
+   "right": {
+    "src": "assets/characters/cut/vali-right.webp",
+    "w": 598,
+    "h": 1393,
+    "face": "R",
+    "conf": 0.059
+   },
+   "back": {
+    "src": "assets/characters/cut/vali-back.webp",
+    "w": 659,
+    "h": 1379
+   }
+  },
+  "incoming": "assets/characters/incoming/vali.png"
+ },
+ "valmiki": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/valmiki-front.webp",
+    "w": 578,
+    "h": 1600
+   }
+  },
+  "incoming": "assets/characters/incoming/valmiki.png"
+ },
+ "vasishtha": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/vasishtha-front.webp",
+    "w": 642,
+    "h": 1390
+   },
+   "left": {
+    "src": "assets/characters/cut/vasishtha-left.webp",
+    "w": 565,
+    "h": 1393,
+    "face": "R",
+    "conf": 0.002
+   },
+   "right": {
+    "src": "assets/characters/cut/vasishtha-right.webp",
+    "w": 486,
+    "h": 1400,
+    "face": "L",
+    "conf": 0.008
+   },
+   "back": {
+    "src": "assets/characters/cut/vasishtha-back.webp",
+    "w": 628,
+    "h": 1387
+   }
+  },
+  "incoming": "assets/characters/incoming/vasishtha.png"
+ },
+ "vibhishana": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/vibhishana-front.webp",
+    "w": 485,
+    "h": 1393
+   },
+   "left": {
+    "src": "assets/characters/cut/vibhishana-left.webp",
+    "w": 514,
+    "h": 1396,
+    "face": "L",
+    "conf": 0.07
+   },
+   "right": {
+    "src": "assets/characters/cut/vibhishana-right.webp",
+    "w": 491,
+    "h": 1397,
+    "face": "R",
+    "conf": 0.072
+   },
+   "back": {
+    "src": "assets/characters/cut/vibhishana-back.webp",
+    "w": 470,
+    "h": 1391
+   }
+  },
+  "incoming": "assets/characters/incoming/vibhishana.png"
+ },
+ "vishnu": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/vishnu-front.webp",
+    "w": 706,
+    "h": 1396
+   },
+   "left": {
+    "src": "assets/characters/cut/vishnu-left.webp",
+    "w": 485,
+    "h": 1399,
+    "face": "L",
+    "conf": 0.04
+   },
+   "right": {
+    "src": "assets/characters/cut/vishnu-right.webp",
+    "w": 450,
+    "h": 1399,
+    "face": "L",
+    "conf": 0.043
+   },
+   "back": {
+    "src": "assets/characters/cut/vishnu-back.webp",
+    "w": 695,
+    "h": 1389
+   }
+  },
+  "incoming": "assets/characters/incoming/vishnu.png"
+ },
+ "vishwamitra": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/vishwamitra-front.webp",
+    "w": 594,
+    "h": 1399
+   },
+   "left": {
+    "src": "assets/characters/cut/vishwamitra-left.webp",
+    "w": 510,
+    "h": 1407,
+    "face": "R",
+    "conf": 0.032
+   },
+   "right": {
+    "src": "assets/characters/cut/vishwamitra-right.webp",
+    "w": 479,
+    "h": 1404,
+    "face": "R",
+    "conf": 0.017
+   },
+   "back": {
+    "src": "assets/characters/cut/vishwamitra-back.webp",
+    "w": 585,
+    "h": 1396
+   }
+  },
+  "incoming": "assets/characters/incoming/vishwamitra.png"
+ },
+ "akshakumara": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/akshakumara-front.webp",
+    "w": 610,
+    "h": 1383
+   },
+   "left": {
+    "src": "assets/characters/cut/akshakumara-left.webp",
+    "w": 545,
+    "h": 1394,
+    "face": "R",
+    "conf": 0.018
+   },
+   "right": {
+    "src": "assets/characters/cut/akshakumara-right.webp",
+    "w": 415,
+    "h": 1395,
+    "face": "R",
+    "conf": 0.074
+   },
+   "back": {
+    "src": "assets/characters/cut/akshakumara-back.webp",
+    "w": 600,
+    "h": 1379
+   }
+  },
+  "incoming": "assets/characters/incoming/akshakumara.png"
+ },
+ "atikaya": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/atikaya-front.webp",
+    "w": 612,
+    "h": 1384
+   },
+   "left": {
+    "src": "assets/characters/cut/atikaya-left.webp",
+    "w": 529,
+    "h": 1392,
+    "face": "L",
+    "conf": 0.012
+   },
+   "right": {
+    "src": "assets/characters/cut/atikaya-right.webp",
+    "w": 622,
+    "h": 987,
+    "face": "R",
+    "conf": 0.009
+   },
+   "back": {
+    "src": "assets/characters/cut/atikaya-back.webp",
+    "w": 650,
+    "h": 1379
+   }
+  },
+  "incoming": "assets/characters/incoming/atikaya.png"
+ },
+ "samudra": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/samudra-front.webp",
+    "w": 704,
+    "h": 1400
+   },
+   "left": {
+    "src": "assets/characters/cut/samudra-left.webp",
+    "w": 507,
+    "h": 1409,
+    "face": "R",
+    "conf": 0.018
+   },
+   "right": {
+    "src": "assets/characters/cut/samudra-right.webp",
+    "w": 437,
+    "h": 1406,
+    "face": "R",
+    "conf": 0.035
+   },
+   "back": {
+    "src": "assets/characters/cut/samudra-back.webp",
+    "w": 703,
+    "h": 1399
+   }
+  },
+  "incoming": "assets/characters/incoming/samudra.png"
+ },
+ "sumali": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/sumali-front.webp",
+    "w": 745,
+    "h": 1399
+   },
+   "left": {
+    "src": "assets/characters/cut/sumali-left.webp",
+    "w": 495,
+    "h": 1411,
+    "face": "L",
+    "conf": 0.032
+   },
+   "right": {
+    "src": "assets/characters/cut/sumali-right.webp",
+    "w": 489,
+    "h": 1403,
+    "face": "R",
+    "conf": 0.105
+   },
+   "back": {
+    "src": "assets/characters/cut/sumali-back.webp",
+    "w": 712,
+    "h": 1394
+   }
+  },
+  "incoming": "assets/characters/incoming/sumali.png"
+ },
+ "trijata": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/trijata-front.webp",
+    "w": 483,
+    "h": 1363
+   },
+   "left": {
+    "src": "assets/characters/cut/trijata-left.webp",
+    "w": 453,
+    "h": 1361,
+    "face": "R",
+    "conf": 0.029
+   },
+   "right": {
+    "src": "assets/characters/cut/trijata-right.webp",
+    "w": 454,
+    "h": 1361,
+    "face": "R",
+    "conf": 0.037
+   },
+   "back": {
+    "src": "assets/characters/cut/trijata-back.webp",
+    "w": 486,
+    "h": 1359
+   }
+  },
+  "incoming": "assets/characters/incoming/trijata.png"
+ },
+ "vayu": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/vayu-front.webp",
+    "w": 851,
+    "h": 1383
+   },
+   "left": {
+    "src": "assets/characters/cut/vayu-left.webp",
+    "w": 521,
+    "h": 1390,
+    "face": "R",
+    "conf": 0.008
+   },
+   "right": {
+    "src": "assets/characters/cut/vayu-right.webp",
+    "w": 428,
+    "h": 877,
+    "face": "R",
+    "conf": 0.012
+   },
+   "back": {
+    "src": "assets/characters/cut/vayu-back.webp",
+    "w": 817,
+    "h": 1380
+   }
+  },
+  "incoming": "assets/characters/incoming/vayu.png"
+ },
+ "viradha": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/viradha-front.webp",
+    "w": 892,
+    "h": 1389
+   },
+   "left": {
+    "src": "assets/characters/cut/viradha-left.webp",
+    "w": 438,
+    "h": 1391,
+    "face": "R",
+    "conf": 0.087
+   },
+   "right": {
+    "src": "assets/characters/cut/viradha-right.webp",
+    "w": 434,
+    "h": 1391,
+    "face": "R",
+    "conf": 0.097
+   },
+   "back": {
+    "src": "assets/characters/cut/viradha-back.webp",
+    "w": 829,
+    "h": 1376
+   }
+  },
+  "incoming": "assets/characters/incoming/viradha.png"
+ },
+ "agni": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/agni-front.webp",
+    "w": 605,
+    "h": 1391
+   },
+   "left": {
+    "src": "assets/characters/cut/agni-left.webp",
+    "w": 855,
+    "h": 1397,
+    "face": "R",
+    "conf": 0.085
+   },
+   "right": {
+    "src": "assets/characters/cut/agni-right.webp",
+    "w": 548,
+    "h": 1396,
+    "face": "L",
+    "conf": 0.103
+   },
+   "back": {
+    "src": "assets/characters/cut/agni-back.webp",
+    "w": 595,
+    "h": 1386
+   }
+  },
+  "incoming": "assets/characters/incoming/agni.png"
+ },
+ "bhagiratha": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/bhagiratha-front.webp",
+    "w": 397,
+    "h": 937
+   },
+   "left": {
+    "src": "assets/characters/cut/bhagiratha-left.webp",
+    "w": 212,
+    "h": 931,
+    "face": "R",
+    "conf": 0.071
+   },
+   "right": {
+    "src": "assets/characters/cut/bhagiratha-right.webp",
+    "w": 309,
+    "h": 929,
+    "face": "R",
+    "conf": 0.053
+   },
+   "back": {
+    "src": "assets/characters/cut/bhagiratha-back.webp",
+    "w": 404,
+    "h": 932
+   }
+  },
+  "incoming": "assets/characters/incoming/bhagiratha.png"
+ },
+ "bhudevi": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/bhudevi-front.webp",
+    "w": 351,
+    "h": 937
+   },
+   "left": {
+    "src": "assets/characters/cut/bhudevi-left.webp",
+    "w": 264,
+    "h": 934,
+    "face": "L",
+    "conf": 0.031
+   },
+   "right": {
+    "src": "assets/characters/cut/bhudevi-right.webp",
+    "w": 295,
+    "h": 933,
+    "face": "L",
+    "conf": 0.049
+   },
+   "back": {
+    "src": "assets/characters/cut/bhudevi-back.webp",
+    "w": 338,
+    "h": 934
+   }
+  },
+  "incoming": "assets/characters/incoming/bhudevi.png"
+ },
+ "diti": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/diti-front.webp",
+    "w": 349,
+    "h": 941
+   },
+   "left": {
+    "src": "assets/characters/cut/diti-left.webp",
+    "w": 227,
+    "h": 933,
+    "face": "R",
+    "conf": 0.035
+   },
+   "right": {
+    "src": "assets/characters/cut/diti-right.webp",
+    "w": 322,
+    "h": 932,
+    "face": "L",
+    "conf": 0.052
+   },
+   "back": {
+    "src": "assets/characters/cut/diti-back.webp",
+    "w": 333,
+    "h": 938
+   }
+  },
+  "incoming": "assets/characters/incoming/diti.png"
+ },
+ "durvasa": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/durvasa-front.webp",
+    "w": 403,
+    "h": 933
+   },
+   "left": {
+    "src": "assets/characters/cut/durvasa-left.webp",
+    "w": 337,
+    "h": 937,
+    "face": "R",
+    "conf": 0.008
+   },
+   "right": {
+    "src": "assets/characters/cut/durvasa-right.webp",
+    "w": 339,
+    "h": 936,
+    "face": "R",
+    "conf": 0.081
+   },
+   "back": {
+    "src": "assets/characters/cut/durvasa-back.webp",
+    "w": 399,
+    "h": 933
+   }
+  },
+  "incoming": "assets/characters/incoming/durvasa.png"
+ },
+ "ganga": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/ganga-front.webp",
+    "w": 351,
+    "h": 930
+   },
+   "left": {
+    "src": "assets/characters/cut/ganga-left.webp",
+    "w": 299,
+    "h": 918,
+    "face": "L",
+    "conf": 0.011
+   },
+   "right": {
+    "src": "assets/characters/cut/ganga-right.webp",
+    "w": 299,
+    "h": 918,
+    "face": "R",
+    "conf": 0.022
+   },
+   "back": {
+    "src": "assets/characters/cut/ganga-back.webp",
+    "w": 327,
+    "h": 915
+   }
+  },
+  "incoming": "assets/characters/incoming/ganga.png"
+ },
+ "gautama": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/gautama-front.webp",
+    "w": 438,
+    "h": 927
+   },
+   "left": {
+    "src": "assets/characters/cut/gautama-left.webp",
+    "w": 283,
+    "h": 929,
+    "face": "L",
+    "conf": 0.057
+   },
+   "right": {
+    "src": "assets/characters/cut/gautama-right.webp",
+    "w": 262,
+    "h": 926,
+    "face": "R",
+    "conf": 0.03
+   },
+   "back": {
+    "src": "assets/characters/cut/gautama-back.webp",
+    "w": 408,
+    "h": 928
+   }
+  },
+  "incoming": "assets/characters/incoming/gautama.png"
+ },
+ "kala": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/kala-front.webp",
+    "w": 422,
+    "h": 921
+   },
+   "left": {
+    "src": "assets/characters/cut/kala-left.webp",
+    "w": 183,
+    "h": 913,
+    "face": "L",
+    "conf": 0.064
+   },
+   "right": {
+    "src": "assets/characters/cut/kala-right.webp",
+    "w": 293,
+    "h": 922,
+    "face": "L",
+    "conf": 0.049
+   },
+   "back": {
+    "src": "assets/characters/cut/kala-back.webp",
+    "w": 389,
+    "h": 925
+   }
+  },
+  "incoming": "assets/characters/incoming/kala.png"
+ },
+ "kapila": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/kapila-front.webp",
+    "w": 373,
+    "h": 925
+   },
+   "left": {
+    "src": "assets/characters/cut/kapila-left.webp",
+    "w": 280,
+    "h": 932,
+    "face": "R",
+    "conf": 0.029
+   },
+   "right": {
+    "src": "assets/characters/cut/kapila-right.webp",
+    "w": 335,
+    "h": 925,
+    "face": "L",
+    "conf": 0.056
+   },
+   "back": {
+    "src": "assets/characters/cut/kapila-back.webp",
+    "w": 356,
+    "h": 926
+   }
+  },
+  "incoming": "assets/characters/incoming/kapila.png"
+ },
+ "kartikeya": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/kartikeya-front.webp",
+    "w": 396,
+    "h": 918
+   },
+   "left": {
+    "src": "assets/characters/cut/kartikeya-left.webp",
+    "w": 211,
+    "h": 892,
+    "face": "L",
+    "conf": 0.112
+   },
+   "right": {
+    "src": "assets/characters/cut/kartikeya-right.webp",
+    "w": 272,
+    "h": 906,
+    "face": "R",
+    "conf": 0.031
+   },
+   "back": {
+    "src": "assets/characters/cut/kartikeya-back.webp",
+    "w": 367,
+    "h": 921
+   }
+  },
+  "incoming": "assets/characters/incoming/kartikeya.png"
+ },
+ "lankini": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/lankini-front.webp",
+    "w": 497,
+    "h": 914
+   },
+   "left": {
+    "src": "assets/characters/cut/lankini-left.webp",
+    "w": 263,
+    "h": 918,
+    "face": "L",
+    "conf": 0.081
+   },
+   "right": {
+    "src": "assets/characters/cut/lankini-right.webp",
+    "w": 288,
+    "h": 926,
+    "face": "L",
+    "conf": 0.005
+   },
+   "back": {
+    "src": "assets/characters/cut/lankini-back.webp",
+    "w": 494,
+    "h": 918
+   }
+  },
+  "incoming": "assets/characters/incoming/lankini.png"
+ },
+ "malyavan": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/malyavan-front.webp",
+    "w": 478,
+    "h": 928
+   },
+   "left": {
+    "src": "assets/characters/cut/malyavan-left.webp",
+    "w": 224,
+    "h": 931,
+    "face": "L",
+    "conf": 0.079
+   },
+   "right": {
+    "src": "assets/characters/cut/malyavan-right.webp",
+    "w": 334,
+    "h": 928,
+    "face": "L",
+    "conf": 0.089
+   },
+   "back": {
+    "src": "assets/characters/cut/malyavan-back.webp",
+    "w": 469,
+    "h": 928
+   }
+  },
+  "incoming": "assets/characters/incoming/malyavan.png"
+ },
+ "matali": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/matali-front.webp",
+    "w": 389,
+    "h": 920
+   },
+   "left": {
+    "src": "assets/characters/cut/matali-left.webp",
+    "w": 213,
+    "h": 916,
+    "face": "L",
+    "conf": 0.051
+   },
+   "right": {
+    "src": "assets/characters/cut/matali-right.webp",
+    "w": 357,
+    "h": 917,
+    "face": "R",
+    "conf": 0.003
+   },
+   "back": {
+    "src": "assets/characters/cut/matali-back.webp",
+    "w": 406,
+    "h": 921
+   }
+  },
+  "incoming": "assets/characters/incoming/matali.png"
+ },
+ "menaka": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/menaka-front.webp",
+    "w": 327,
+    "h": 930
+   },
+   "left": {
+    "src": "assets/characters/cut/menaka-left.webp",
+    "w": 336,
+    "h": 932,
+    "face": "L",
+    "conf": 0.099
+   },
+   "right": {
+    "src": "assets/characters/cut/menaka-right.webp",
+    "w": 272,
+    "h": 929,
+    "face": "R",
+    "conf": 0.055
+   },
+   "back": {
+    "src": "assets/characters/cut/menaka-back.webp",
+    "w": 339,
+    "h": 929
+   }
+  },
+  "incoming": "assets/characters/incoming/menaka.png"
+ },
+ "rishyasringa": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/rishyasringa-front.webp",
+    "w": 345,
+    "h": 917
+   },
+   "left": {
+    "src": "assets/characters/cut/rishyasringa-left.webp",
+    "w": 246,
+    "h": 919,
+    "face": "L",
+    "conf": 0.022
+   },
+   "right": {
+    "src": "assets/characters/cut/rishyasringa-right.webp",
+    "w": 327,
+    "h": 919,
+    "face": "R",
+    "conf": 0.013
+   },
+   "back": {
+    "src": "assets/characters/cut/rishyasringa-back.webp",
+    "w": 369,
+    "h": 922
+   }
+  },
+  "incoming": "assets/characters/incoming/rishyasringa.png"
+ },
+ "sagara": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/sagara-front.webp",
+    "w": 394,
+    "h": 941
+   },
+   "left": {
+    "src": "assets/characters/cut/sagara-left.webp",
+    "w": 255,
+    "h": 929,
+    "face": "L",
+    "conf": 0.051
+   },
+   "right": {
+    "src": "assets/characters/cut/sagara-right.webp",
+    "w": 329,
+    "h": 941,
+    "face": "R",
+    "conf": 0.056
+   },
+   "back": {
+    "src": "assets/characters/cut/sagara-back.webp",
+    "w": 432,
+    "h": 937
+   }
+  },
+  "incoming": "assets/characters/incoming/sagara.png"
+ },
+ "sarama": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/sarama-front.webp",
+    "w": 339,
+    "h": 931
+   },
+   "left": {
+    "src": "assets/characters/cut/sarama-left.webp",
+    "w": 218,
+    "h": 930,
+    "face": "R",
+    "conf": 0.047
+   },
+   "right": {
+    "src": "assets/characters/cut/sarama-right.webp",
+    "w": 244,
+    "h": 930,
+    "face": "R",
+    "conf": 0.069
+   },
+   "back": {
+    "src": "assets/characters/cut/sarama-back.webp",
+    "w": 338,
+    "h": 928
+   }
+  },
+  "incoming": "assets/characters/incoming/sarama.png"
+ },
+ "uma": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/uma-front.webp",
+    "w": 339,
+    "h": 938
+   },
+   "left": {
+    "src": "assets/characters/cut/uma-left.webp",
+    "w": 282,
+    "h": 934,
+    "face": "L",
+    "conf": 0.005
+   },
+   "right": {
+    "src": "assets/characters/cut/uma-right.webp",
+    "w": 285,
+    "h": 930,
+    "face": "L",
+    "conf": 0.008
+   },
+   "back": {
+    "src": "assets/characters/cut/uma-back.webp",
+    "w": 320,
+    "h": 907
+   }
+  },
+  "incoming": "assets/characters/incoming/uma.png"
+ },
+ "vishwakarma": {
+  "views": {
+   "front": {
+    "src": "assets/characters/cut/vishwakarma-front.webp",
+    "w": 507,
+    "h": 897
+   },
+   "left": {
+    "src": "assets/characters/cut/vishwakarma-left.webp",
+    "w": 290,
+    "h": 893,
+    "face": "L",
+    "conf": 0.122
+   },
+   "right": {
+    "src": "assets/characters/cut/vishwakarma-right.webp",
+    "w": 347,
+    "h": 888,
+    "face": "R",
+    "conf": 0.082
+   },
+   "back": {
+    "src": "assets/characters/cut/vishwakarma-back.webp",
+    "w": 485,
+    "h": 896
+   }
+  },
+  "incoming": "assets/characters/incoming/vishwakarma.png"
+ }
+}

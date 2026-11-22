@@ -1,0 +1,28 @@
+{
+ "plates": [
+  {
+   "id": "bg:ayodhya-dusk",
+   "src": "assets/backgrounds/ayodhya-dusk.webp",
+   "depth": "assets/backgrounds/ayodhya-dusk-depth.png",
+   "w": 1360,
+   "h": 768,
+   "light": [
+    0.386,
+    0.353
+   ],
+   "caption": "Ayodhyā, city of the kings of the Solar line"
+  },
+  {
+   "id": "site-0-0-2",
+   "src": "assets/hero/site-0-0-2.webp",
+   "depth": "assets/hero/site-0-0-2-depth.png",
+   "w": 2560,
+   "h": 1446,
+   "light": [
+    0.509,
+    0.138
+   ],
+   "caption": "Rāma, Sītā and Lakṣmaṇa walk into the forest"
+  }
+ ]
+}

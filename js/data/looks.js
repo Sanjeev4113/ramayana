@@ -1,0 +1,87 @@
+// How each figure should look, for generating art in a consistent, cinematic style.
+// Used by tools/prompts.html to build character and scene prompts.
+
+export const STYLE = 'cinematic 3D animated film still, ultra-detailed, Unreal Engine 5 and Pixar-quality rendering, beautiful expressive faces with clear eyes, soft volumetric golden light, rich saturated colours, epic Indian mythological setting, faithful to the Vālmīki Rāmāyaṇa, devotional and divine mood';
+export const SHEET = 'character turnaround sheet: the same character shown full body four times side by side — front view, left side view, right side view, back view — standing on a plain dark background with no pedestal and no text, even lighting, 16:9, 4K, every view sharp and fully visible from head to feet';
+export const SINGLE = 'full-body portrait, standing, the whole figure visible from head to feet, plain dark studio background, no text, portrait orientation 2:3, 4K, sharp focus on the face';
+
+export const LOOKS = {
+  rama: 'Śrī Rāma, divine prince of Ayodhyā, serene compassionate face, dark blue-grey skin like a rain cloud, long black hair in a topknot with a golden band, saffron silk dhoti and stole, golden armlets and necklaces, tulasī beads, the great Kodaṇḍa bow in his left hand and a quiver of arrows on his back, calm noble posture, soft divine glow',
+  sita: 'Sītā (Jānakī), divine and serene, gentle loving smile, large luminous eyes, long flowing black hair, saffron-yellow silk saree with a fine golden border draped gracefully over her head, delicate gold necklaces, bangles and earrings, small red bindi and sindūra, a soft golden halo of light around her, graceful feminine posture with weight on one foot and one hand raised in blessing, radiating purity and grace',
+  lakshmana: 'Lakṣmaṇa, fair-skinned young warrior prince, determined loyal expression, long black hair in a topknot, orange and saffron silk dhoti and stole, golden armlets, bow in hand and quiver on his back, alert protective stance',
+  bharata: 'Bharata, prince of Ayodhyā with dark blue-grey skin like his brother Rāma, gentle devoted face, golden crown, saffron dhoti and stole, golden ornaments, bow in hand',
+  shatrughna: 'Śatrughna, fair-skinned young prince, golden crown, ochre and gold dhoti, bow and quiver, steady loyal expression',
+  dasharatha: 'King Daśaratha of Ayodhyā, aged and dignified, kind tired eyes, full grey beard, tall golden crown, gold armour over a saffron dhoti and red stole, royal jewellery, sword at his side',
+  kausalya: 'Queen Kausalyā, mother of Rāma, gentle and devout, mature graceful face, red silk saree with a broad gold border, small golden crown, gold jewellery',
+  kaikeyi: 'Queen Kaikeyī, regal and proud, beautiful sharp features, purple silk saree with gold border, small golden crown, rich jewellery',
+  sumitra: 'Queen Sumitrā, serene and wise, deep blue silk saree with gold border, small golden crown, gentle smile',
+  manthara: 'Mantharā, an old hunchbacked maid, cunning eyes, grey cotton saree, wooden walking stick',
+  sumantra: 'Sumantra, elderly royal minister and charioteer, white turban, grey beard, embroidered coat, wise face',
+  urmila: 'Ūrmilā, wife of Lakṣmaṇa, graceful princess, orange-red silk saree, gold jewellery, gentle patient expression',
+  mandavi: 'Māṇḍavī, wife of Bharata, golden-ochre silk saree, gold jewellery, kind face',
+  shrutakirti: 'Śrutakīrti, wife of Śatrughna, red silk saree with gold border, gold jewellery, youthful face',
+  janaka: 'King Janaka of Mithilā, philosopher-king, wise calm face, long white beard, golden crown, white dhoti and saffron stole, simple royal ornaments',
+  guha: 'Guha, king of the Niṣāda forest people, dark-skinned strong warrior, moustache, simple tribal ornaments of wood and shell, bow in hand, warm loyal smile',
+  lava: 'Lava, young son of Rāma, about twelve years old, dark blue-grey skin, topknot, saffron dhoti, small bow',
+  kusha: 'Kuśa, young son of Rāma, about twelve years old, dark blue-grey skin, topknot, ochre dhoti, small bow and a vīṇā',
+  valmiki: 'Mahārṣi Vālmīki, the first poet, aged sage with long white hair and flowing white beard, kind wise eyes, saffron robes, holding a palm-leaf manuscript',
+  narada: 'Devarṣi Nārada, celestial sage, youthful radiant face, topknot, saffron robes, holding a vīṇā, playful wise smile',
+  vasishtha: 'Mahārṣi Vasiṣṭha, royal preceptor, serene aged sage, white beard, saffron robes, rudrākṣa beads, wooden staff, gentle divine radiance',
+  vishwamitra: 'Brahmarṣi Viśvāmitra, fierce powerful sage, dark skin, black beard, matted hair in a bun, saffron and ochre robes, kamaṇḍalu, intense eyes',
+  parashurama: 'Paraśurāma, warrior-sage avatāra of Viṣṇu, muscular, dark skin, black beard, matted hair, deerskin and ochre garments, a great battle-axe on his shoulder, fiery eyes',
+  agastya: 'Mahārṣi Agastya, short and powerful sage, dark skin, white beard, saffron robes, kamaṇḍalu, calm all-knowing smile',
+  bharadwaja: 'Mahārṣi Bharadvāja, aged sage of Prayāga, white beard, bark garments, wooden staff, welcoming smile',
+  atri: 'Mahārṣi Atri, one of the seven sages, white beard, bark garments, serene face',
+  anasuya: 'Anasūyā, great ascetic woman, aged, kind radiant face, simple off-white cotton saree, white hair in a bun',
+  ahalya: 'Ahalyā, wife of the sage Gautama, beautiful and luminous, simple white saree, radiant after long penance',
+  shabari: 'Śabarī, aged forest ascetic woman, dark skin, white hair, ochre cotton saree, holding a small basket of forest fruits, tears of joy',
+  hanuman: 'Hanumān, mighty vānara devotee of Rāma, golden-brown fur, strong muscular body, kind wise eyes, golden crown, red and saffron dhoti, golden mace (gadā), long curling tail',
+  sugriva: 'Sugrīva, king of the vānaras, golden fur, golden crown and ornaments, red dhoti, mace, noble face',
+  vali: 'Vālī, mighty vānara king of Kiṣkindhā, golden fur, heavy gold armour and crown, red dhoti, mace, proud powerful build',
+  angada: 'Aṅgada, young vānara crown prince, golden fur, golden armour and crown, purple dhoti, mace',
+  tara: 'Tārā, queen of Kiṣkindhā, graceful vānara woman, wise eyes, golden crown, maroon silk saree, gold jewellery',
+  jambavan: 'Jāmbavān, ancient and wise king of the bears, black fur, golden armour and crown, mace, kind old eyes',
+  nala: 'Nala, vānara builder son of Viśvakarmā, brown fur, simple dhoti, holding a carved stone block',
+  nila: 'Nīla, commander of the vānara army, son of Agni, dark blue-black fur, gold dhoti, mace, fiery eyes',
+  sushena: 'Suṣeṇa, aged vānara physician, grey fur, white beard, holding glowing healing herbs',
+  jatayu: 'Jaṭāyu, enormous aged king of vultures, a giant majestic vulture with grey-brown feathers, white ruff of feathers on the neck, vast wings, noble eyes',
+  sampati: 'Sampāti, giant vulture, elder brother of Jaṭāyu, burnt stubs where his wings were, grey feathers, wise eyes',
+  garuda: 'Garuḍa, king of birds and mount of Viṣṇu, eagle head with a golden crown, powerful human body in golden armour, vast golden wings',
+  vishnu: 'Lord Viṣṇu, blue-skinned, four arms holding conch, discus (Sudarśana cakra), mace and lotus, yellow silk dhoti, jewelled golden crown, Kaustubha jewel, divine radiant halo',
+  shiva: 'Lord Śiva, ash-blue skin, matted locks with the crescent moon and the river Gaṅgā flowing from them, serpent around the neck, tiger-skin garment, trident (triśūla) and ḍamaru, serene meditative face',
+  brahma: 'Lord Brahmā, four bearded faces, golden crown, four arms holding the Vedas, a rosary, a water pot and a lotus, white and red silk garments, seated on a lotus',
+  indra: 'Indra, king of the gods, fair-skinned, golden crown, blue silk garments, holding the vajra thunderbolt, majestic',
+  agni: 'Agni, god of fire, red-skinned, hair of living flames, golden ornaments, radiant fiery aura',
+  ravana: 'Rāvaṇa, the ten-headed king of Laṅkā: EXACTLY TEN HEADS in one row — one large central head with the tallest crown, five heads to its left and four to its right (5 + 1 + 4 = 10), every head with its own golden crown and thick moustache; dark complexion, powerful build, ornate gold and black armour, maroon and black dhoti, the sword Candrahāsa in hand, fearsome regal expression',
+  kumbhakarna: 'Kumbhakarṇa, colossal rākṣasa giant, enormous body, dark skin, heavy dark armour, huge spear, sleepy fierce eyes',
+  vibhishana: 'Vibhīṣaṇa, righteous rākṣasa prince, calm kind face, moustache, golden crown, red and orange garments, sword, hands folded in devotion',
+  indrajit: 'Indrajit (Meghanāda), mighty rākṣasa prince, dark armour with gold trim, spiked crown, bow and quiver, arrogant fierce face',
+  mandodari: 'Mandodarī, queen of Laṅkā, beautiful and dignified, dark red silk saree, golden crown, sorrowful wise eyes',
+  shurpanakha: 'Śūrpaṇakhā, rākṣasī sister of Rāvaṇa, wild dark hair, long sharp nails, green and maroon garments, fierce eyes',
+  mareecha: 'Mārīca, rākṣasa shape-shifter, moustache, fangs, dark armour, sword, cunning fearful eyes',
+  tataka: 'Tāṭakā, giant yakṣī turned rākṣasī, wild matted hair, fangs, dark skin, ragged garments, terrifying',
+  subahu: 'Subāhu, horned rākṣasa warrior, dark skin, fangs, spear, dark armour',
+  khara: 'Khara, rākṣasa lord of Janasthāna, spiked crown, fangs, dark armour, mace, fierce',
+  dushana: 'Dūṣaṇa, horned rākṣasa general, dark armour, sword, fangs',
+  prahasta: 'Prahasta, commander-in-chief of Laṅkā, massive rākṣasa in heavy dark armour, spiked crown, great sword',
+  kabandha: 'Kabandha, headless giant monster with one huge eye in his chest and a wide mouth in his belly, extremely long arms',
+  kaikesi: 'Kaikasī, rākṣasa princess, mother of Rāvaṇa, purple and gold garments, dark beauty',
+  kubera: 'Kubera, lord of wealth, golden crown, green and gold garments, pot of jewels, plump kind face',
+  ravana_mendicant: 'Rāvaṇa disguised as a wandering ascetic, saffron robes, matted hair, beard, kamaṇḍalu, false gentle smile'
+};
+
+// Settings for scene prompts, keyed by stage environment.
+export const SETTINGS = {
+  ayodhya: 'the golden city of Ayodhyā on the Sarayū river, white marble palaces with golden domes, flags and flowers', palace: 'inside a royal palace of Ayodhyā, carved pillars, silk curtains, oil lamps', court: 'the royal court of Ayodhyā, a golden hall of pillars, a jewelled throne, courtiers',
+  chamber: "a dim royal bedchamber at night lit by oil lamps", 'lanka-court': "Rāvaṇa's golden court in Laṅkā, black and gold pillars, fire bowls, a crystal throne", mithila: 'the city of Mithilā, sandstone palaces, festive banners',
+  yajna: 'a sacred fire altar in a forest clearing, smoke rising, sages', river: 'a peaceful river bank in a forest', ganga: 'the wide holy Gaṅgā river at dawn, mist on the water',
+  forest: 'a dense green Indian forest with sunbeams', dandaka: 'the deep, dark Daṇḍaka forest at dusk, giant sal trees, mist', ashram: 'a hermitage of thatched huts in a forest clearing',
+  chitrakoot: 'Citrakūṭa hill with waterfalls and the Mandākinī river, a leaf hut', panchavati: 'Pañcavaṭī by the Godāvarī river, a beautiful hermitage among trees', pampa: 'Lake Pampā with lotuses and great boulders',
+  rocks: 'the rocky hills of Kiṣkindhā, huge boulders, dry grass', kishkindha: 'the cave-city of Kiṣkindhā among great boulders, a golden gateway', cave: 'a vast glowing cave of golden crystals',
+  shore: 'the shore of the southern ocean, white sand, palms, crashing waves', 'shore-army': 'the ocean shore filled with a vast vānara army', ocean: 'the open ocean seen from the sky, dramatic clouds', setu: 'the stone bridge Rāma Setu stretching across the ocean',
+  sky: 'high in the clouds', lanka: 'the golden city of Laṅkā on Mount Trikūṭa at night, towering golden palaces glowing with lamps', 'lanka-street': 'a street of golden palaces in Laṅkā at night',
+  ashoka: 'the Aśoka grove in Laṅkā at night, red-flowering aśoka trees, a great śiṁśapā tree, moonlight', battle: 'the great battlefield before the golden walls of Laṅkā, vast armies of vānaras and rākṣasas, dust, fire and smoke',
+  himalaya: 'the snow peaks of the Himālaya', kailasa: 'Mount Kailāsa, a radiant snow peak', heaven: 'the heavens of the gods, golden clouds and palaces', cosmic: 'the cosmic ocean among stars and nebulae',
+  sarayu: 'the ghāṭs of the Sarayū river at dusk, lamps floating', naimisha: 'the sacred Naimiṣa forest with a great pavilion for the Aśvamedha sacrifice'
+};
+export const TIMES = { dawn: 'at dawn, soft pink and gold light', day: 'in bright daylight', dusk: 'at dusk, warm orange light', night: 'at night, moonlight and lamplight', war: 'under a smoky red sky', gold: 'in radiant golden light', storm: 'in a storm with lightning', cosmic: 'in cosmic light' };

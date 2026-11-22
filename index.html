@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>The Rāmāyaṇa — Śrīmad Vālmīki Rāmāyaṇa</title>
+  <meta name="description" content="The Śrīmad Vālmīki Rāmāyaṇa as a living book: every sentence painted and narrated in eight languages, the characters, the sacred journey and the great war." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23f4c96b'>ॐ</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Cinzel+Decorative:wght@700;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Tiro+Devanagari+Sanskrit:ital@0;1&family=Noto+Serif+Devanagari:wght@400;600;800&family=Rozha+One&family=Marcellus&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css?v=5e0e2101" />
+  <link rel="stylesheet" href="css/theme.css?v=b524708b" />
+  <script>/* revalidate data files */{const f = window.fetch.bind(window); window.fetch = (u, o = {}) => f(u, typeof u === "string" && /\.json(\?|$)/.test(u) ? { cache: "no-cache", ...o } : o);}</script>
+  <script type="importmap">
+  {
+ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/",
+  "./js/astra-fx.js": "./js/astra-fx.js?v=4d12adf9",
+  "./js/astras.js": "./js/astras.js?v=b3e0b8e3",
+  "./js/book.js": "./js/book.js?v=095ffd92",
+  "./js/calm.js": "./js/calm.js?v=676c0d73",
+  "./js/data/backdrops.js": "./js/data/backdrops.js?v=fd6fb4b1",
+  "./js/data/cast.js": "./js/data/cast.js?v=1b6a5e42",
+  "./js/data/characters.js": "./js/data/characters.js?v=bb5b6d05",
+  "./js/data/covers.js": "./js/data/covers.js?v=a0c60b34",
+  "./js/data/duels.js": "./js/data/duels.js?v=a3136e80",
+  "./js/data/i18n/hi-Latn.js": "./js/data/i18n/hi-Latn.js?v=b5cd3a10",
+  "./js/data/i18n/hi.js": "./js/data/i18n/hi.js?v=c46193aa",
+  "./js/data/i18n/kn.js": "./js/data/i18n/kn.js?v=c7232812",
+  "./js/data/i18n/ml.js": "./js/data/i18n/ml.js?v=4c38e0ab",
+  "./js/data/i18n/mr.js": "./js/data/i18n/mr.js?v=47c26d6a",
+  "./js/data/i18n/ta.js": "./js/data/i18n/ta.js?v=268825d9",
+  "./js/data/i18n/te.js": "./js/data/i18n/te.js?v=51080ef4",
+  "./js/data/looks.js": "./js/data/looks.js?v=d5a2bf0f",
+  "./js/data/places.js": "./js/data/places.js?v=09166cf0",
+  "./js/data/proxies.js": "./js/data/proxies.js?v=295455a2",
+  "./js/data/sargas.js": "./js/data/sargas.js?v=4db3a080",
+  "./js/data/scenes.js": "./js/data/scenes.js?v=76457d4c",
+  "./js/data/story.js": "./js/data/story.js?v=7622a8a1",
+  "./js/divine.js": "./js/divine.js?v=b14a1387",
+  "./js/duels.js": "./js/duels.js?v=86546bac",
+  "./js/entry.js": "./js/entry.js?v=9c5b3db3",
+  "./js/fight2d.js": "./js/fight2d.js?v=67226f05",
+  "./js/fullscreen.js": "./js/fullscreen.js?v=3aa9c91a",
+  "./js/glimpse.js": "./js/glimpse.js?v=d451de5d",
+  "./js/hero.js": "./js/hero.js?v=09e0249b",
+  "./js/hero2.js": "./js/hero2.js?v=8770bf06",
+  "./js/hero3.js": "./js/hero3.js?v=fdaf44e7",
+  "./js/i18n.js": "./js/i18n.js?v=6d3fd7db",
+  "./js/intro.js": "./js/intro.js?v=336d35b9",
+  "./js/journey.js": "./js/journey.js?v=262a4dcd",
+  "./js/main.js": "./js/main.js?v=b53c3bef",
+  "./js/map.js": "./js/map.js?v=6ce2a54a",
+  "./js/odyssey.js": "./js/odyssey.js?v=7f6f7dc1",
+  "./js/pantheon.js": "./js/pantheon.js?v=1910f1ee",
+  "./js/puppet.js": "./js/puppet.js?v=65969fd8",
+  "./js/scene.js": "./js/scene.js?v=ccf54ede",
+  "./js/sound.js": "./js/sound.js?v=7fe2b71e",
+  "./js/stage3d/director.js": "./js/stage3d/director.js?v=71fe1366",
+  "./js/stage3d/env.js": "./js/stage3d/env.js?v=cd5a5bcc",
+  "./js/stage3d/fight.js": "./js/stage3d/fight.js?v=75800e93",
+  "./js/stage3d/plate.js": "./js/stage3d/plate.js?v=2d8bc4c3",
+  "./js/stage3d/stage.js": "./js/stage3d/stage.js?v=0ff0df9d",
+  "./js/stage3d/vfx.js": "./js/stage3d/vfx.js?v=6dac8aec",
+  "./js/theme.js": "./js/theme.js?v=16e5aa14",
+  "./js/war.js": "./js/war.js?v=631a9b01",
+  "./js/yuddha.js": "./js/yuddha.js?v=f8aa950f"
+ }
+}
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/CustomEase.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+</head>
+<body class="in-intro">
+
+  <!-- ═════════════ THE CARVED FRAME (always over the page) ═════════════ -->
+  <div id="frame" aria-hidden="true">
+    <div class="fr-pillar l"></div><div class="fr-pillar r"></div>
+    <div class="fr-medal l"></div><div class="fr-medal r"></div>
+    <div class="fr-corner tl"></div><div class="fr-corner tr"></div>
+    <div class="fr-frieze bl"></div><div class="fr-frieze br"></div>
+    <div class="fr-edge t"></div><div class="fr-edge b"></div>
+  </div>
+  <canvas id="embers" aria-hidden="true"></canvas>
+  <div id="cursor" aria-hidden="true"><i class="dot"></i><i class="halo"><svg viewBox="0 0 60 60"><g fill="none" stroke="currentColor" stroke-width="1"><circle cx="30" cy="30" r="22"/><path d="M30 6c5 7 5 14 0 20-5-6-5-13 0-20zM30 54c5-7 5-14 0-20-5 6-5 13 0 20zM6 30c7-5 14-5 20 0-6 5-13 5-20 0zM54 30c-7-5-14-5-20 0 6 5 13 5 20 0z"/></g></svg></i></div>
+  <nav id="compass" aria-label="The seven Kāṇḍas"></nav>
+
+  <!-- ═════════════ NAVIGATION ═════════════ -->
+  <header id="nav">
+    <nav class="nv-left" aria-label="Sections">
+      <a href="#odyssey" data-nav="odyssey"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.2"><circle cx="12" cy="12" r="3.2"/><circle cx="12" cy="12" r="7"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M19.1 4.9 17 7M7 17l-2.1 2.1"/></g></svg>The Odyssey</a>
+      <a href="#pantheon" data-nav="pantheon"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 2 4 7h16L12 2Z"/><path d="M5 7v12M9 7v12M15 7v12M19 7v12M3 20h18M4 22h16"/></g></svg>Pantheon</a>
+      <a href="#journey" data-nav="journey"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.2"><path d="M12 21s-6-5.6-6-10.5A6 6 0 0 1 18 10.5C18 15.4 12 21 12 21Z"/><circle cx="12" cy="10.5" r="2.2"/></g></svg>The Journey</a>
+      <a href="#yuddha" data-nav="yuddha"><svg viewBox="0 0 24 24" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.2"><path d="M6 3c5 3 5 15 0 18"/><path d="M6 3v18"/><path d="M3 12h18M17 8l4 4-4 4"/></g></svg>Laṅkā Yuddha</a>
+    </nav>
+    <button class="nv-menu" aria-label="Menu" aria-expanded="false"><i></i><i></i><i></i></button>
+    <div class="nv-right">
+      <button class="switch" id="sound-switch" role="switch" aria-checked="false"><span>Sound On/Off</span><i></i></button>
+      <button class="switch pill" id="ctx-switch" role="switch" aria-checked="true"><span>Mandala</span><i></i></button>
+      <button class="nv-more" id="sound-toggle" aria-label="Sound settings" title="Sound settings">⋯</button>
+      <div id="sound-panel" class="sound-panel" hidden>
+        <div class="sp-h">Sound</div>
+        <button data-snd="music" class="snd-row"><span>♪ Temple music</span><i></i></button>
+        <button data-snd="sfx" class="snd-row"><span>✦ Effects &amp; ambience</span><i></i></button>
+        <button data-snd="narrate" class="snd-row"><span>🗣 Narration</span><i></i></button>
+        <button data-snd="chant" class="snd-row"><span>॥ राम ॥ Rām chant</span><i></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═════════════ THE INTRO: the gate of invocation, then the opening film ═════════════ -->
+  <div id="intro">
+    <video id="intro-video" data-hd="assets/theme/intro.mp4" data-sd="assets/theme/intro-720.mp4" muted playsinline preload="auto"></video>
+    <script>/* the film in 1080p for a large screen on a fast line, else 720p (half the size) */{const v=document.getElementById('intro-video'),c=navigator.connection,fast=!c||((c.downlink||10)>=8&&!c.saveData&&!/2g|3g/.test(c.effectiveType||''));window.__hd=fast&&screen.width*(devicePixelRatio||1)>=1800;v.src=window.__hd?v.dataset.hd:v.dataset.sd;}</script>
+    <canvas id="gate-dust" aria-hidden="true"></canvas>
+    <div class="gate">
+      <div class="g-sloka" lang="sa"><p>श्री राम राम रामेति रमे रामे मनोरमे ।</p><p>सहस्रनाम तत्तुल्यं रामनाम वरानने ॥</p></div>
+      <div class="g-tr">Śrī Rāma Rāma Rāmeti, Rame Rāme Manorame · Sahasranāma Tattulyaṁ, Rāma Nāma Varānane</div>
+      <div class="g-en">“I delight in the enchanting name of Rāma; the name of Rāma alone is equal to the thousand names of the Lord.”</div>
+      <button class="g-enter" id="g-enter" aria-label="Enter the saga">
+        <svg class="g-arch" viewBox="0 0 260 200" aria-hidden="true">
+          <defs><linearGradient id="gaGold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff2c6"/><stop offset=".5" stop-color="#e6b155"/><stop offset="1" stop-color="#8f5b16"/></linearGradient></defs>
+          <path class="ga-fill" d="M20 196 V104 Q20 88 36 84 Q66 76 86 58 Q108 38 130 36 Q152 38 174 58 Q194 76 224 84 Q240 88 240 104 V196 Z"/>
+          <path class="ga-line" d="M20 196 V104 Q20 88 36 84 Q66 76 86 58 Q108 38 130 36 Q152 38 174 58 Q194 76 224 84 Q240 88 240 104 V196"/>
+          <path class="ga-line in" d="M32 196 V108 Q32 96 44 93 Q72 86 92 68 Q112 50 130 48 Q148 50 168 68 Q188 86 216 93 Q228 96 228 108 V196"/>
+          <g class="ga-bow"><path d="M84 30 C 104 4, 156 4, 176 30" /><path d="M84 30 L176 30"/><path d="M130 44 L130 0"/><path d="M125 7 L130 -1 L135 7"/></g>
+          <circle class="ga-ring" cx="130" cy="128" r="46"/><circle class="ga-prog" cx="130" cy="128" r="46" pathLength="1"/>
+          <g class="ga-diyas"></g>
+        </svg>
+        <span class="g-dev">प्रवेश करें</span><span class="g-en2">Enter the Saga</span><span class="g-hint">press to enter</span>
+      </button>
+    </div>
+    <button class="in-skip">Skip ›</button>
+  </div>
+
+  <main>
+    <!-- ═════════════ HERO: the land of temples, as the film leaves it ═════════════ -->
+    <section id="hero">
+      <div class="hero-pin">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hs">
+          <div class="hs-mandala"><img alt="" /><i class="lines"></i><i class="glow"></i><span class="om">ॐ</span></div>
+          <div class="hs-orn"><i class="l"></i><span>ॐ</span><i class="r"></i></div>
+          <svg class="hs-word" viewBox="0 0 1000 300" role="img" aria-label="रामायण">
+            <defs>
+              <linearGradient id="hwGold" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#fff4d2"/><stop offset=".3" stop-color="#f3d593"/><stop offset=".55" stop-color="#ddb164"/>
+                <stop offset=".72" stop-color="#b98436"/><stop offset=".88" stop-color="#e2b866"/><stop offset="1" stop-color="#f6dc9c"/>
+              </linearGradient>
+              <linearGradient id="hwSheen" gradientUnits="userSpaceOnUse" x1="-300" y1="0" x2="-60" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fffbe9" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+              <filter id="hwEmboss" x="-8%" y="-30%" width="120%" height="170%" color-interpolation-filters="sRGB">
+                <!-- chiselled like the film's letters: light runs along each stroke's ridge from the upper left -->
+                <feGaussianBlur in="SourceAlpha" stdDeviation="2.4" result="b"/>
+                <feSpecularLighting in="b" surfaceScale="8" specularConstant="1.15" specularExponent="26" lighting-color="#fff6dc" result="spec"><feDistantLight azimuth="235" elevation="40"/></feSpecularLighting>
+                <feComposite in="spec" in2="SourceAlpha" operator="in" result="specIn"/>
+                <feDiffuseLighting in="b" surfaceScale="8" diffuseConstant="1.18" lighting-color="#fff" result="diff"><feDistantLight azimuth="235" elevation="52"/></feDiffuseLighting>
+                <feComposite in="diff" in2="SourceAlpha" operator="in" result="diffIn"/>
+                <feBlend in="SourceGraphic" in2="diffIn" mode="multiply" result="shaded"/>
+                <feComposite in="shaded" in2="specIn" operator="arithmetic" k1="0" k2="1" k3=".85" k4="0" result="lit"/>
+                <!-- a fine dark edge, and the depth of the cast metal below and to the right -->
+                <feMorphology in="SourceAlpha" operator="dilate" radius="1.4" result="dil"/>
+                <feFlood flood-color="#3b2207"/><feComposite in2="dil" operator="in" result="edge"/>
+                <feOffset in="dil" dx="1.6" dy="2.6" result="o1"/><feOffset in="dil" dx="3.2" dy="5.2" result="o2"/>
+                <feMerge result="ext"><feMergeNode in="o1"/><feMergeNode in="o2"/></feMerge>
+                <feFlood flood-color="#6b4214"/><feComposite in2="ext" operator="in" result="depth"/>
+                <feGaussianBlur in="SourceAlpha" stdDeviation="6" result="sb"/><feOffset in="sb" dx="4" dy="11" result="so"/>
+                <feFlood flood-color="#140a02" flood-opacity=".72"/><feComposite in2="so" operator="in" result="shadow"/>
+                <feMerge><feMergeNode in="shadow"/><feMergeNode in="depth"/><feMergeNode in="edge"/><feMergeNode in="lit"/></feMerge>
+              </filter>
+              <filter id="hwGlow" x="-20%" y="-50%" width="140%" height="200%"><feGaussianBlur stdDeviation="14"/></filter>
+              <mask id="hwMask"><text class="hw" x="500" y="226" text-anchor="middle" fill="#fff">रामायण</text></mask>
+            </defs>
+            <text class="hw hw-glow" x="500" y="226" text-anchor="middle" filter="url(#hwGlow)">रामायण</text>
+            <text class="hw hw-gold" x="500" y="226" text-anchor="middle" fill="url(#hwGold)" filter="url(#hwEmboss)">रामायण</text>
+            <rect class="hw-sheen" x="0" y="0" width="1000" height="300" fill="url(#hwSheen)" mask="url(#hwMask)"/>
+          </svg>
+          <h1 class="hs-en">The Rāmāyana</h1>
+          <div class="hs-lotus"><i class="lines"></i></div>
+          <svg class="hs-bow" viewBox="0 0 240 90" aria-hidden="true"><g fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path class="b1" d="M8 46 C 10 38, 20 34, 30 36 C 60 40, 80 22, 104 26 C 112 27, 116 30, 120 34 C 124 30, 128 27, 136 26 C 160 22, 180 40, 210 36 C 220 34, 230 38, 232 46"/>
+            <path class="b2" d="M10 46 L230 46"/><path class="b3" d="M120 86 L120 6"/><path class="b3" d="M113 16 L120 3 L127 16"/>
+            <path class="b3" d="M115 84 L120 74 L125 84"/></g></svg>
+          <div class="hs-ring">
+            <svg viewBox="0 0 1000 160" aria-hidden="true"><defs><path id="ringTop" d="M40 80 A460 34 0 0 1 960 80"/><path id="ringBot" d="M40 80 A460 34 0 0 0 960 80"/></defs>
+              <text class="rt"><textPath href="#ringTop">रामो विग्रहवान् धर्मः • साधुः सत्यपराक्रमः • राजा सर्वस्य लोकस्य • देवानामिव वासवः • रामो विग्रहवान् धर्मः • साधुः सत्यपराक्रमः •</textPath></text>
+              <text class="rb"><textPath href="#ringBot">रामो विग्रहवान् धर्मः • रामो विग्रहवान् धर्मः • रामो विग्रहवान् धर्मः • रामो विग्रहवान् धर्मः • रामो विग्रहवान् धर्मः •</textPath></text></svg>
+          </div>
+          <a href="#odyssey" class="hs-btn" data-begin><i class="fl l"></i><span>Begin the Kathā</span><i class="fl r"></i></a>
+          <a href="#kandas" class="hs-saga">Enter the Saga</a>
+        </div>
+        <canvas id="hero-sparks" aria-hidden="true"></canvas>
+        <div class="scroll-cue"><span></span></div>
+      </div>
+    </section>
+
+    <!-- ═════════════ THE GLIMPSE, under the opening verse: the saga in ten seconds (js/glimpse.js) ═════════════ -->
+    <section id="verse">
+      <div class="vs-pin">
+        <video id="gl-video" class="vs-video" data-hd="assets/glimpse/glimpse.mp4" data-sd="assets/glimpse/glimpse-720.mp4" poster="assets/glimpse/poster.webp" muted playsinline loop preload="none" aria-label="A glimpse of the Rāmāyaṇa: Ayodhyā, Rāma's bow, Hanumān's leap, Rāvaṇa and the last battle"></video>
+        <div class="vs-shade"></div>
+        <button class="gl-play" type="button"><i>▶</i><span>Watch with sound</span></button>
+        <button class="gl-snd" type="button" aria-label="Sound on" title="Sound"><svg viewBox="0 0 24 24"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path class="w" d="M16 9c1.5 1.5 1.5 4.5 0 6M18.5 6.5c3 3 3 8 0 11" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path class="x" d="M16 9l5 6M21 9l-5 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+        <div class="vs-copy">
+          <div class="vs-dev" lang="sa">रामो विग्रहवान् धर्मः</div>
+          <div class="vs-tr">Rāmo vigrahavān dharmaḥ</div>
+          <div class="vs-en">“Rāma is dharma itself, in human form.”</div>
+          <div class="vs-src">Vālmīki Rāmāyaṇa · Araṇya Kāṇḍa 37.13</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═════════════ THE PATH OF DHARMA ═════════════ -->
+    <section id="dharma" class="scene">
+      <div class="dh-yantra"><img alt="" /></div>
+      <header class="sc-head">
+        <div class="sc-orn"><i></i><span>आदिकाव्य · The First Poem</span><i></i></div>
+        <h2 class="sc-title">The Path of Dharma</h2>
+        <p class="sc-lede">The Rāmāyaṇa, <em>Rāma’s journey</em>, was sung by Maharṣi Vālmīki, the first poet. It tells how Lord Viṣṇu, born as Rāma, prince of Ayodhyā, walked the earth as a man and showed what a son, brother, husband, friend and king can be.</p>
+      </header>
+      <div class="dh-rings">
+        <div class="dh-ring"><svg viewBox="0 0 200 200"><circle class="o" cx="100" cy="100" r="94"/><circle class="d" cx="100" cy="100" r="86"/><circle class="i" cx="100" cy="100" r="68"/><circle class="p" cx="100" cy="6" r="3.5"/></svg><b data-count="7">0</b><span>Kāṇḍas</span></div>
+        <div class="dh-ring"><svg viewBox="0 0 200 200"><circle class="o" cx="100" cy="100" r="94"/><circle class="d" cx="100" cy="100" r="86"/><circle class="i" cx="100" cy="100" r="68"/><circle class="p" cx="100" cy="6" r="3.5"/></svg><b data-count="24000">0</b><span>Ślokas</span></div>
+        <div class="dh-ring"><svg viewBox="0 0 200 200"><circle class="o" cx="100" cy="100" r="94"/><circle class="d" cx="100" cy="100" r="86"/><circle class="i" cx="100" cy="100" r="68"/><circle class="p" cx="100" cy="6" r="3.5"/></svg><b data-count="500">0</b><span>Sargas</span></div>
+        <div class="dh-ring"><svg viewBox="0 0 200 200"><circle class="o" cx="100" cy="100" r="94"/><circle class="d" cx="100" cy="100" r="86"/><circle class="i" cx="100" cy="100" r="68"/><circle class="p" cx="100" cy="6" r="3.5"/></svg><b data-count="14">0</b><span>Years of Exile</span></div>
+      </div>
+    </section>
+
+    <!-- ═════════════ THE SEVEN KĀṆḌAS ═════════════ -->
+    <section id="kandas" class="scene">
+      <header class="sc-head">
+        <div class="sc-orn"><i></i><span>सप्त काण्ड</span><i></i></div>
+        <h2 class="sc-title">The Seven Kāṇḍas</h2>
+      </header>
+      <div class="kd-wrap">
+        <button class="kd-arrow l" aria-label="Previous">‹</button>
+        <div class="kd-track"></div>
+        <button class="kd-arrow r" aria-label="Next">›</button>
+      </div>
+    </section>
+
+    <!-- ═════════════ THE ODYSSEY: the living book ═════════════ -->
+    <section id="odyssey" class="scene">
+      <div class="od-smoke"></div>
+      <header class="sc-head">
+        <div class="sc-orn"><i></i><span>ॐ</span><i></i></div>
+        <h2 class="sc-title big">The Ramayana</h2>
+        <div class="sc-orn small"><i></i><span>❖</span><i></i></div>
+      </header>
+      <div class="od-grid">
+        <div class="od-main">
+          <div class="book" id="book-panel">
+            <button class="bk-turn l" id="bk-prev" aria-label="Previous passage">‹</button>
+            <div class="bk-spread" id="spread">
+              <div class="bk-page left">
+                <div class="pg-art" id="stage-panel">
+                  <div id="stage"></div>
+                  <canvas class="motes" aria-hidden="true"></canvas><i class="glint" aria-hidden="true"></i>
+                  <button class="fs-btn" data-fs="stage-panel" aria-label="Show the painting full screen" title="Full screen painting"><svg viewBox="0 0 24 24"><path class="fs-in" d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/><path class="fs-out" d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg></button>
+                </div>
+              </div>
+              <div class="bk-page right"><div class="pg-text" id="pg-text"></div></div>
+              <div class="bk-gutter"></div>
+            </div>
+            <button class="bk-turn r" id="bk-next" aria-label="Next passage">›</button>
+            <button class="fs-btn book-fs" data-fs="book-panel" aria-label="Open the book full screen" title="Full screen book"><svg viewBox="0 0 24 24"><path class="fs-in" d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/><path class="fs-out" d="M9 4v5H4M15 4v5h5M9 20v-5H4M15 20v-5h5"/></svg></button>
+          </div>
+          <div class="book-controls th-bar" id="th-bar">
+            <button id="bk-back" class="th-btn" aria-label="Previous episode" title="Previous episode"><svg viewBox="0 0 24 24"><path d="M6 5v14M19 5 9 12l10 7z" fill="currentColor" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></button>
+            <button id="bk-play" class="th-play"><i>▶</i><span>Read Along</span></button>
+            <button id="bk-fwd" class="th-btn" aria-label="Next episode" title="Next episode"><svg viewBox="0 0 24 24"><path d="M18 5v14M5 5l10 7-10 7z" fill="currentColor" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></button>
+            <span class="th-sep"></span>
+            <select id="bk-kanda" class="bk-select" aria-label="Go to Kāṇḍa"></select>
+            <div id="lang-bar" class="lang-pop" aria-label="Choose the language"></div>
+            <button data-snd="narrate" class="snd-chip" title="Narration">🗣</button>
+            <button class="snd-chip fs-chip" data-fs-exit>✕ Exit full screen</button>
+          </div>
+        </div>
+        <aside class="od-side">
+          <div class="sd-card sd-journey" id="sd-journey">
+            <h4>The Journey</h4>
+            <div class="sd-map"><img src="assets/theme/india-map-small.webp" alt="" /><svg viewBox="0 0 640 544" preserveAspectRatio="xMidYMid slice"></svg></div>
+          </div>
+          <div class="sd-card sd-pantheon">
+            <h4 class="sd-h">The Pantheon</h4>
+            <div class="sd-faces" id="sd-faces"></div>
+            <div class="sd-who" id="sd-who"></div>
+          </div>
+          <div class="sd-card sd-lore" id="sd-lore"></div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ═════════════ PANTHEON: the character showcase ═════════════ -->
+    <section id="pantheon" class="scene">
+      <header class="sc-head">
+        <div class="sc-kicker">Character Showcase Gallery</div>
+        <h2 class="sc-title">Gods, Kings, Sages &amp; Rākṣasas</h2>
+        <div class="pt-tabs" id="pt-tabs"></div>
+        <button class="pt-all" data-open="codex"><i>◈</i> All Figures</button>
+      </header>
+      <div class="pt-stage">
+        <figure class="pt-scene" id="pt-scene"><img alt="" /><figcaption></figcaption></figure>
+        <div class="pt-ring" id="pt-ring">
+          <div class="pt-col l"></div>
+          <div class="pt-center">
+            <div class="pt-halo"></div>
+            <div class="pt-figure" id="pt-figure"></div>
+            <div class="pt-pedestal"><img alt="" /><i class="r1"></i><i class="r2"></i><i class="r3"></i></div>
+            <div class="pt-turn">⟲ drag to turn</div>
+          </div>
+          <div class="pt-col r"></div>
+          <canvas id="pt-trail"></canvas>
+        </div>
+        <aside class="pt-lore" id="pt-lore"></aside>
+      </div>
+    </section>
+
+    <!-- ═════════════ THE JOURNEY: sacred geography ═════════════ -->
+    <section id="journey" class="scene">
+      <div class="jr-map" id="jr-map">
+        <img src="assets/theme/india-wide.webp" alt="The Indian subcontinent, from the Himālaya to Laṅkā" decoding="async" />
+        <svg id="jr-svg" viewBox="0 0 3200 1800" preserveAspectRatio="xMidYMid slice"></svg>
+      </div>
+      <div class="jr-shade"></div>
+      <header class="sc-head jr-head">
+        <div class="sc-orn"><i></i><span>भूगोल</span><i></i></div>
+        <h2 class="sc-title">The Journey</h2>
+      </header>
+      <div class="jr-list" id="jr-list"></div>
+      <aside class="jr-card" id="jr-card" hidden></aside>
+    </section>
+
+    <!-- ═════════════ LAṄKĀ YUDDHA ═════════════ -->
+    <section id="yuddha" class="scene">
+      <div class="yd-bg"><img alt="" /></div>
+      <canvas id="meteors" aria-hidden="true"></canvas>
+      <div class="yd-shade"></div>
+      <header class="sc-head yd-head">
+        <div class="sc-orn"><i></i><span>ॐ</span><i></i></div>
+        <h2 class="sc-title fire">Laṅkā Yuddha</h2>
+      </header>
+      <div class="yd-cards">
+        <button class="yd-card" data-open="duels"><img src="assets/scenes/ill/yuddha-11-0-2.webp" alt="" /><span>Great Duels of the Epic</span></button>
+        <button class="yd-card" data-open="fight"><img src="assets/scenes/ill/yuddha-15-1-1.webp" alt="" /><span>Dharma Yuddha · Play</span></button>
+        <button class="yd-card" data-open="astras"><img src="assets/scenes/ill/bala-9-0-2.webp" alt="" /><span>The Divine Astras</span></button>
+      </div>
+      <a class="yd-sources" href="#sources">Sources &amp; Acknowledgements</a>
+    </section>
+
+    <!-- ═════════════ SOURCES ═════════════ -->
+    <section id="sources" class="scene">
+      <header class="sc-head">
+        <div class="sc-orn"><i></i><span>ग्रन्थसूची</span><i></i></div>
+        <h2 class="sc-title">Sources &amp; Acknowledgements</h2>
+      </header>
+      <div class="src-grid">
+        <div class="src-card"><h4>The Text</h4><p><b>Śrīmad Vālmīki Rāmāyaṇa</b>, the Ādi Kāvya of Maharṣi Vālmīki. Devanagari quotations are from the original verses.</p></div>
+        <div class="src-card"><h4>valmikiramayan.net</h4><p>Sarga numbering follows <a href="https://www.valmikiramayan.net/" target="_blank" rel="noopener">valmikiramayan.net</a>, with verse translations by <b>Desiraju Hanumanta Rao</b> and <b>K. M. K. Murthy</b>. Every passage links to its sarga there.</p></div>
+        <div class="src-card"><h4>This Retelling</h4><p>Written afresh as one flowing kathā, following Vālmīki together with the beloved tradition of the Rāmcaritmānas and the Kamba Rāmāyaṇam, so the episodes every household knows are told as they are told in temples and homes.</p></div>
+        <div class="src-card"><h4>Maps &amp; Art</h4><p>Satellite imagery: NASA Blue Marble (public domain). Every illustration and character portrait was painted for this site with AI image models; the opening film and the Glimpse of the saga were made with Google Gemini.</p></div>
+      </div>
+      <footer class="src-foot">
+        <p class="mangala" lang="sa">मङ्गलं कोसलेन्द्राय महनीयगुणात्मने ।<br/>चक्रवर्तितनूजाय सार्वभौमाय मङ्गलम् ॥</p>
+        <p class="mangala-en">Auspiciousness to the Lord of Kosala, whose virtues are worthy of worship, the son of the emperor, the sovereign of all the earth.</p>
+        <p class="jsr">जय श्री राम</p>
+      </footer>
+    </section>
+  </main>
+
+  <!-- ═════════════ OVERLAYS ═════════════ -->
+  <div id="char-modal" class="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <article class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="cm-name">
+      <button class="modal-close" data-close aria-label="Close">✕</button>
+      <div class="cm-visual" id="cm-visual"></div>
+      <div class="cm-body" id="cm-body"></div>
+    </article>
+  </div>
+
+  <div id="codex-ov" class="ov" hidden>
+    <button class="ov-close" data-ov-close aria-label="Close">✕</button>
+    <div class="ov-inner wide">
+      <header class="sc-head"><div class="sc-orn"><i></i><span>देवगण</span><i></i></div><h2 class="sc-title">Every Figure of the Kathā</h2></header>
+      <div id="codex" class="codex"></div>
+    </div>
+  </div>
+
+  <div id="duels-ov" class="ov" hidden>
+    <button class="ov-close" data-ov-close aria-label="Close">✕</button>
+    <div class="ov-inner">
+      <header class="sc-head"><div class="sc-orn"><i></i><span>द्वन्द्व युद्ध</span><i></i></div><h2 class="sc-title">Great Duels of the Epic</h2></header>
+      <div id="duel-grid" class="duel-grid"></div>
+    </div>
+  </div>
+
+  <div id="astras-ov" class="ov astras-ov" hidden>
+    <button class="ov-close" data-ov-close aria-label="Close">✕</button>
+    <div id="astras" class="astras"></div>
+  </div>
+
+  <div id="duel" class="duel" hidden>
+    <canvas id="duel-sparks"></canvas>
+    <button class="modal-close" id="duel-close" aria-label="Close">✕</button>
+    <div class="duel-top">
+      <div class="hp hp-l"><div class="hp-name" id="hp-name-l"></div><div class="hp-bar"><i id="hp-l"></i><em id="hp-l-ghost"></em></div></div>
+      <div class="duel-meta" id="duel-meta"></div>
+      <div class="hp hp-r"><div class="hp-name" id="hp-name-r"></div><div class="hp-bar"><i id="hp-r"></i><em id="hp-r-ghost"></em></div></div>
+    </div>
+    <div class="fighter f-left" id="f-left"></div>
+    <div class="fighter f-right" id="f-right"></div>
+    <div class="vs" id="vs">VS</div>
+    <div class="duel-round" id="duel-round"></div>
+    <div class="duel-text" id="duel-text"></div>
+    <div class="duel-controls"><button id="duel-next" class="btn-sacred small"><span class="btn-en">Next Round ▶</span></button></div>
+  </div>
+
+  <div id="fight" class="fight" hidden></div>
+
+  <script type="module" src="js/main.js?v=b53c3bef"></script>
+</body>
+</html>

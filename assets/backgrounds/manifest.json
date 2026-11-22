@@ -1,0 +1,1178 @@
+{
+ "court": {
+  "src": "assets/backgrounds/court.webp",
+  "depth": "assets/backgrounds/court-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.92,
+   0.875,
+   0.812
+  ],
+  "amb": [
+   0.558,
+   0.443,
+   0.395
+  ],
+  "haze": [
+   0.471,
+   0.346,
+   0.283
+  ],
+  "keyX": 0.474,
+  "keyY": 0.674,
+  "stamp": "1794803132451.68"
+ },
+ "ashoka": {
+  "src": "assets/backgrounds/ashoka.webp",
+  "depth": "assets/backgrounds/ashoka-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.687,
+   0.612,
+   0.63
+  ],
+  "amb": [
+   0.257,
+   0.214,
+   0.272
+  ],
+  "haze": [
+   0.217,
+   0.183,
+   0.255
+  ],
+  "keyX": 0.483,
+  "keyY": 0.452,
+  "stamp": "1794803927702.7622"
+ },
+ "ashram": {
+  "src": "assets/backgrounds/ashram.webp",
+  "depth": "assets/backgrounds/ashram-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.911,
+   0.8,
+   0.819
+  ],
+  "amb": [
+   0.504,
+   0.404,
+   0.333
+  ],
+  "haze": [
+   0.46,
+   0.381,
+   0.324
+  ],
+  "keyX": 0.481,
+  "keyY": 0.126,
+  "stamp": "1794803487287.248"
+ },
+ "ayodhya": {
+  "src": "assets/backgrounds/ayodhya.webp",
+  "depth": "assets/backgrounds/ayodhya-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.861,
+   0.868,
+   0.868
+  ],
+  "amb": [
+   0.58,
+   0.565,
+   0.555
+  ],
+  "haze": [
+   0.603,
+   0.534,
+   0.463
+  ],
+  "keyX": 0.325,
+  "keyY": 0.253,
+  "stamp": "1794803829086.7263"
+ },
+ "battle": {
+  "src": "assets/backgrounds/battle.webp",
+  "depth": "assets/backgrounds/battle-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.872,
+   0.715,
+   0.489
+  ],
+  "amb": [
+   0.605,
+   0.351,
+   0.244
+  ],
+  "haze": [
+   0.659,
+   0.426,
+   0.256
+  ],
+  "keyX": 0.497,
+  "keyY": 0.566,
+  "stamp": "1794803249281.563"
+ },
+ "cave": {
+  "src": "assets/backgrounds/cave.webp",
+  "depth": "assets/backgrounds/cave-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.81,
+   0.691,
+   0.544
+  ],
+  "amb": [
+   0.326,
+   0.267,
+   0.276
+  ],
+  "haze": [
+   0.331,
+   0.26,
+   0.274
+  ],
+  "keyX": 0.508,
+  "keyY": 0.537,
+  "stamp": "1794805391744.665"
+ },
+ "chamber": {
+  "src": "assets/backgrounds/chamber.webp",
+  "depth": "assets/backgrounds/chamber-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.586,
+   0.47,
+   0.468
+  ],
+  "amb": [
+   0.215,
+   0.185,
+   0.247
+  ],
+  "haze": [
+   0.265,
+   0.19,
+   0.224
+  ],
+  "keyX": 0.47,
+  "keyY": 0.452,
+  "stamp": "1794804696846.8694"
+ },
+ "chitrakoot": {
+  "src": "assets/backgrounds/chitrakoot.webp",
+  "depth": "assets/backgrounds/chitrakoot-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.743,
+   0.857,
+   0.894
+  ],
+  "amb": [
+   0.37,
+   0.471,
+   0.375
+  ],
+  "haze": [
+   0.33,
+   0.427,
+   0.341
+  ],
+  "keyX": 0.495,
+  "keyY": 0.168,
+  "stamp": "1794808568568.0269"
+ },
+ "cosmic": {
+  "src": "assets/backgrounds/cosmic.webp",
+  "depth": "assets/backgrounds/cosmic-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.707,
+   0.775,
+   0.824
+  ],
+  "amb": [
+   0.368,
+   0.38,
+   0.497
+  ],
+  "haze": [
+   0.319,
+   0.351,
+   0.504
+  ],
+  "keyX": 0.522,
+  "keyY": 0.692,
+  "stamp": "1794806376919.065"
+ },
+ "dandaka": {
+  "src": "assets/backgrounds/dandaka.webp",
+  "depth": "assets/backgrounds/dandaka-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.819,
+   0.508,
+   0.384
+  ],
+  "amb": [
+   0.204,
+   0.169,
+   0.138
+  ],
+  "haze": [
+   0.243,
+   0.194,
+   0.16
+  ],
+  "keyX": 0.504,
+  "keyY": 0.348,
+  "stamp": "1794807144909.8464"
+ },
+ "forest": {
+  "src": "assets/backgrounds/forest.webp",
+  "depth": "assets/backgrounds/forest-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.593,
+   0.82,
+   0.873
+  ],
+  "amb": [
+   0.256,
+   0.334,
+   0.268
+  ],
+  "haze": [
+   0.258,
+   0.349,
+   0.306
+  ],
+  "keyX": 0.451,
+  "keyY": 0.223,
+  "stamp": "1794807277605.7844"
+ },
+ "ganga": {
+  "src": "assets/backgrounds/ganga.webp",
+  "depth": "assets/backgrounds/ganga-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.933,
+   0.855,
+   0.767
+  ],
+  "amb": [
+   0.558,
+   0.481,
+   0.44
+  ],
+  "haze": [
+   0.487,
+   0.448,
+   0.408
+  ],
+  "keyX": 0.228,
+  "keyY": 0.192,
+  "stamp": "1794808057760.9397"
+ },
+ "heaven": {
+  "src": "assets/backgrounds/heaven.webp",
+  "depth": "assets/backgrounds/heaven-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.958,
+   0.9,
+   0.777
+  ],
+  "amb": [
+   0.699,
+   0.574,
+   0.478
+  ],
+  "haze": [
+   0.664,
+   0.531,
+   0.419
+  ],
+  "keyX": 0.287,
+  "keyY": 0.181,
+  "stamp": "1794804569324.1816"
+ },
+ "himalaya": {
+  "src": "assets/backgrounds/himalaya.webp",
+  "depth": "assets/backgrounds/himalaya-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.676,
+   0.707,
+   0.812
+  ],
+  "amb": [
+   0.272,
+   0.391,
+   0.572
+  ],
+  "haze": [
+   0.21,
+   0.313,
+   0.472
+  ],
+  "keyX": 0.612,
+  "keyY": 0.666,
+  "stamp": "1794811658647.69"
+ },
+ "kailasa": {
+  "src": "assets/backgrounds/kailasa.webp",
+  "depth": "assets/backgrounds/kailasa-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.922,
+   0.724,
+   0.5
+  ],
+  "amb": [
+   0.547,
+   0.396,
+   0.378
+  ],
+  "haze": [
+   0.417,
+   0.284,
+   0.258
+  ],
+  "keyX": 0.251,
+  "keyY": 0.322,
+  "stamp": "1794811546272.9648"
+ },
+ "kishkindha": {
+  "src": "assets/backgrounds/kishkindha.webp",
+  "depth": "assets/backgrounds/kishkindha-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.807,
+   0.872,
+   0.93
+  ],
+  "amb": [
+   0.588,
+   0.527,
+   0.461
+  ],
+  "haze": [
+   0.494,
+   0.416,
+   0.295
+  ],
+  "keyX": 0.246,
+  "keyY": 0.195,
+  "stamp": "1794804324290.9265"
+ },
+ "lanka-court": {
+  "src": "assets/backgrounds/lanka-court.webp",
+  "depth": "assets/backgrounds/lanka-court-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.789,
+   0.672,
+   0.548
+  ],
+  "amb": [
+   0.285,
+   0.232,
+   0.266
+  ],
+  "haze": [
+   0.273,
+   0.194,
+   0.211
+  ],
+  "keyX": 0.497,
+  "keyY": 0.518,
+  "stamp": "1794803365550.8203"
+ },
+ "lanka-street": {
+  "src": "assets/backgrounds/lanka-street.webp",
+  "depth": "assets/backgrounds/lanka-street-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.786,
+   0.612,
+   0.519
+  ],
+  "amb": [
+   0.32,
+   0.252,
+   0.293
+  ],
+  "haze": [
+   0.408,
+   0.286,
+   0.291
+  ],
+  "keyX": 0.571,
+  "keyY": 0.422,
+  "stamp": "1794805970577.286"
+ },
+ "lanka": {
+  "src": "assets/backgrounds/lanka.webp",
+  "depth": "assets/backgrounds/lanka-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.797,
+   0.671,
+   0.528
+  ],
+  "amb": [
+   0.295,
+   0.29,
+   0.368
+  ],
+  "haze": [
+   0.384,
+   0.339,
+   0.371
+  ],
+  "keyX": 0.465,
+  "keyY": 0.378,
+  "stamp": "1794804961234.3835"
+ },
+ "mithila": {
+  "src": "assets/backgrounds/mithila.webp",
+  "depth": "assets/backgrounds/mithila-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.846,
+   0.865,
+   0.884
+  ],
+  "amb": [
+   0.568,
+   0.536,
+   0.508
+  ],
+  "haze": [
+   0.505,
+   0.391,
+   0.332
+  ],
+  "keyX": 0.531,
+  "keyY": 0.203,
+  "stamp": "1794806913814.1187"
+ },
+ "naimisha": {
+  "src": "assets/backgrounds/naimisha.webp",
+  "depth": "assets/backgrounds/naimisha-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.787,
+   0.825,
+   0.782
+  ],
+  "amb": [
+   0.456,
+   0.441,
+   0.372
+  ],
+  "haze": [
+   0.355,
+   0.379,
+   0.368
+  ],
+  "keyX": 0.492,
+  "keyY": 0.322,
+  "stamp": "1794808706661.206"
+ },
+ "ocean": {
+  "src": "assets/backgrounds/ocean.webp",
+  "depth": "assets/backgrounds/ocean-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.932,
+   0.906,
+   0.869
+  ],
+  "amb": [
+   0.534,
+   0.595,
+   0.613
+  ],
+  "haze": [
+   0.509,
+   0.564,
+   0.567
+  ],
+  "keyX": 0.277,
+  "keyY": 0.167,
+  "stamp": "1794811319079.975"
+ },
+ "palace": {
+  "src": "assets/backgrounds/palace.webp",
+  "depth": "assets/backgrounds/palace-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.913,
+   0.878,
+   0.83
+  ],
+  "amb": [
+   0.534,
+   0.433,
+   0.4
+  ],
+  "haze": [
+   0.461,
+   0.346,
+   0.309
+  ],
+  "keyX": 0.465,
+  "keyY": 0.576,
+  "stamp": "1794803715400.8916"
+ },
+ "pampa": {
+  "src": "assets/backgrounds/pampa.webp",
+  "depth": "assets/backgrounds/pampa-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.727,
+   0.849,
+   0.905
+  ],
+  "amb": [
+   0.437,
+   0.534,
+   0.521
+  ],
+  "haze": [
+   0.382,
+   0.43,
+   0.415
+  ],
+  "keyX": 0.233,
+  "keyY": 0.147,
+  "stamp": "1794808187412.7197"
+ },
+ "panchavati": {
+  "src": "assets/backgrounds/panchavati.webp",
+  "depth": "assets/backgrounds/panchavati-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.755,
+   0.857,
+   0.879
+  ],
+  "amb": [
+   0.482,
+   0.479,
+   0.387
+  ],
+  "haze": [
+   0.486,
+   0.564,
+   0.504
+  ],
+  "keyX": 0.439,
+  "keyY": 0.463,
+  "stamp": "1794804131955.282"
+ },
+ "river": {
+  "src": "assets/backgrounds/river.webp",
+  "depth": "assets/backgrounds/river-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.671,
+   0.801,
+   0.779
+  ],
+  "amb": [
+   0.383,
+   0.408,
+   0.342
+  ],
+  "haze": [
+   0.302,
+   0.384,
+   0.316
+  ],
+  "keyX": 0.413,
+  "keyY": 0.356,
+  "stamp": "1794807414924.749"
+ },
+ "rocks": {
+  "src": "assets/backgrounds/rocks.webp",
+  "depth": "assets/backgrounds/rocks-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.846,
+   0.874,
+   0.922
+  ],
+  "amb": [
+   0.539,
+   0.501,
+   0.466
+  ],
+  "haze": [
+   0.479,
+   0.431,
+   0.374
+  ],
+  "keyX": 0.829,
+  "keyY": 0.091,
+  "stamp": "1794808309599.9106"
+ },
+ "sarayu": {
+  "src": "assets/backgrounds/sarayu.webp",
+  "depth": "assets/backgrounds/sarayu-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.887,
+   0.581,
+   0.381
+  ],
+  "amb": [
+   0.569,
+   0.333,
+   0.25
+  ],
+  "haze": [
+   0.518,
+   0.287,
+   0.227
+  ],
+  "keyX": 0.546,
+  "keyY": 0.291,
+  "stamp": "1794806778295.794"
+ },
+ "shore": {
+  "src": "assets/backgrounds/shore.webp",
+  "depth": "assets/backgrounds/shore-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.875,
+   0.769,
+   0.669
+  ],
+  "amb": [
+   0.596,
+   0.444,
+   0.389
+  ],
+  "haze": [
+   0.602,
+   0.357,
+   0.292
+  ],
+  "keyX": 0.37,
+  "keyY": 0.711,
+  "stamp": "1794808437488.889"
+ },
+ "sky": {
+  "src": "assets/backgrounds/sky.webp",
+  "depth": "assets/backgrounds/sky-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.958,
+   0.908,
+   0.783
+  ],
+  "amb": [
+   0.558,
+   0.554,
+   0.487
+  ],
+  "haze": [
+   0.723,
+   0.675,
+   0.605
+  ],
+  "keyX": 0.234,
+  "keyY": 0.223,
+  "stamp": "1794811429161.3127"
+ },
+ "yajna": {
+  "src": "assets/backgrounds/yajna.webp",
+  "depth": "assets/backgrounds/yajna-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.926,
+   0.819,
+   0.846
+  ],
+  "amb": [
+   0.496,
+   0.4,
+   0.351
+  ],
+  "haze": [
+   0.48,
+   0.424,
+   0.421
+  ],
+  "keyX": 0.494,
+  "keyY": 0.162,
+  "stamp": "1794805106414.8938"
+ },
+ "ashoka-day": {
+  "src": "assets/backgrounds/ashoka-day.webp",
+  "depth": "assets/backgrounds/ashoka-day-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.886,
+   0.88,
+   0.877
+  ],
+  "amb": [
+   0.531,
+   0.416,
+   0.401
+  ],
+  "haze": [
+   0.461,
+   0.341,
+   0.325
+  ],
+  "keyX": 0.332,
+  "keyY": 0.244,
+  "stamp": "1794810568298.2314"
+ },
+ "ashram-day": {
+  "src": "assets/backgrounds/ashram-day.webp",
+  "depth": "assets/backgrounds/ashram-day-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.825,
+   0.749,
+   0.584
+  ],
+  "amb": [
+   0.435,
+   0.412,
+   0.32
+  ],
+  "haze": [
+   0.38,
+   0.374,
+   0.301
+  ],
+  "keyX": 0.547,
+  "keyY": 0.591,
+  "stamp": "1794809315503.773"
+ },
+ "ashram-night": {
+  "src": "assets/backgrounds/ashram-night.webp",
+  "depth": "assets/backgrounds/ashram-night-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.753,
+   0.604,
+   0.526
+  ],
+  "amb": [
+   0.245,
+   0.242,
+   0.275
+  ],
+  "haze": [
+   0.213,
+   0.219,
+   0.265
+  ],
+  "keyX": 0.5,
+  "keyY": 0.576,
+  "stamp": "1794809472277.407"
+ },
+ "ayodhya-dusk": {
+  "src": "assets/backgrounds/ayodhya-dusk.webp",
+  "depth": "assets/backgrounds/ayodhya-dusk-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.895,
+   0.722,
+   0.52
+  ],
+  "amb": [
+   0.588,
+   0.398,
+   0.312
+  ],
+  "haze": [
+   0.619,
+   0.415,
+   0.297
+  ],
+  "keyX": 0.386,
+  "keyY": 0.353,
+  "stamp": "1794809629548.2869"
+ },
+ "battle-dusk": {
+  "src": "assets/backgrounds/battle-dusk.webp",
+  "depth": "assets/backgrounds/battle-dusk-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.893,
+   0.722,
+   0.492
+  ],
+  "amb": [
+   0.647,
+   0.411,
+   0.285
+  ],
+  "haze": [
+   0.719,
+   0.469,
+   0.28
+  ],
+  "keyX": 0.538,
+  "keyY": 0.425,
+  "stamp": "1794809145542.6887"
+ },
+ "battle-night": {
+  "src": "assets/backgrounds/battle-night.webp",
+  "depth": "assets/backgrounds/battle-night-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.843,
+   0.757,
+   0.62
+  ],
+  "amb": [
+   0.387,
+   0.346,
+   0.356
+  ],
+  "haze": [
+   0.526,
+   0.442,
+   0.378
+  ],
+  "keyX": 0.638,
+  "keyY": 0.448,
+  "stamp": "1794808998444.4407"
+ },
+ "dandaka-night": {
+  "src": "assets/backgrounds/dandaka-night.webp",
+  "depth": "assets/backgrounds/dandaka-night-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.378,
+   0.521,
+   0.577
+  ],
+  "amb": [
+   0.119,
+   0.169,
+   0.195
+  ],
+  "haze": [
+   0.103,
+   0.171,
+   0.224
+  ],
+  "keyX": 0.478,
+  "keyY": 0.331,
+  "stamp": "1794810972927.9414"
+ },
+ "forest-dusk": {
+  "src": "assets/backgrounds/forest-dusk.webp",
+  "depth": "assets/backgrounds/forest-dusk-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.865,
+   0.588,
+   0.47
+  ],
+  "amb": [
+   0.26,
+   0.196,
+   0.148
+  ],
+  "haze": [
+   0.306,
+   0.214,
+   0.167
+  ],
+  "keyX": 0.464,
+  "keyY": 0.296,
+  "stamp": "1794810250013.9712"
+ },
+ "forest-night": {
+  "src": "assets/backgrounds/forest-night.webp",
+  "depth": "assets/backgrounds/forest-night-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.376,
+   0.591,
+   0.686
+  ],
+  "amb": [
+   0.11,
+   0.203,
+   0.256
+  ],
+  "haze": [
+   0.093,
+   0.203,
+   0.303
+  ],
+  "keyX": 0.513,
+  "keyY": 0.292,
+  "stamp": "1794810403317.851"
+ },
+ "kishkindha-dusk": {
+  "src": "assets/backgrounds/kishkindha-dusk.webp",
+  "depth": "assets/backgrounds/kishkindha-dusk-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.885,
+   0.714,
+   0.56
+  ],
+  "amb": [
+   0.576,
+   0.366,
+   0.27
+  ],
+  "haze": [
+   0.458,
+   0.306,
+   0.192
+  ],
+  "keyX": 0.204,
+  "keyY": 0.15,
+  "stamp": "1794811204404.6309"
+ },
+ "lanka-day": {
+  "src": "assets/backgrounds/lanka-day.webp",
+  "depth": "assets/backgrounds/lanka-day-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.909,
+   0.885,
+   0.852
+  ],
+  "amb": [
+   0.643,
+   0.615,
+   0.611
+  ],
+  "haze": [
+   0.711,
+   0.65,
+   0.587
+  ],
+  "keyX": 0.355,
+  "keyY": 0.376,
+  "stamp": "1794810725104.8772"
+ },
+ "palace-night": {
+  "src": "assets/backgrounds/palace-night.webp",
+  "depth": "assets/backgrounds/palace-night-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.87,
+   0.774,
+   0.723
+  ],
+  "amb": [
+   0.399,
+   0.318,
+   0.353
+  ],
+  "haze": [
+   0.403,
+   0.304,
+   0.322
+  ],
+  "keyX": 0.471,
+  "keyY": 0.642,
+  "stamp": "1794811087175.555"
+ },
+ "river-dawn": {
+  "src": "assets/backgrounds/river-dawn.webp",
+  "depth": "assets/backgrounds/river-dawn-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.932,
+   0.823,
+   0.799
+  ],
+  "amb": [
+   0.446,
+   0.385,
+   0.342
+  ],
+  "haze": [
+   0.423,
+   0.398,
+   0.343
+  ],
+  "keyX": 0.465,
+  "keyY": 0.18,
+  "stamp": "1794810097375.8545"
+ },
+ "river-night": {
+  "src": "assets/backgrounds/river-night.webp",
+  "depth": "assets/backgrounds/river-night-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.504,
+   0.584,
+   0.663
+  ],
+  "amb": [
+   0.18,
+   0.243,
+   0.315
+  ],
+  "haze": [
+   0.136,
+   0.238,
+   0.304
+  ],
+  "keyX": 0.427,
+  "keyY": 0.419,
+  "stamp": "1794809940516.6135"
+ },
+ "rocks-dusk": {
+  "src": "assets/backgrounds/rocks-dusk.webp",
+  "depth": "assets/backgrounds/rocks-dusk-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.887,
+   0.604,
+   0.397
+  ],
+  "amb": [
+   0.509,
+   0.296,
+   0.221
+  ],
+  "haze": [
+   0.444,
+   0.274,
+   0.196
+  ],
+  "keyX": 0.513,
+  "keyY": 0.306,
+  "stamp": "1794809787877.3457"
+ },
+ "setu": {
+  "src": "assets/backgrounds/setu.webp",
+  "depth": "assets/backgrounds/setu-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.825,
+   0.888,
+   0.92
+  ],
+  "amb": [
+   0.557,
+   0.587,
+   0.589
+  ],
+  "haze": [
+   0.442,
+   0.525,
+   0.555
+  ],
+  "keyX": 0.303,
+  "keyY": 0.193,
+  "stamp": "1794808847980.8357"
+ },
+ "shore-day": {
+  "src": "assets/backgrounds/shore-day.webp",
+  "depth": "assets/backgrounds/shore-day-depth.png",
+  "w": 1360,
+  "h": 768,
+  "key": [
+   0.921,
+   0.893,
+   0.845
+  ],
+  "amb": [
+   0.61,
+   0.684,
+   0.719
+  ],
+  "haze": [
+   0.583,
+   0.726,
+   0.799
+  ],
+  "keyX": 0.464,
+  "keyY": 0.687,
+  "stamp": "1794810860896.0532"
+ },
+ "field": {
+  "src": "assets/backgrounds/field.webp",
+  "depth": "assets/backgrounds/field-depth.png",
+  "w": 3840,
+  "h": 2176,
+  "key": [
+   0.81,
+   0.727,
+   0.562
+  ],
+  "amb": [
+   0.328,
+   0.276,
+   0.214
+  ],
+  "haze": [
+   0.472,
+   0.396,
+   0.301
+  ],
+  "keyX": 0.197,
+  "keyY": 0.354,
+  "stamp": "1795368073654.7466"
+ }
+}
