@@ -71,8 +71,8 @@ function nav(sound) {
   addEventListener('scroll', () => navEl.classList.toggle('solid', scrollY > innerHeight * .5), { passive: true });
   const links = $$('[data-nav]');
   const ctx = $('#ctx-switch');
-  const CTX = { hero: 'Mandala', verse: 'Mandala', dharma: 'Mandala', kandas: 'Mandala', odyssey: 'Map', pantheon: 'Map', journey: 'Mandala', yuddha: 'Mandala', sources: 'Mandala' };
-  ['hero', 'verse', 'dharma', 'kandas', 'odyssey', 'pantheon', 'journey', 'yuddha', 'sources'].forEach(id => ScrollTrigger.create({
+  const CTX = { hero: 'Mandala', verse: 'Mandala', dharma: 'Mandala', kandas: 'Mandala', odyssey: 'Map', pantheon: 'Map', journey: 'Mandala', today: 'Mandala', yuddha: 'Mandala', sources: 'Mandala' };
+  ['hero', 'verse', 'dharma', 'kandas', 'odyssey', 'pantheon', 'journey', 'today', 'yuddha', 'sources'].forEach(id => ScrollTrigger.create({
     trigger: '#' + id, start: 'top 55%', end: 'bottom 55%',
     onToggle: s => { if (!s.isActive) return; links.forEach(a => a.classList.toggle('on', a.dataset.nav === id)); ctx.dataset.mode = CTX[id]; $('span', ctx).textContent = CTX[id]; ctx.setAttribute('aria-checked', String(CTX[id] === 'Map' ? !document.body.classList.contains('no-map') : !document.body.classList.contains('no-mandala'))); }
   }));
