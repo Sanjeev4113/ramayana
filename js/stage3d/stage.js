@@ -15,7 +15,9 @@ import { CHARACTERS, MINOR_NAMES } from '../data/characters.js';
 import { Director, sentences } from './director.js';
 import { findPlate, loadPlate } from './plate.js';
 import { trSay, trName } from '../i18n.js';
-import { isAwake, onBreath, offBreath, FPS } from '../calm.js';
+import { isAwake, onBreath, offBreath, FPS, LITE } from '../calm.js';
+// the paintings in HD (2720 px, tools/hd_ill.py) on a large, sharp screen with a good connection; else the 1360 px originals
+const HD = (() => { const c = navigator.connection; return !LITE && (Math.max(screen.width, innerWidth) * (devicePixelRatio || 1)) >= 1800 && !(c && (c.saveData || /2g|3g/.test(c.effectiveType || ''))); })();
 
 const gsap = window.gsap;
 const NAME = Object.fromEntries(CHARACTERS.map(c => [c.id, c.name]));
@@ -319,7 +321,8 @@ export class Stage3D {
     root.classList.add('stage', 'stage3d');
     root.innerHTML = `<canvas class="s3-canvas"></canvas><div class="s3-media"></div><div class="stg-flash"></div><div class="s3-bars"></div><div class="stg-title"></div><div class="stg-dialog"><b></b><span></span></div><div class="s3-fade"></div>`;
     this.canvas = root.querySelector('canvas'); this.mediaEl = root.querySelector('.s3-media');
-    this.media = fetch('assets/scenes/manifest.json').then(r => r.ok ? r.json() : {}).catch(() => ({})); this.flashEl = root.querySelector('.stg-flash'); this.titleEl = root.querySelector('.stg-title'); this.dialog = root.querySelector('.stg-dialog'); this.fadeEl = root.querySelector('.s3-fade');
+    this.media = fetch('assets/scenes/manifest.json').then(r => r.ok ? r.json() : {}).catch(() => ({}));
+    if (HD) fetch('assets/scenes/hd/index.json').then(r => r.ok ? r.json() : {}).catch(() => ({})).then(x => { this.hd = x; }); this.flashEl = root.querySelector('.stg-flash'); this.titleEl = root.querySelector('.stg-title'); this.dialog = root.querySelector('.stg-dialog'); this.fadeEl = root.querySelector('.s3-fade');
     const r = this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas, antialias: true, powerPreference: 'high-performance' });
     // Lighter rendering on phones and low-memory devices.
     QUALITY.low = matchMedia('(max-width: 760px)').matches || (navigator.deviceMemory && navigator.deviceMemory <= 4);
@@ -538,7 +541,7 @@ export class Stage3D {
       const m = a.match(/^([\d.]+)\s+(\S+)\s+(\S+)(?:\s+"(.*)")?$/); if (!m) return;
       const [, t, who, verb, text] = m;
       if (verb === 'say') this.timers.push(gsap.delayedCall(+t + .8, () => this.say(who.split('.')[0], trSay(text))));
-      if (who === 'fx' && (verb === 'conch' || verb === 'bell')) this.timers.push(gsap.delayedCall(+t + .8, () => verb === 'conch' ? this.sound?.sfx('conch') : this.sound?.bell(.5)));
+      if (who === 'fx' && verb === 'conch') this.timers.push(gsap.delayedCall(+t + .8, () => this.sound?.sfx('conch')));
     });
   }
 
@@ -614,9 +617,12 @@ export class Stage3D {
     const el = document.createElement('div'), img = document.createElement('img');
     el.className = 's3-media-item s3-cut s3-still'; el.style.opacity = 0; el.dataset.src = clip.src;
     const url = `assets/scenes/${clip.src}${clip.v ? `?v=${clip.v}` : ''}`;
+    // an HD file only when it was made from this very version of the painting
+    const id = /^ill\/(.+)\.webp$/.exec(clip.src)?.[1], hd = id && clip.v && this.hd?.[id] === clip.v ? `assets/scenes/hd/${id}.webp?v=${clip.v}` : null;
     // an absolute address: a url() handed to a stylesheet through a custom property resolves against the stylesheet
+    // (the soft, blurred copy behind the painting needs no more than the original)
     el.style.setProperty('--still', `url("${new URL(url, location.href).href}")`);
-    img.decoding = 'async'; img.alt = ''; img.src = url; el.appendChild(img);
+    img.decoding = 'async'; img.alt = ''; img.src = hd || url; el.appendChild(img);
     this.mediaEl.appendChild(el); this.mediaEl.style.opacity = 1; this.cutEl = el;
     const hold = Math.max(6, dur || 9) + 2;
     const show = () => {
@@ -770,7 +776,7 @@ export class Stage3D {
       case 'astra': {
         a.face(dirX > 0 ? 'R' : 'L'); const col = text || '#ffd870';
         const hp = a.handPoint(dirX);
-        this.vfx.rune(new v3(S.x, 0, S.z), col, 3.4, 2.6); this.vfx.charge(hp, col, 1.2); this.sound?.sfx('astra'); this.sound?.chantHit?.();
+        this.vfx.rune(new v3(S.x, 0, S.z), col, 3.4, 2.6); this.vfx.charge(hp, col, 1.2); this.sound?.sfx('astra');
         gsap.to(S, { glow: 1, duration: .8 }); this.focus(a, .5);
         this.timers.push(gsap.delayedCall(1.2, () => {
           this.sound?.sfx('twang'); this.flash(col, .35);
@@ -864,7 +870,6 @@ export class Stage3D {
       case 'ring': this.vfx.shockwave(new V(x, 0, 0), '#ffd870', 6); this.vfx.rune(new V(x, 0, 0), '#ffd870'); break;
       case 'nagapasha': for (let i = 0; i < 14; i++) setTimeout(() => { const to = new V(rand(-5, 0), rand(.5, 1.8), rand(-1, 1)); this.vfx.projectile({ from: new V(rand(4, 8), rand(5, 7), -2), to, kind: 'serpent', color: '#5dff9a', onHit: p => this.vfx.burst(p, '#5dff9a', 26, 2.5) }); }, i * 110); this.sound?.sfx('hiss'); break;
       case 'conch': this.sound?.sfx('conch'); break;
-      case 'bell': this.sound?.bell(.5); break;
       case 'stars': break;
       case 'rays': this.vfx.ambient.motes = 1.5; break;
       default: this.vfx.ambient[name] = (this.vfx.ambient[name] || 0) + 1; if (name === 'petals') this.sound?.sfx('petals'); if (name === 'rain') this.sound?.ambience('rain');

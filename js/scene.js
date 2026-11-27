@@ -416,7 +416,6 @@ export class Stage {
       case 'burn': for (let i = 0; i < 9; i++) this.addFire(60 + i * 100, 360 + Math.sin(i * 1.7) * 60, 2.2, 'burn' + i); this.sound?.sfx('blaze'); break;
       case 'flash': this.flash('#fff'); break;
       case 'conch': this.sound?.sfx('conch'); break;
-      case 'bell': this.sound?.bell(.5); break;
       case 'shake': this.shake(); break;
       case 'lightning': this.lightning(); break;
       case 'ring': this.ring(x, GROUND - 100, '#ffd870'); break;

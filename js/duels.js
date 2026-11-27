@@ -168,7 +168,7 @@ export class DuelTheatre {
       }
       case 'glow': { this.sound?.sfx?.('chime'); vfx.rune(new V(S.x, 0, 0), a.color, 3, 1.6); await new Promise(res => gsap.to(S, { glow: .8, duration: .6, yoyo: true, repeat: 1, onComplete: res })); break; }
       case 'chant': {                                       // the Ādityahṛdayam: the sun's light gathers round Rāma
-        this.sound?.chantHit?.(); vfx.rune(new V(S.x, 0, 0), '#ffd36b', 3.6, 3);
+        this.sound?.sfx?.('swell', .7); vfx.rune(new V(S.x, 0, 0), '#ffd36b', 3.6, 3);
         const [x, y] = st.toScreen(this.chest(a, .7));
         fx.add(u => { const e = Math.sin(Math.PI * Math.min(1, u / 2.6)); fx.sunAt(x, y, 300 * fx.k * (.6 + .4 * e), e * .8, u * .2); }, 2.6);
         await new Promise(res => gsap.to(S, { glow: 1, duration: 1.2, yoyo: true, repeat: 1, onComplete: res }));
@@ -304,7 +304,7 @@ export class DuelTheatre {
       }
       default:
         if (what.startsWith('astra:')) {
-          const kind = what.slice(6); this.sound?.sfx?.(kind === 'aindrastra' ? 'thunder' : 'astra'); this.sound?.chantHit?.();
+          const kind = what.slice(6); this.sound?.sfx?.(kind === 'aindrastra' ? 'thunder' : 'astra');
           S.weaponCol = kind === 'brahmastra' ? '#ffd36b' : (kind === 'aindrastra' ? '#9fd7ff' : '#ff6a2a');
           if (a.poses?.draw) S.pose = 'draw';
           vfx.rune(new V(S.x, 0, 0), S.weaponCol, 3.4, 2.6);

@@ -21,7 +21,7 @@ const BOOKS = [PROLOGUE, ...KANDAS];
 const DEV_NUM = ['०', '१', '२', '३', '४', '५', '६', '७', '८', '९'];
 const devNum = n => String(n).split('').map(d => DEV_NUM[+d]).join('');
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
-const sound = new Sound();
+const sound = window.__sound = new Sound();
 
 // Wrap Devanagari runs so they get the Devanagari face and gold colour.
 const fmt = t => t.replace(/[ऀ-ॿ][ऀ-ॿ\s।॥,]*[ऀ-ॿ।॥]/g, m => `<span class="dv">${m}</span>`);
@@ -49,7 +49,7 @@ function emblemSVG(color, petals = 16) {
 /* ───────────────────────── SOUND TOGGLE ───────────────────────── */
 function updateSoundBtn() {
   $('#sound-toggle').classList.toggle('muted', !sound.on);
-  $$('[data-snd]').forEach(b => b.classList.toggle('on', { music: sound.musicOn, sfx: sound.sfxOn, narrate: sound.narrateOn, chant: sound.chantOn }[b.dataset.snd]));
+  $$('[data-snd]').forEach(b => b.classList.toggle('on', { music: sound.musicOn, sfx: sound.sfxOn, narrate: sound.narrateOn }[b.dataset.snd]));
 }
 sound.onChange(updateSoundBtn);
 document.addEventListener('click', async e => {
@@ -59,7 +59,6 @@ document.addEventListener('click', async e => {
   if (k === 'music') sound.setMusic(!sound.musicOn);
   if (k === 'sfx') sound.setSfx(!sound.sfxOn);
   if (k === 'narrate') sound.setNarrate(!sound.narrateOn);
-  if (k === 'chant') sound.setChant(!sound.chantOn);
 });
 // Browsers need a gesture before audio can start.
 document.addEventListener('pointerdown', () => { if (!sound.ctx && document.body.classList.contains('entered')) sound.start(); }, { once: false, passive: true });
@@ -333,12 +332,11 @@ $('#duel-next').addEventListener('click', () => {
     const fallenName = fallen === 'right' ? $('#hp-name-r').textContent : $('#hp-name-l').textContent;
     const loser = fallen === 'right' ? d.right : d.left;
     duelStage.then(th => th.outcome(fallen === 'right' && d.rightAlt ? [loser, d.rightAlt] : [loser], fallen === 'right'));
-    if (d.final) sound.chantHit?.();
     $('#duel-round').innerHTML = `<small>${d.final ? '<span class="dvs">धर्म विजय</span> · Dharma Triumphs' : 'The Outcome'}</small><strong>${fallenName} ${fallenName.includes('&') ? 'fall' : 'falls'}</strong>`;
     gsap.fromTo('#duel-round', { scale: 2, opacity: 0 }, { scale: 1, opacity: 1, duration: .6, ease: 'back.out(1.4)' });
     $('#duel-text').innerHTML = `<span class="outcome">${d.outcome}</span>`;
     sparks.burst(innerWidth / 2, innerHeight * .3, d.final ? 260 : 120, '#fff1c1', true);
-    sound.bell(d.final ? .8 : .45);
+    sound.sfx(d.final ? 'conch' : 'swell', d.final ? .9 : .5);
     $('#duel-next .btn-en').textContent = 'Close ✕';
   } else {
     closeDuel();

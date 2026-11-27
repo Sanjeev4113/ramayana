@@ -179,6 +179,10 @@ export function inScript(s) {
   }
   return out;
 }
+// An episode's Devanagari title, shown as an ornament above the title. It is Hindi (हनुमान का बचपन), not Sanskrit, so it is
+// never re-lettered into another script (that would read as nonsense); readers of Hindi and Marathi, whose own title
+// below is already in Devanagari, are not shown it twice.
+export function epOrnament(s) { return current === 'hi' || current === 'mr' ? '' : (s || ''); }
 // Kāṇḍa numbers: the reader's numerals (౧ ೧ ൧), Western digits for Tamil, Devanagari for Hindi and Marathi
 export function numeral(n) {
   const s = String(n);

@@ -10,7 +10,7 @@ import { SARGA_INDEX } from './data/sargas.js';
 import { Stage } from './scene.js';
 import { Stage3D } from './stage3d/stage.js';
 import { COVER, coverSrc } from './data/covers.js';
-import { LANGS, lang, langInfo, setLang, ui, tr, trSpeech, kandaName, shloka, isIndic, initialLang, inScript, numeral } from './i18n.js';
+import { LANGS, lang, langInfo, setLang, ui, tr, trSpeech, kandaName, shloka, isIndic, initialLang, inScript, epOrnament, numeral } from './i18n.js';
 
 const BOOKS = [PROLOGUE, ...KANDAS];
 const PLACE = Object.fromEntries(PLACES.map(p => [p.id, p.name]));
@@ -69,7 +69,7 @@ export async function initBook({ root, stageEl, controls, sound, langBar }) {
         const sg = SARGAS[`${b.id}-${i}`];
         const link = sg && sargaUrl(b.id, sg[0]);
         const title = tr(`e.${b.id}.${i}.title`, ep.title);
-        const head = `<div class="ep-h" data-ep="${b.id}:${i}"><div class="eh-dev">${inScript(ep.dev || '')}</div><h3>${title}</h3>${sg ? `<a class="eh-sarga" href="${link}" target="_blank" rel="noopener">${sargaLabel(sg)} · ${ui('original')}</a>` : b.id === 'uttara' ? `<span class="eh-sarga">${kName}</span>` : ''}</div>`;
+        const head = `<div class="ep-h" data-ep="${b.id}:${i}"><div class="eh-dev">${epOrnament(ep.dev)}</div><h3>${title}</h3>${sg ? `<a class="eh-sarga" href="${link}" target="_blank" rel="noopener">${sargaLabel(sg)} · ${ui('original')}</a>` : b.id === 'uttara' ? `<span class="eh-sarga">${kName}</span>` : ''}</div>`;
         const text0 = beats.get(`${b.id}:${i}:0`).text;
         // keep the heading with the start of its first paragraph
         mBody.insertAdjacentHTML('beforeend', head + `<p class="beat">${text0.split(' ').slice(0, 18).join(' ')}</p>`);

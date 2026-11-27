@@ -9,7 +9,7 @@ import { COVER, coverSrc } from './data/covers.js';
 import { Stage3D } from './stage3d/stage.js';
 import { sentences } from './stage3d/director.js';
 import { hold } from './calm.js';
-import { LANGS, lang, langInfo, setLang, ui, tr, trSpeech, kandaName, initialLang, inScript, isIndic } from './i18n.js';
+import { LANGS, lang, langInfo, setLang, ui, tr, trSpeech, kandaName, initialLang, inScript, epOrnament, isIndic } from './i18n.js';
 
 const gsap = window.gsap;
 const $ = (s, el = document) => el.querySelector(s), $$ = (s, el = document) => [...el.querySelectorAll(s)];
@@ -50,7 +50,7 @@ export async function initOdyssey({ sound, cut = {}, onChar, onPlace }) {
     const last = b.k === b.n - 1;
     return `<div class="pt-kanda">${esc(b.kanda)}</div>
       <div class="pt-sub">${sg ? `<a href="${sargaUrl(b.book, sg[0])}" target="_blank" rel="noopener">${sarga} · ${ui('original')}</a>` : 'Chronicle'}</div>
-      ${b.k === 0 ? `<div class="pt-dev">${inScript(b.dev)}</div><div class="pt-rule"></div><div class="pt-title">${esc(b.title)}</div>` : `<div class="pt-rule"></div><div class="pt-title">${esc(b.title)}</div>`}
+      ${b.k === 0 ? `<div class="pt-dev">${epOrnament(b.dev)}</div><div class="pt-rule"></div><div class="pt-title">${esc(b.title)}</div>` : `<div class="pt-rule"></div><div class="pt-title">${esc(b.title)}</div>`}
       <div class="pt-body"><p class="${b.k === 0 ? 'first' : ''}">${body}</p>${last ? '<div class="pt-end" style="text-align:center;color:#8c5c1e">❁</div>' : ''}</div>
       <div class="pt-foot"><span>${b.place ? esc(b.place) : ''}</span><span>${i + 1} / ${beats.length}</span></div>`;
   }

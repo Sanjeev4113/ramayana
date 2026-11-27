@@ -34,7 +34,7 @@ The libraries (GSAP, Lenis, Three.js) and fonts load from public CDNs.
 - `index.html`, `css/`, `js/` — the site. `js/odyssey.js` is the book, `js/astra-fx.js` the light of the astras, `js/fight2d.js` the painted battlefield, `js/duels.js` the duel director, `js/stage3d/fight.js` the game, `js/calm.js` the governor that keeps every animation light (it sleeps out of view, rests when the reader is idle, and caps frame rates on modest devices).
 - `assets/` — the paintings, character art, maps, films and narration.
 
-The paintings and character art were made with AI image models (FLUX.2 Klein, Z-Image-Turbo) from hand-written captions and reviewed by eye; the opening film and the Glimpse were made with Google Gemini. Narration: Kokoro-82M (English) and Svara-TTS (Indian languages); translations: IndicTrans2. Satellite imagery: NASA Blue Marble (public domain). Sarga numbering and verse translations follow valmikiramayan.net.
+The paintings and character art were made with AI image models (FLUX.2 Klein, Z-Image-Turbo) from hand-written captions and reviewed by eye; the opening film and the Glimpse were made with Google Gemini. Translations into Hindi, Marathi, Telugu, Tamil, Kannada and Malayalam were written with Claude (Anthropic), sentence by sentence against the English, and proofread. Music: a bansuri ālāp by Pandit Hariprasad Chaurasia (IGRMS archive, CC BY-NC 4.0); ambience and effects are field recordings from Wikimedia Commons (credited on the site). Satellite imagery: NASA Blue Marble (public domain). Sarga numbering and verse translations follow valmikiramayan.net.
 
 The production pipeline (painting, narration and translation tools) is kept in a separate private repository.
 

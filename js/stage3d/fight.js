@@ -437,7 +437,7 @@ export class DharmaYuddha {
   astra(f, o) {
     const st = this.stage, S = f.a.state, dir = f.dir, A = f.astra || { name: 'Agneyāstra', kind: 'astra', color: '#ff4a1a', dmg: 30 };
     f.sh = 0; f.state = 'cast'; f.vx = 0; this.updateHud();
-    this.sound?.sfx('astra'); this.sound?.chantHit?.();
+    this.sound?.sfx('astra');
     this.slow = .35;
     if (!this.isAir) st.vfx.rune(new V(f.x, 0, 0), A.color || '#ffd36b', 3.6, 2.4);
     S.weaponCol = A.color || '#ffd36b';
@@ -508,7 +508,7 @@ export class DharmaYuddha {
     if (o.state === 'ko' || this.over) return;
     const st = this.stage, oS = o.a.state, p = new V(o.x, o.y + o.a.height * oS.sc * .58, .3);
     if (o.guard && Math.sign(f.x - o.x) === o.dir) {
-      dmg *= .18; kb *= .3; st.vfx.burst(p, '#9fd0ff', 32, 4.2); const [gx, gy] = this.scr(p); this.fx.add(a => this.fx.shockRing(gx, gy, (16 + 74 * (a / .25)) * this.fx.k, '159,208,255', (1 - a / .25) * .85, 2), .26); this.sound?.sfx('impact', .4); o.sh = Math.min(100, o.sh + 4);
+      dmg *= .18; kb *= .3; st.vfx.burst(p, '#9fd0ff', 32, 4.2); const [gx, gy] = this.scr(p); this.fx.add(a => this.fx.shockRing(gx, gy, (16 + 74 * (a / .25)) * this.fx.k, '159,208,255', (1 - a / .25) * .85, 2), .26); this.sound?.sfx('clash', .8); o.sh = Math.min(100, o.sh + 4);
     } else {
       st.vfx.burst(p, color, heavy ? 96 : 48, heavy ? 6.8 : 4.4); st.vfx.flare(p, color, heavy ? 2.8 : 1.5, .36);
       if (o.id === 'jatayu' || f.id === 'jatayu') st.vfx.feathers(p, heavy ? 18 : 9, 250);

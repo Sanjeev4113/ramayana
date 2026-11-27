@@ -85,7 +85,7 @@ function nav(sound) {
   const sync = () => sw.setAttribute('aria-checked', String(!!sound.ctx && (sound.musicOn || sound.sfxOn)));
   sw.addEventListener('click', async () => {
     const on = sw.getAttribute('aria-checked') !== 'true';
-    await sound.start(); sound.setMusic(on); sound.setSfx(on); if (on) sound.bell(); sync();
+    await sound.start(); sound.setMusic(on); sound.setSfx(on); sync();
   });
   sound.onChange(sync); sync();
   $('#sound-toggle').addEventListener('click', e => { e.stopPropagation(); $('#sound-panel').hidden = !$('#sound-panel').hidden; });
