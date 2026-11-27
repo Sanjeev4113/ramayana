@@ -1,9 +1,9 @@
 // The site's sound. Three channels with independent switches:
-//  music     — an ālāp on the bansuri by Pandit Hariprasad Chaurasia over the concert's own tanpura (tools/music_bed.py),
+//  music     — a bright dhun on the bansuri by Pandit Hariprasad Chaurasia, with tabla, in a major scale (tools/music_bed.py),
 //  ambience  — forest, river, ocean, night, battle…,
 //  effects   — bow twang, arrows, astras, the conch, page turns…
 import { LITE } from './calm.js';
-const MUSIC = .2, MUSIC_UNDER_VOICE = .06;
+const MUSIC = .22, MUSIC_UNDER_VOICE = .07;
 
 const LS = 'ramayana3d.sound';
 function loadPrefs() { try { return JSON.parse(localStorage.getItem(LS)) || {}; } catch { return {}; } }
@@ -59,9 +59,9 @@ export class Sound {
   filt(type, f, q = 1) { const x = this.ctx.createBiquadFilter(); x.type = type; x.frequency.value = f; x.Q.value = q; return x; }
   env(g, t, a, peak, d) { g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(peak, t + a); g.gain.exponentialRampToValueAtTime(.0001, t + a + d); }
 
-  /* ── music: the bansuri ālāp, streamed (an <audio> element, so a phone never holds minutes of decoded sound) ── */
+  /* ── music: the bansuri dhun, streamed (an <audio> element, so a phone never holds minutes of decoded sound) ── */
   startMusic() {
-    const a = this.bed = new Audio(`assets/audio/music/bansuri-alap${LITE ? '-lite' : ''}.m4a`);
+    const a = this.bed = new Audio(`assets/audio/music/bansuri-dhun${LITE ? '-lite' : ''}.m4a`);
     a.loop = true; a.preload = 'none';
     try {
       const src = this.ctx.createMediaElementSource(a), send = this.ctx.createGain(); send.gain.value = .18;

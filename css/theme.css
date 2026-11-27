@@ -1347,3 +1347,5 @@ html.has-cursor .bk-spread.dragging, html.has-cursor .bk-spread.dragging * { cur
 [lang="sa"], [lang="hi"], .sc-orn span, .pt-dev, .eh-dev, .kp-dev { letter-spacing: normal !important; }
 :root:is([data-read="hi"], [data-read="mr"], [data-read="te"], [data-read="ta"], [data-read="kn"], [data-read="ml"])
   :is(.stg-title, .stg-title small, .s3-chapter small, .pt-kanda, .pt-sub a, .pt-title, .lp-cur span, .d-lore h5, .pg-text, .lore, h1, h2, h3, h4, h5, h6, small, button span) { letter-spacing: normal !important; }
+/* on a phone the book is stacked, so its full-screen button sat on the painting's own: put it in the other corner */
+@media (max-width: 760px) { .fs-btn.book-fs:not(.is-max *) { right: auto; left: 8px; } }
