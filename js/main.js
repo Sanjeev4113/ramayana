@@ -436,6 +436,7 @@ let journeyApi = null;
 const loadJourney = () => (journeyApi = journeyApi || import('./journey.js').then(m => m.initJourney({ openBook: (b, i) => renderBook(b, false, i) })));
 near('#journey', loadJourney);
 // the Rāmāyaṇa today: each place can be shown on the Journey map above it
+near('#learn', () => import('./learn.js').then(m => m.initLearn({ openBook: (b, i) => renderBook(b, false, i), openChar })));
 near('#today', () => import('./today.js').then(m => m.initToday({ showPlace: id => { goTo('#journey'); loadJourney().then(j => setTimeout(() => j.place(id), 900)); } })));
 near('#yuddha', () => themeMan.then(t => import('./yuddha.js').then(m => m.initYuddha({ src: t.yuddha || 'assets/scenes/ill/yuddha-15-1-1.webp' }))));
 setTimeout(() => (window.requestIdleCallback || setTimeout)(() => loadOdyssey()), 6000);
@@ -463,3 +464,6 @@ if (skip) {
   if (params.get('fight')) setTimeout(async () => { await openFight(); setTimeout(() => fightGame?.startLadder(params.get('fight')), 2500); }, 800);
   if (params.get('duel')) setTimeout(() => { openDuel(params.get('duel')); }, 700);
 }
+
+// The site as an app: installable, and what has been read stays readable offline (sw.js). Not on a development server.
+if ('serviceWorker' in navigator && location.protocol === 'https:') addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => { }));

@@ -2070,7 +2070,7 @@
    "src": "ill/ayodhya-0-0-5.webp",
    "at": 5,
    "still": true,
-   "v": 5786951
+   "v": 5872130
   },
   {
    "src": "ill/ayodhya-0-0-6.webp",
@@ -2784,7 +2784,7 @@
    "src": "ill/ayodhya-6-0-2.webp",
    "at": 2,
    "still": true,
-   "v": 5786960
+   "v": 5872143
   },
   {
    "src": "ill/ayodhya-6-0-3.webp",
@@ -3128,7 +3128,7 @@
    "src": "ill/ayodhya-9-1-2.webp",
    "at": 2,
    "still": true,
-   "v": 5786962
+   "v": 5872145
   }
  ],
  "ayodhya-10-0": [
@@ -3388,7 +3388,7 @@
    "src": "ill/ayodhya-12-1-1.webp",
    "at": 1,
    "still": true,
-   "v": 5786953
+   "v": 5872133
   },
   {
    "src": "ill/ayodhya-12-1-2.webp",
@@ -4780,7 +4780,7 @@
    "src": "ill/aranya-10-0-1.webp",
    "at": 1,
    "still": true,
-   "v": 5786941
+   "v": 5872118
   }
  ],
  "aranya-10-1": [
@@ -7054,7 +7054,13 @@
    "src": "ill/sundara-5-2-1.webp",
    "at": 1,
    "still": true,
-   "v": 5787017
+   "v": 5872220,
+   "box": [
+    0.327,
+    0.1,
+    0.665,
+    0.928
+   ]
   },
   {
    "src": "ill/sundara-5-2-2.webp",
@@ -7105,6 +7111,12 @@
     0.757,
     1.0
    ]
+  },
+  {
+   "src": "ill/sundara-6-0-3.webp",
+   "at": 3,
+   "still": true,
+   "v": 5872220
   },
   {
    "src": "ill/sundara-6-0-4.webp",
@@ -8173,6 +8185,12 @@
     0.752,
     1.0
    ]
+  },
+  {
+   "src": "ill/yuddha-4-1-2.webp",
+   "at": 2,
+   "still": true,
+   "v": 5872284
   }
  ],
  "yuddha-5-0": [
@@ -8580,6 +8598,12 @@
   }
  ],
  "yuddha-11-0": [
+  {
+   "src": "ill/yuddha-11-0-0.webp",
+   "at": 0,
+   "still": true,
+   "v": 5872249
+  },
   {
    "src": "ill/yuddha-11-0-1.webp",
    "at": 1,
@@ -9344,7 +9368,13 @@
    "src": "ill/yuddha-20-1-3.webp",
    "at": 3,
    "still": true,
-   "v": 5787048
+   "v": 5872261,
+   "box": [
+    0.357,
+    0.133,
+    0.614,
+    0.935
+   ]
   }
  ],
  "yuddha-20-2": [
@@ -9732,7 +9762,13 @@
    "src": "ill/uttara-6-1-1.webp",
    "at": 1,
    "still": true,
-   "v": 5787034
+   "v": 5872243,
+   "box": [
+    0.469,
+    0.051,
+    0.846,
+    0.945
+   ]
   }
  ],
  "uttara-6-2": [
@@ -9902,7 +9938,13 @@
    "src": "ill/uttara-8-1-0.webp",
    "at": 0,
    "still": true,
-   "v": 5787037
+   "v": 5872246,
+   "box": [
+    0.281,
+    0.06,
+    0.793,
+    1.0
+   ]
   },
   {
    "src": "ill/uttara-8-1-1.webp",
@@ -10338,7 +10380,13 @@
    "src": "ill/uttara-13-2-0.webp",
    "at": 0,
    "still": true,
-   "v": 5787022
+   "v": 5872226,
+   "box": [
+    0.26,
+    0.262,
+    0.446,
+    0.974
+   ]
   },
   {
    "src": "ill/uttara-13-2-1.webp",
