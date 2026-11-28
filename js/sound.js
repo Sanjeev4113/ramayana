@@ -14,7 +14,11 @@ export class Sound {
     const p = loadPrefs();
     this.ctx = null;
     this.musicOn = p.music ?? true; this.sfxOn = p.sfx ?? true; this.narrateOn = p.narrate ?? true;
-    this.narrMan = null; fetch('assets/audio/narration/manifest.json').then(r => r.ok ? r.json() : null).then(m => { this.narrMan = m; }).catch(() => {});
+    // English: Mary's narration (assets/audio/narration/en) once the whole book is there; until then the earlier voice
+    this.narrMan = null; this.enDir = '';
+    fetch('assets/audio/narration/en/manifest.json').then(r => r.ok ? r.json() : null).catch(() => null)
+      .then(m => m && Object.keys(m).length >= 244 ? (this.enDir = 'en/', m) : fetch('assets/audio/narration/manifest.json').then(r => r.ok ? r.json() : null))
+      .then(m => { this.narrMan = m; }).catch(() => {});
     this.ambName = null; this.ambNodes = []; this.ambTimers = [];
     this.listeners = new Set();
   }
@@ -199,7 +203,7 @@ export class Sound {
     const entry = man?.[key];
     if (entry) {
       const dur = typeof entry === 'number' ? entry : entry.d;
-      const a = this.narrAudio = new Audio(L === 'en' ? `assets/audio/narration/${key}.m4a` : `assets/audio/narration/${L}/${key}.m4a`);
+      const a = this.narrAudio = new Audio(L === 'en' ? `assets/audio/narration/${this.enDir}${key}.m4a` : `assets/audio/narration/${L}/${key}.m4a`);
       const h = { kind: 'audio', duration: dur, starts: entry.s || null, done: false, progress: () => (a.currentTime || 0) / (a.duration || dur) };
       a.volume = 1; let done = false; const fin = () => { if (done) return; done = true; h.done = true; this.duck(false); onEnd?.(); };
       const fallback = () => { if (done) return; done = true; const s = this.speak(opt.speech || text, onEnd, L); if (s) Object.assign(h, s); else { h.done = true; onEnd?.(); } };
