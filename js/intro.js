@@ -4,6 +4,7 @@
 // the flight through the clouds, the land of temples and the golden name. On the film's last moment the live page,
 // laid out exactly over it, takes its place, and the carved frame closes in around it.
 import { loop as frames, ambient, dpr, LITE } from './calm.js';
+import { fitFilm } from './film-fit.js';
 const gsap = window.gsap;
 const $ = (s, el = document) => el.querySelector(s), $$ = (s, el = document) => [...el.querySelectorAll(s)];
 const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -225,6 +226,7 @@ function gate(sound) {
 export async function runIntro({ sound, embers, skip = false } = {}) {
   const man = await fetch('assets/theme/manifest.json').then(r => r.json()).catch(() => ({}));
   const intro = $('#intro'), body = document.body, video = $('#intro-video');
+  fitFilm(video);                                                // the whole opening film on an upright phone
   if (man.mandala) { document.documentElement.style.setProperty('--mandala', `url("${new URL(man.mandalaMask || man.mandala, location.href).href}")`); const y = $('.dh-yantra img'); if (y) y.src = man.mandala; }
   const heroP = man.plate ? land($('#hero-canvas'), { src: man.plate, depth: man.plateDepth || man.plate, light: man.plateLight || [.3, .15] }) : Promise.resolve(null);
   await document.fonts.load('200px "Tiro Devanagari Sanskrit"', 'रामायण').catch(() => { });

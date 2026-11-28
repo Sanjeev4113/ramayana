@@ -640,7 +640,8 @@ html:not([data-read="en"]):not([data-read="hi-Latn"]) .pt-body { font-family: 'T
   .book { padding: 0; }
   .bk-spread { aspect-ratio: auto; display: grid; gap: 10px; padding: 8px; }
   .bk-page { position: relative; inset: auto; width: auto; top: auto; bottom: auto; left: auto !important; right: auto !important; border-radius: 4px; }
-  .bk-page.left { aspect-ratio: 4 / 3.3; }
+  .bk-page.left { aspect-ratio: 1.8; }                                 /* the painting's own 16:9 inside the page's margins: never cropped */
+  .bk-page.left .pg-art { inset: 6% 6% 6% 6.6%; }
   .bk-page.right { min-height: 62vh; }
   .bk-gutter { display: none; }
   .pg-text { inset: 7% 8% 6%; }
@@ -1349,3 +1350,19 @@ html.has-cursor .bk-spread.dragging, html.has-cursor .bk-spread.dragging * { cur
   :is(.stg-title, .stg-title small, .s3-chapter small, .pt-kanda, .pt-sub a, .pt-title, .lp-cur span, .d-lore h5, .pg-text, .lore, h1, h2, h3, h4, h5, h6, small, button span) { letter-spacing: normal !important; }
 /* on a phone the book is stacked, so its full-screen button sat on the painting's own: put it in the other corner */
 @media (max-width: 760px) { .fs-btn.book-fs:not(.is-max *) { right: auto; left: 8px; } }
+
+/* ── films are never cropped (js/film-fit.js): on an upright phone the whole picture, in a glow of its own colours ── */
+.film-amb { position: absolute; left: -12%; top: -12%; width: 124%; height: 124%; z-index: 0; pointer-events: none;
+  filter: blur(34px) saturate(1.35) brightness(.5); transform: translateZ(0); }
+video.film-whole { object-fit: contain !important; background: transparent !important; z-index: 1; }
+#intro-video.film-whole, .vs-video.film-whole { position: absolute; }
+
+/* ── a phone held sideways: the open book is sized by the screen's height, so the whole spread and its controls fit ── */
+@media (orientation: landscape) and (max-height: 520px) {
+  #odyssey .book { display: flex; justify-content: center; }
+  #odyssey .bk-spread { width: min(100%, calc((100svh - var(--nav-h, 52px) - 74px) * 1.74)); flex: none; margin: 0 auto; }
+}
+/* full screen's exit is a labelled pill, not one of the round icon buttons beside it */
+#odyssey .th-bar .fs-chip, .th-bar .fs-chip { width: auto; height: 38px; padding: 0 16px; border-radius: 999px; white-space: nowrap; gap: 6px; align-items: center; }
+/* in full screen the painting's CC (subtitles) button sits left of the exit button, never beneath it */
+#stage-panel.is-max .s3-cc { top: 26px; right: 66px; }

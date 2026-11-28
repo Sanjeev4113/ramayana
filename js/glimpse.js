@@ -4,12 +4,14 @@
 // The verse steps aside while the film shows its own title, and while it is watched with sound. Out of view, in a
 // hidden tab or while the page rests, the film pauses.
 import { hold, onBreath, isAwake } from './calm.js';
+import { fitFilm } from './film-fit.js';
 
 const $ = (s, el = document) => el.querySelector(s);
 const CARD = 8.1;            // from here the film shows its own title card (रामायण · Experience the saga)
 
 export function initGlimpse({ sound } = {}) {
   const sec = $('#verse'), v = $('#gl-video'), play = $('.gl-play', sec), snd = $('.gl-snd', sec);
+  fitFilm(v);                                                    // the whole film on an upright phone, never cropped
   if (!sec || !v) return;
   let seen = false, watching = false, musicWas = null;
   const want = () => seen && isAwake();

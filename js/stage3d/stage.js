@@ -322,6 +322,8 @@ export class Stage3D {
     root.innerHTML = `<canvas class="s3-canvas"></canvas><div class="s3-media"></div><div class="stg-flash"></div><div class="s3-bars"></div><div class="stg-title"></div><div class="stg-dialog"><b></b><span></span></div><div class="s3-fade"></div>`;
     this.canvas = root.querySelector('canvas'); this.mediaEl = root.querySelector('.s3-media');
     this.media = fetch('assets/scenes/manifest.json').then(r => r.ok ? r.json() : {}).catch(() => ({}));
+    // living paintings (tools/build_layers.py): figure and background masks, on every device that is not a modest one
+    if (!LITE && !matchMedia('(prefers-reduced-motion: reduce)').matches) fetch('assets/scenes/layers/index.json').then(r => r.ok ? r.json() : {}).catch(() => ({})).then(x => { this.layers = x; });
     if (HD) fetch('assets/scenes/hd/index.json').then(r => r.ok ? r.json() : {}).catch(() => ({})).then(x => { this.hd = x; }); this.flashEl = root.querySelector('.stg-flash'); this.titleEl = root.querySelector('.stg-title'); this.dialog = root.querySelector('.stg-dialog'); this.fadeEl = root.querySelector('.s3-fade');
     const r = this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas, antialias: true, powerPreference: 'high-performance' });
     // Lighter rendering on phones and low-memory devices.
@@ -354,7 +356,19 @@ export class Stage3D {
     this.renderer.setSize(w, h, false); this.composer.setSize(w, h); this.bloom.resolution.set(w, h);
     const pr = this.renderer.getPixelRatio(); this.focusPass?.uniforms.texel.value.set(1 / (w * pr), 1 / (h * pr));
     this.camera.aspect = w / h; this.camera.updateProjectionMatrix();
-    const el = this.cutEl; if (el?._img && el._st) requestAnimationFrame(() => this.placeStill(el._img, el._st));
+    const el = this.cutEl; if (el?._img && el._st) requestAnimationFrame(() => this.reframeStill(el));
+  }
+  // The frame changed size (full screen, a turned phone): the camera's move is worked out afresh for the new frame and
+  // carries on from the same point of the sentence, so a picture is never left zoomed for a smaller (or larger) frame.
+  reframeStill(el) {
+    const img = el._img, tw = el._tw; if (!img) return;
+    if (!tw || !el._moveArgs) { this.placeStill(img, el._st); return; }
+    const t = tw.progress(), left = tw.duration() * (1 - t), was = tw.paused();
+    const [from, to] = this.stillMoves(img, ...el._moveArgs), st = el._st;
+    const lerp = (a, b) => a + (b - a) * gsap.parseEase('sine.inOut')(t);
+    Object.assign(st, { z: lerp(from.z, to.z), cx: lerp(from.cx, to.cx), cy: lerp(from.cy, to.cy), dir: Math.sign(to.z - from.z) });
+    tw.kill(); this.placeStill(img, st);
+    el._tw = gsap.to(st, { z: to.z, cx: to.cx, cy: to.cy, p: 1, duration: Math.max(.5, left), ease: 'sine.out', onUpdate: () => this.placeStill(img, st), paused: was });
   }
 
   /* ── environment ── */
@@ -623,6 +637,16 @@ export class Stage3D {
     // (the soft, blurred copy behind the painting needs no more than the original)
     el.style.setProperty('--still', `url("${new URL(url, location.href).href}")`);
     img.decoding = 'async'; img.alt = ''; img.src = hd || url; el.appendChild(img);
+    // a living painting: beneath, the clean plate (the world with its figures taken out); the background with a hole where the figures stand; and the
+    // figures on their own layer, which moves a little more than the background as the camera drifts. No figure is
+    // ever stretched: every layer is the painting itself, moved whole.
+    if (id && clip.v && this.layers?.[id] === clip.v) {
+      const lay = (cls, mask) => { const i = document.createElement('img'); i.decoding = 'async'; i.alt = ''; i.className = cls; i.src = img.src;
+        if (mask) { const m = `url("assets/scenes/layers/${id}.${mask}.webp?v=${clip.v}")`; i.style.webkitMaskImage = i.style.maskImage = m; }
+        return i; };
+      const base = lay('s3-l0'); base.src = `assets/scenes/layers/${id}.p.webp?v=${clip.v}`; img.classList.add('s3-l1'); img.style.webkitMaskImage = img.style.maskImage = `url("assets/scenes/layers/${id}.h.webp?v=${clip.v}")`;
+      el.insertBefore(base, img); el.appendChild(lay('s3-l2', 'f')); el.classList.add('s3-living'); el._box = clip.box;
+    }
     this.mediaEl.appendChild(el); this.mediaEl.style.opacity = 1; this.cutEl = el;
     const hold = Math.max(6, dur || 9) + 2;
     const show = () => {
@@ -630,10 +654,11 @@ export class Stage3D {
       gsap.to(el, { opacity: 1, duration: film ? 1.2 : .7, ease: 'power2.inOut', onComplete: () => { if (prev && prev !== el) { gsap.killTweensOf(prev); prev._tw?.kill(); prev.remove(); } } });
       // the camera eases toward the figures (clip.box, found by tools/finish_ill.py) and never crops any of them;
       // shots alternate between a slow push in and a slow pull back, so a run of pictures breathes like a film
-      const [from, to] = this.stillMoves(img, clip.box, clip.move || ((this._stillN = (this._stillN || 0) + 1) % 2 ? 'in' : 'out'));
-      const st = { ...from }, put = () => this.placeStill(img, st);
+      el._moveArgs = [clip.box, clip.move || ((this._stillN = (this._stillN || 0) + 1) % 2 ? 'in' : 'out')];
+      const [from, to] = this.stillMoves(img, ...el._moveArgs);
+      const st = { ...from, p: 0, dir: Math.sign(to.z - from.z) }, put = () => this.placeStill(img, st);
       el._img = img; el._st = st;                                   // re-placed if the screen changes size
-      put(); el._tw = gsap.to(st, { ...to, duration: hold, ease: 'sine.inOut', onUpdate: put, paused: !this.visible });
+      put(); el._tw = gsap.to(st, { ...to, p: 1, duration: hold, ease: 'sine.inOut', onUpdate: put, paused: !this.visible });
     };
     if (img.complete && img.naturalWidth) show(); else { img.addEventListener('load', show, { once: true }); img.addEventListener('error', () => { if (this.cutEl === el && !this.filming) this.endCut(true); }, { once: true }); }
     // over the living scene a picture stays for its sentence, then dissolves back
@@ -658,8 +683,19 @@ export class Stage3D {
   }
   placeStill(img, s) {
     const v = this.stillView(img, s);
-    img.style.width = `${v.cw}px`; img.style.height = `${v.ch}px`;
-    img.style.transform = `translate3d(${v.left.toFixed(2)}px, ${v.top.toFixed(2)}px, 0) scale(${s.z.toFixed(4)})`;
+    const el = img.parentElement, all = el?.classList.contains('s3-living') ? el.querySelectorAll('img') : [img];
+    const base = `translate3d(${v.left.toFixed(2)}px, ${v.top.toFixed(2)}px, 0) scale(${s.z.toFixed(4)})`;
+    for (const i of all) {
+      i.style.width = `${v.cw}px`; i.style.height = `${v.ch}px`;
+      if (!i.classList.contains('s3-l2')) { i.style.transform = base; continue; }
+      // the figures are nearer than their world, so as the camera moves in they grow a little faster than it (and
+      // shrink faster as it pulls back) — about their feet, which stand on the ground at its own depth and never slide
+      const [x0, y0, x1, y1] = Array.isArray(el._box) && el._box.length === 4 ? el._box : [.3, .2, .7, .9];
+      // at most ~6 px of difference at the top of the figures, on any screen: depth you feel, never a gap you see
+      const reach = Math.max(.012, Math.min(.03, 6 / Math.max(1, (y1 - y0) * v.dh)));
+      const k = 1 + reach * (s.p ?? 0) * (s.dir || 0), fx = v.left + (x0 + x1) / 2 * v.dw, fy = v.top + Math.min(.99, y1) * v.dh;
+      i.style.transform = `translate3d(${(fx - k * (fx - v.left)).toFixed(2)}px, ${(fy - k * (fy - v.top)).toFixed(2)}px, 0) scale(${(s.z * k).toFixed(4)})`;
+    }
   }
   // The start and end of a still's slow camera move. The figures' box [x0, y0, x1, y1] (fractions of the painting)
   // keeps a clear margin on the left, right and above (crowns and raised hands are never cut); only the feet may
